@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+
+<html className="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ShopEase - Multi-Vendor Marketplace Authentication</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "className",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary": "#ffffff",
+            "secondary": "#006c49",
+            "surface-variant": "#d3e4fe",
+            "inverse-surface": "#213145",
+            "surface-tint": "#4d44e3",
+            "on-tertiary-fixed": "#25005a",
+            "status-processing": "#3B82F6",
+            "on-surface-variant": "#464555",
+            "primary-fixed-dim": "#c3c0ff",
+            "tertiary-fixed": "#eaddff",
+            "secondary-fixed": "#6ffbbe",
+            "on-tertiary": "#ffffff",
+            "status-cancelled": "#EF4444",
+            "primary-fixed": "#e2dfff",
+            "tertiary-container": "#7531e6",
+            "tertiary": "#5c00ca",
+            "surface-dim": "#cbdbf5",
+            "status-shipped": "#6366F1",
+            "surface-container-low": "#eff4ff",
+            "on-surface": "#0b1c30",
+            "status-paid": "#10B981",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-container": "#dad7ff",
+            "customer-primary": "#4F46E5",
+            "vendor-accent": "#0D9488",
+            "inverse-on-surface": "#eaf1ff",
+            "surface-container-highest": "#d3e4fe",
+            "on-tertiary-fixed-variant": "#5a00c6",
+            "secondary-container": "#6cf8bb",
+            "customer-accent": "#10B981",
+            "inverse-primary": "#c3c0ff",
+            "on-primary-fixed-variant": "#3323cc",
+            "surface-card": "#FFFFFF",
+            "on-secondary-fixed": "#002113",
+            "tertiary-fixed-dim": "#d2bbff",
+            "error-container": "#ffdad6",
+            "on-error": "#ffffff",
+            "surface": "#f8f9ff",
+            "on-primary-fixed": "#0f0069",
+            "primary": "#3525cd",
+            "on-error-container": "#93000a",
+            "surface-container": "#e5eeff",
+            "on-secondary": "#ffffff",
+            "outline-variant": "#c7c4d8",
+            "surface-canvas": "#F8FAFC",
+            "on-background": "#0b1c30",
+            "on-tertiary-container": "#e4d4ff",
+            "outline": "#777587",
+            "error": "#ba1a1a",
+            "secondary-fixed-dim": "#4edea3",
+            "primary-container": "#4f46e5",
+            "vendor-primary": "#7C3AED",
+            "surface-container-high": "#dce9ff",
+            "status-pending": "#F59E0B",
+            "on-secondary-fixed-variant": "#005236",
+            "background": "#f8f9ff",
+            "on-secondary-container": "#00714d",
+            "surface-bright": "#f8f9ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "margin-mobile": "1rem",
+            "gutter": "1.5rem",
+            "margin": "2rem",
+            "gutter-mobile": "1rem",
+            "space-xl": "2.5rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"],
+            "label-md": ["Inter"],
+            "display": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-lg": ["Inter"],
+            "label-lg": ["Inter"],
+            "label-sm": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+            "display": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+            "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 5px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body className="bg-surface-canvas text-on-surface font-body-md text-body-md min-h-full flex flex-col antialiased selection:bg-primary-fixed selection:text-primary">
+<!-- Top Navigation Header -->
+<header className="w-full bg-surface-container-lowest sticky top-0 z-40 border-b border-surface-variant/40 shadow-sm">
+<div className="w-full max-w-7xl mx-auto px-margin-mobile md:px-margin flex items-center justify-between h-16">
+<!-- Brand Logo -->
+<a className="flex items-center gap-space-sm group focus:outline-none" href="#">
+<img alt="ShopEase Brand Logo" className="h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XGJvxYDma9N_9A6XdIk-hQy9nJKcmXLRBL1SZO2lIOK8L-q2Y46igLU97XG47OBTJqKJWbx1PT98K7h4v8yw359NcuVARFPs-T2BUakr2lSbeYScGmCHWw0gvR7r4bvbrLdN8h4txTkKPy-sLe-NjnPmIXC75o52jKZlZbecK2u_HCBGX5t0OXvZjBhup1P-HOgFvZ19D0LGr80lKQmYciuBmD3Nakq6H6CdLNdYA_IjDC4KRc4jZRRIp5"/>
+</a>
+<!-- Trailing Action items -->
+<div className="flex items-center gap-space-md">
+<!-- Marketplace Direct Return -->
+<a className="inline-flex items-center gap-1.5 text-on-surface-variant hover:text-customer-primary font-label-lg text-label-lg transition-colors duration-150" href="#">
+<span className="material-symbols-outlined text-[18px]">arrow_back</span>
+<span className="hidden sm:inline">Back to Marketplace</span>
+</a>
+<!-- Language Selector -->
+<div className="relative hidden sm:flex items-center">
+<button className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-slate-200 bg-surface-container-lowest text-on-surface text-label-md font-label-md hover:bg-slate-50 transition-colors" type="button">
+<span className="material-symbols-outlined text-[16px] text-customer-primary">language</span>
+<span>EN (US)</span>
+<span className="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span>
+</button>
+</div>
+<!-- Help Modal Trigger -->
+<a className="p-2 text-on-surface-variant hover:text-customer-primary rounded-lg hover:bg-slate-50 transition-colors" href="#" title="Help & Support">
+<span className="material-symbols-outlined text-[20px]">help_outline</span>
+</a>
+</div>
+</div>
+</header>
+<!-- Main Content Container with Ambient Glowing Backdrop -->
+<main className="flex-1 relative flex items-center justify-center py-8 md:py-12 px-margin-mobile md:px-margin overflow-hidden">
+<!-- Atmospheric Ambient Gradient Spots -->
+<div className="absolute -top-32 -left-32 w-96 h-96 bg-customer-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div className="absolute -bottom-32 -right-32 w-96 h-96 bg-vendor-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center relative z-10">
+<!-- LEFT COLUMN: Brand Platform Highlights & Trust Architecture -->
+<div className="lg:col-span-5 flex flex-col justify-between space-y-6">
+<div>
+<!-- Status Announcement Tag -->
+<div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-customer-primary/10 border border-customer-primary/20 text-customer-primary font-label-sm text-label-sm mb-4">
+<span className="w-2 h-2 rounded-full bg-customer-accent animate-pulse"></span>
+            Unified Multi-Vendor Gateway v2.4
+          </div>
+<h1 className="font-headline-lg text-headline-lg text-on-surface tracking-tight text-slate-900">
+            One account for smarter shopping & scaleable selling.
+          </h1>
+<p className="mt-3 text-body-lg font-body-lg text-on-surface-variant">
+            Connect directly with verified independent merchants or launch your global multi-channel enterprise storefront in minutes.
+          </p>
+</div>
+<!-- Dynamic Value Proposition Bento-Cards -->
+<div className="space-y-3.5">
+<!-- Buyer Protection Bento Card -->
+<div className="p-space-md rounded-xl bg-surface-card border border-slate-200/80 shadow-sm flex items-start gap-3.5 hover:border-customer-primary/30 transition-all duration-200">
+<div className="w-10 h-10 rounded-lg bg-customer-primary/10 text-customer-primary flex items-center justify-center shrink-0">
+<span className="material-symbols-outlined text-[22px]">verified_user</span>
+</div>
+<div>
+<h2 className="font-title-md text-title-md text-on-surface">Curated Multi-Vendor Protection</h2>
+<p className="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Escrow-backed transactions, transparent unified tracking, and zero hidden checkout markups.</p>
+</div>
+</div>
+<!-- Vendor Capabilities Bento Card -->
+<div className="p-space-md rounded-xl bg-surface-card border border-slate-200/80 shadow-sm flex items-start gap-3.5 hover:border-vendor-primary/30 transition-all duration-200">
+<div className="w-10 h-10 rounded-lg bg-vendor-primary/10 text-vendor-primary flex items-center justify-center shrink-0">
+<span className="material-symbols-outlined text-[22px]">storefront</span>
+</div>
+<div>
+<h2 className="font-title-md text-title-md text-on-surface">Zero Setup Fees for Merchants</h2>
+<p className="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Automated split-payouts, unified product inventory syncing, and customizable storefront URLs.</p>
+</div>
+</div>
+<!-- Instant Role-Based Dashboarding Card -->
+<div className="p-space-md rounded-xl bg-surface-card border border-slate-200/80 shadow-sm flex items-start gap-3.5 hover:border-customer-accent/40 transition-all duration-200">
+<div className="w-10 h-10 rounded-lg bg-emerald-50 text-customer-accent flex items-center justify-center shrink-0">
+<span className="material-symbols-outlined text-[22px]">speed</span>
+</div>
+<div>
+<h2 className="font-title-md text-title-md text-on-surface">Real-Time Routing & Instant Sync</h2>
+<p className="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Instant role-based dashboard redirection with automatic guest cart preservation.</p>
+</div>
+</div>
+</div>
+<!-- High-Trust E-Commerce Badges -->
+<div className="pt-2 border-t border-slate-200/80 flex flex-wrap items-center justify-between gap-4 text-on-surface-variant">
+<div className="flex items-center gap-1.5 text-body-sm font-body-sm">
+<span className="material-symbols-outlined text-customer-accent text-[18px]">lock</span>
+<span className="font-medium text-slate-700">256-Bit SSL Encryption</span>
+</div>
+<div className="flex items-center gap-1.5 text-body-sm font-body-sm">
+<span className="material-symbols-outlined text-customer-primary text-[18px]">groups</span>
+<span className="font-medium text-slate-700">50k+ Verified Users</span>
+</div>
+<div className="flex items-center gap-1.5 text-body-sm font-body-sm">
+<span className="material-symbols-outlined text-vendor-primary text-[18px]">bolt</span>
+<span className="font-medium text-slate-700">Instant Role Routing</span>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Dual-Tabbed Interactive Auth Terminal -->
+<div className="lg:col-span-7">
+<div className="bg-surface-card border border-slate-200 rounded-xl shadow-lg shadow-slate-900/5 p-6 md:p-8 relative">
+<!-- Segmented Tab Header (Sign In vs Create Account) -->
+<div className="flex items-center p-1 bg-slate-100 rounded-lg mb-6" role="tablist">
+<button className="flex-1 py-2.5 px-4 rounded-md font-label-lg text-label-lg transition-all duration-200 text-center shadow-sm bg-surface-card text-customer-primary font-bold" id="tab-login-btn" onclick="switchAuthTab('login')" type="button">
+              Sign In
+            </button>
+<button className="flex-1 py-2.5 px-4 rounded-md font-label-lg text-label-lg transition-all duration-200 text-center text-on-surface-variant hover:text-on-surface" id="tab-register-btn" onclick="switchAuthTab('register')" type="button">
+              Create Account
+            </button>
+</div>
+<!-- TAB 1: SIGN IN FORM -->
+<div className="space-y-5 block" id="tab-content-login">
+<div className="text-left">
+<h2 className="font-headline-sm text-headline-sm text-slate-900">Welcome back to ShopEase</h2>
+<p className="text-body-md font-body-md text-on-surface-variant mt-1">Enter your platform credentials to access your buyer or merchant hub.</p>
+</div>
+<!-- Social Authentication Actions -->
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<button className="w-full flex items-center justify-center gap-2.5 py-2.5 px-4 rounded-lg border border-slate-300 bg-surface-card text-on-surface font-label-md text-label-md hover:bg-slate-50 active:scale-95 transition duration-150" onclick="triggerMockOAuth('Google')" type="button">
+<svg className="w-4 h-4" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"></path>
+</svg>
+                Continue with Google
+              </button>
+<button className="w-full flex items-center justify-center gap-2.5 py-2.5 px-4 rounded-lg border border-slate-300 bg-surface-card text-on-surface font-label-md text-label-md hover:bg-slate-50 active:scale-95 transition duration-150" onclick="triggerMockOAuth('Apple')" type="button">
+<svg className="w-4 h-4 fill-current" viewbox="0 0 24 24">
+<path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.63-.77 1.06-1.84.95-2.91-.91.04-2.02.61-2.67 1.37-.58.67-1.09 1.76-.95 2.8 1.02.08 2.04-.49 2.67-1.26z"></path>
+</svg>
+                Continue with Apple
+              </button>
+</div>
+<!-- Visual Divider -->
+<div className="relative my-4 flex items-center">
+<div className="flex-grow border-t border-slate-200"></div>
+<span className="flex-shrink mx-3 text-slate-400 font-label-sm text-label-sm">OR WITH EMAIL</span>
+<div className="flex-grow border-t border-slate-200"></div>
+</div>
+<form className="space-y-4" id="login-form" onsubmit="handleLoginSubmit(event)">
+<!-- Email Input Field -->
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-1" for="login-email">Email address</label>
+<div className="relative">
+<div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+<span className="material-symbols-outlined text-[18px]">mail</span>
+</div>
+<input className="w-full pl-10 pr-10 py-2.5 bg-surface-card border border-slate-300 rounded-lg text-body-md font-body-md text-on-surface placeholder:text-slate-400 focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 outline-none transition" id="login-email" oninput="validateEmailField(this, 'login-email-feedback')" placeholder="alex@domain.com" required="" type="email"/>
+<div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none opacity-0 transition-opacity" id="login-email-feedback">
+<span className="material-symbols-outlined text-customer-accent text-[20px]">check_circle</span>
+</div>
+</div>
+</div>
+<!-- Password Input Field -->
+<div>
+<div className="flex items-center justify-between mb-1">
+<label className="block font-label-md text-label-md text-on-surface" for="login-password">Password</label>
+<button className="text-customer-primary hover:underline font-label-sm text-label-sm" onclick="toggleForgotPasswordModal(true)" type="button">Forgot Password?</button>
+</div>
+<div className="relative">
+<div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+<span className="material-symbols-outlined text-[18px]">lock</span>
+</div>
+<input className="w-full pl-10 pr-10 py-2.5 bg-surface-card border border-slate-300 rounded-lg text-body-md font-body-md text-on-surface placeholder:text-slate-400 focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 outline-none transition" id="login-password" placeholder="••••••••••••" required="" type="password"/>
+<button className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 focus:outline-none" onclick="togglePasswordVisibility('login-password', this)" type="button">
+<span className="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- Remember Device Checkbox -->
+<div className="flex items-center">
+<input className="h-4 w-4 rounded border-slate-300 text-customer-primary focus:ring-customer-primary/20" id="remember-me" name="remember-me" type="checkbox"/>
+<label className="ml-2 block text-body-sm font-body-sm text-on-surface-variant" for="remember-me">Remember this device for 30 days</label>
+</div>
+<!-- Submit CTA -->
+<button className="w-full py-3 px-4 rounded-lg bg-customer-primary hover:bg-indigo-700 text-on-primary font-label-lg text-label-lg shadow-sm hover:shadow active:scale-[0.99] transition duration-150 flex items-center justify-center gap-2" id="login-submit-btn" type="submit">
+<span>Sign In to ShopEase</span>
+<span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</form>
+<!-- Guest Checkout Sync Notice -->
+<div className="p-3 bg-slate-50 border border-slate-200/80 rounded-lg flex items-start gap-2.5 text-on-surface-variant">
+<span className="material-symbols-outlined text-customer-primary text-[18px] shrink-0 mt-0.5">shopping_bag</span>
+<p className="text-body-sm font-body-sm">
+<span className="font-medium text-slate-800">Browsing as a guest?</span> Your active cart items will automatically merge and sync to your role hub upon signing in.
+              </p>
+</div>
+</div>
+<!-- TAB 2: REGISTRATION FORM -->
+<div className="space-y-5 hidden" id="tab-content-register">
+<div className="text-left">
+<h2 className="font-headline-sm text-headline-sm text-slate-900">Create your ShopEase account</h2>
+<p className="text-body-md font-body-md text-on-surface-variant mt-1">Select your account tier to configure personalized platform features.</p>
+</div>
+<!-- Role Selector Interactive Cards -->
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-2">Choose your primary role</label>
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-3" id="role-selector-group">
+<!-- Customer Role Card -->
+<div className="cursor-pointer border-2 border-customer-primary bg-indigo-50/40 p-3.5 rounded-xl transition duration-150 flex flex-col justify-between" id="role-customer-card" onclick="selectRole('customer')">
+<div className="flex items-center justify-between">
+<div className="flex items-center gap-2">
+<span className="material-symbols-outlined text-customer-primary text-[22px]">shopping_cart</span>
+<span className="font-label-lg text-label-lg text-slate-900">Customer</span>
+</div>
+<span className="material-symbols-outlined text-customer-primary text-[20px]" id="customer-radio-icon" style="font-variation-settings: 'FILL' 1;">radio_button_checked</span>
+</div>
+<p className="text-body-sm font-body-sm text-on-surface-variant mt-2">Browse, buy, and track orders across multi-vendor storefronts.</p>
+</div>
+<!-- Vendor Role Card -->
+<div className="cursor-pointer border-2 border-slate-200 bg-surface-card p-3.5 rounded-xl hover:border-slate-300 transition duration-150 flex flex-col justify-between" id="role-vendor-card" onclick="selectRole('vendor')">
+<div className="flex items-center justify-between">
+<div className="flex items-center gap-2">
+<span className="material-symbols-outlined text-vendor-primary text-[22px]">storefront</span>
+<span className="font-label-lg text-label-lg text-slate-900">Vendor</span>
+</div>
+<span className="material-symbols-outlined text-slate-400 text-[20px]" id="vendor-radio-icon">radio_button_unchecked</span>
+</div>
+<p className="text-body-sm font-body-sm text-on-surface-variant mt-2">Sell products, manage multi-store inventory, and access merchant tools.</p>
+</div>
+</div>
+</div>
+<form className="space-y-4" id="register-form" onsubmit="handleRegisterSubmit(event)">
+<!-- Full Name Field -->
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-1" for="reg-name">Full Name</label>
+<div className="relative">
+<div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+<span className="material-symbols-outlined text-[18px]">person</span>
+</div>
+<input className="w-full pl-10 pr-3 py-2.5 bg-surface-card border border-slate-300 rounded-lg text-body-md font-body-md text-on-surface placeholder:text-slate-400 focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 outline-none transition" id="reg-name" placeholder="Alex Morgan" required="" type="text"/>
+</div>
+</div>
+<!-- Work / Personal Email -->
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-1" for="reg-email">Work / Personal Email</label>
+<div className="relative">
+<div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+<span className="material-symbols-outlined text-[18px]">mail</span>
+</div>
+<input className="w-full pl-10 pr-10 py-2.5 bg-surface-card border border-slate-300 rounded-lg text-body-md font-body-md text-on-surface placeholder:text-slate-400 focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 outline-none transition" id="reg-email" oninput="validateEmailField(this, 'reg-email-feedback')" placeholder="alex.morgan@company.com" required="" type="email"/>
+<div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none opacity-0 transition-opacity" id="reg-email-feedback">
+<span className="material-symbols-outlined text-customer-accent text-[20px]">check_circle</span>
+</div>
+</div>
+</div>
+<!-- Dynamic Vendor Specific Fields Area -->
+<div className="space-y-4 p-4 rounded-xl border border-vendor-primary/30 bg-purple-50/40 transition-all duration-300 hidden" id="vendor-fields-container">
+<div className="flex items-center gap-2 pb-1 border-b border-vendor-primary/20">
+<span className="material-symbols-outlined text-vendor-primary text-[20px]">settings_input_composite</span>
+<span className="font-label-lg text-label-lg text-vendor-primary">Merchant Store Configuration</span>
+</div>
+<!-- Store Name -->
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-1" for="reg-store-name">Store Name</label>
+<input className="w-full px-3 py-2.5 bg-surface-card border border-slate-300 rounded-lg text-body-md font-body-md text-on-surface focus:border-vendor-primary focus:ring-2 focus:ring-vendor-primary/20 outline-none transition" id="reg-store-name" oninput="updateStoreSubdomainPreview(this.value)" placeholder="Apex Gear Co." type="text"/>
+<p className="text-body-sm font-body-sm text-slate-500 mt-1">
+                    Storefront Subdomain: <span className="font-mono text-vendor-primary font-medium" id="store-slug-preview">shopease.io/store/your-store</span>
+</p>
+</div>
+<!-- Store Category -->
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-1" for="reg-store-category">Primary Store Category</label>
+<select className="w-full px-3 py-2.5 bg-surface-card border border-slate-300 rounded-lg text-body-md font-body-md text-on-surface focus:border-vendor-primary focus:ring-2 focus:ring-vendor-primary/20 outline-none transition" id="reg-store-category">
+<option value="Electronics">Consumer Electronics & Gadgets</option>
+<option value="Fashion">Fashion & Apparel</option>
+<option value="Home & Living">Home, Furniture & Living</option>
+<option value="Handmade">Handmade & Artisanal Crafts</option>
+</select>
+</div>
+<!-- Logo URL Input with Live Preview helper -->
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-1" for="reg-logo-url">Store Logo URL</label>
+<div className="flex gap-2">
+<input className="flex-1 px-3 py-2.5 bg-surface-card border border-slate-300 rounded-lg text-body-md font-body-md text-on-surface placeholder:text-slate-400 focus:border-vendor-primary focus:ring-2 focus:ring-vendor-primary/20 outline-none transition" id="reg-logo-url" placeholder="https://example.com/logo.png" type="url"/>
+<button className="px-3 py-2 rounded-lg bg-surface-card border border-slate-300 hover:bg-slate-100 text-on-surface font-label-sm text-label-sm transition" onclick="previewStoreLogo()" type="button">Test URL</button>
+</div>
+<div className="mt-2 hidden items-center gap-2 text-body-sm font-body-sm text-slate-600 bg-white p-2 rounded-lg border border-slate-200" id="logo-preview-box">
+<span className="material-symbols-outlined text-customer-accent text-[18px]">image</span>
+<span id="logo-preview-text">Valid image referenced</span>
+</div>
+</div>
+</div>
+<!-- Password Inputs with Live Strength Meter -->
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-1" for="reg-password">Password</label>
+<div className="relative">
+<input className="w-full pl-3 pr-10 py-2.5 bg-surface-card border border-slate-300 rounded-lg text-body-md font-body-md text-on-surface placeholder:text-slate-400 focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 outline-none transition" id="reg-password" oninput="checkPasswordStrength(this.value)" placeholder="••••••••••••" required="" type="password"/>
+<button className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 focus:outline-none" onclick="togglePasswordVisibility('reg-password', this)" type="button">
+<span className="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</div>
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-1" for="reg-confirm-password">Confirm Password</label>
+<div className="relative">
+<input className="w-full pl-3 pr-10 py-2.5 bg-surface-card border border-slate-300 rounded-lg text-body-md font-body-md text-on-surface placeholder:text-slate-400 focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 outline-none transition" id="reg-confirm-password" oninput="checkPasswordMatch()" placeholder="••••••••••••" required="" type="password"/>
+<button className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 focus:outline-none" onclick="togglePasswordVisibility('reg-confirm-password', this)" type="button">
+<span className="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Live Strength Meter Display -->
+<div>
+<div className="flex items-center justify-between text-body-sm font-body-sm text-slate-500 mb-1">
+<span>Security strength</span>
+<span className="font-medium" id="strength-label">Enter password</span>
+</div>
+<div className="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden flex">
+<div className="h-full w-1/4 bg-transparent transition-colors" id="strength-bar-1"></div>
+<div className="h-full w-1/4 bg-transparent transition-colors" id="strength-bar-2"></div>
+<div className="h-full w-1/4 bg-transparent transition-colors" id="strength-bar-3"></div>
+<div className="h-full w-1/4 bg-transparent transition-colors" id="strength-bar-4"></div>
+</div>
+<div className="hidden text-error text-body-sm font-body-sm mt-1" id="password-match-error">Passwords do not match.</div>
+</div>
+<!-- Agreement Checkbox -->
+<div className="flex items-start">
+<input className="h-4 w-4 mt-0.5 rounded border-slate-300 text-customer-primary focus:ring-customer-primary/20" id="agree-terms" name="agree-terms" required="" type="checkbox"/>
+<label className="ml-2 block text-body-sm font-body-sm text-on-surface-variant" for="agree-terms">
+                  I agree to the <a className="text-customer-primary hover:underline" href="#">Terms of Service</a>, <a className="text-customer-primary hover:underline" href="#">Privacy Policy</a>, and <a className="text-customer-primary hover:underline" href="#">Vendor Policy</a>.
+                </label>
+</div>
+<!-- Dynamic Submit Button -->
+<button className="w-full py-3 px-4 rounded-lg bg-customer-primary hover:bg-indigo-700 text-on-primary font-label-lg text-label-lg shadow-sm hover:shadow active:scale-[0.99] transition duration-150 flex items-center justify-center gap-2" id="register-submit-btn" type="submit">
+<span id="register-cta-text">Create Customer Account</span>
+<span className="material-symbols-outlined text-[18px]">how_to_reg</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Interactive Forgot Password Modal -->
+<div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 backdrop-blur-sm hidden opacity-0 transition-opacity duration-200" id="forgot-password-modal">
+<div className="bg-surface-card border border-slate-200 rounded-xl max-w-md w-full mx-4 p-6 shadow-xl transform transition-transform">
+<div className="flex items-center justify-between pb-3 border-b border-slate-100">
+<div className="flex items-center gap-2">
+<div className="p-2 rounded-lg bg-indigo-50 text-customer-primary">
+<span className="material-symbols-outlined text-[20px]">lock_reset</span>
+</div>
+<h2 className="font-headline-sm text-headline-sm text-slate-900">Reset your password</h2>
+</div>
+<button className="text-slate-400 hover:text-slate-600" onclick="toggleForgotPasswordModal(false)" type="button">
+<span className="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<form className="mt-4 space-y-4" onsubmit="handleForgotPasswordSubmit(event)">
+<p className="text-body-md font-body-md text-on-surface-variant">
+          Enter the email associated with your ShopEase account and we'll send a 6-digit recovery code.
+        </p>
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-1" for="reset-email">Email address</label>
+<input className="w-full px-3 py-2.5 bg-surface-card border border-slate-300 rounded-lg text-body-md font-body-md text-on-surface focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 outline-none" id="reset-email" placeholder="alex@domain.com" required="" type="email"/>
+</div>
+<div className="flex items-center justify-end gap-3 pt-2">
+<button className="px-4 py-2 rounded-lg border border-slate-300 text-on-surface font-label-md text-label-md hover:bg-slate-50 transition" onclick="toggleForgotPasswordModal(false)" type="button">Cancel</button>
+<button className="px-4 py-2 rounded-lg bg-customer-primary hover:bg-indigo-700 text-on-primary font-label-md text-label-md transition" type="submit">Send Recovery Link</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Toast Notification System (Auth Feedback) -->
+<div className="fixed bottom-6 right-6 z-50 flex flex-col gap-2 pointer-events-none" id="toast-container"></div>
+<!-- Shared Global Web Footer -->
+<footer className="w-full bg-surface-container-low border-t border-surface-variant/40 mt-auto">
+<div className="w-full max-w-7xl mx-auto px-margin-mobile md:px-margin py-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div className="text-body-sm font-body-sm text-on-surface-variant text-center md:text-left">
+        © 2024 ShopEase Marketplace Inc. All rights reserved. Built for modern vendors and smart shoppers.
+      </div>
+<div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-label-md font-label-md">
+<a className="text-on-surface-variant hover:text-customer-primary transition-colors duration-150" href="#">Terms of Service</a>
+<a className="text-on-surface-variant hover:text-customer-primary transition-colors duration-150" href="#">Privacy Policy</a>
+<a className="text-on-surface-variant hover:text-customer-primary transition-colors duration-150" href="#">Vendor Policy</a>
+<a className="text-on-surface-variant hover:text-customer-primary transition-colors duration-150" href="#">Security</a>
+<a className="text-on-surface-variant hover:text-customer-primary transition-colors duration-150" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+<!-- Application Dynamic Behavior & Authentication Logic -->
+<script>
+    let currentRole = 'customer';
+
+    // Switch between 'Sign In' and 'Create Account' Tabs
+    function switchAuthTab(tab) {
+      const loginBtn = document.getElementById('tab-login-btn');
+      const registerBtn = document.getElementById('tab-register-btn');
+      const loginContent = document.getElementById('tab-content-login');
+      const registerContent = document.getElementById('tab-content-register');
+
+      if (tab === 'login') {
+        loginBtn.classNameName = "flex-1 py-2.5 px-4 rounded-md font-label-lg text-label-lg transition-all duration-200 text-center shadow-sm bg-surface-card text-customer-primary font-bold";
+        registerBtn.classNameName = "flex-1 py-2.5 px-4 rounded-md font-label-lg text-label-lg transition-all duration-200 text-center text-on-surface-variant hover:text-on-surface";
+        loginContent.classNameList.remove('hidden');
+        loginContent.classNameList.add('block');
+        registerContent.classNameList.remove('block');
+        registerContent.classNameList.add('hidden');
+      } else {
+        registerBtn.classNameName = "flex-1 py-2.5 px-4 rounded-md font-label-lg text-label-lg transition-all duration-200 text-center shadow-sm bg-surface-card text-customer-primary font-bold";
+        loginBtn.classNameName = "flex-1 py-2.5 px-4 rounded-md font-label-lg text-label-lg transition-all duration-200 text-center text-on-surface-variant hover:text-on-surface";
+        registerContent.classNameList.remove('hidden');
+        registerContent.classNameList.add('block');
+        loginContent.classNameList.remove('block');
+        loginContent.classNameList.add('hidden');
+      }
+    }
+
+    // Role Selection Logic (Customer vs Vendor)
+    function selectRole(role) {
+      currentRole = role;
+      const customerCard = document.getElementById('role-customer-card');
+      const vendorCard = document.getElementById('role-vendor-card');
+      const customerRadio = document.getElementById('customer-radio-icon');
+      const vendorRadio = document.getElementById('vendor-radio-icon');
+      const vendorFields = document.getElementById('vendor-fields-container');
+      const submitBtn = document.getElementById('register-submit-btn');
+      const submitText = document.getElementById('register-cta-text');
+      const storeNameInput = document.getElementById('reg-store-name');
+
+      if (role === 'vendor') {
+        // Highlight Vendor Card
+        vendorCard.classNameName = "cursor-pointer border-2 border-vendor-primary bg-purple-50/50 p-3.5 rounded-xl transition duration-150 flex flex-col justify-between";
+        customerCard.classNameName = "cursor-pointer border-2 border-slate-200 bg-surface-card p-3.5 rounded-xl hover:border-slate-300 transition duration-150 flex flex-col justify-between";
+        vendorRadio.textContent = 'radio_button_checked';
+        vendorRadio.classNameName = 'material-symbols-outlined text-vendor-primary text-[20px]';
+        vendorRadio.style = "font-variation-settings: 'FILL' 1;";
+        customerRadio.textContent = 'radio_button_unchecked';
+        customerRadio.classNameName = 'material-symbols-outlined text-slate-400 text-[20px]';
+        customerRadio.style = "";
+
+        // Reveal Dynamic Vendor Area
+        vendorFields.classNameList.remove('hidden');
+        storeNameInput.setAttribute('required', 'true');
+
+        // Update CTA Appearance
+        submitBtn.classNameName = "w-full py-3 px-4 rounded-lg bg-vendor-primary hover:bg-purple-800 text-on-primary font-label-lg text-label-lg shadow-sm hover:shadow active:scale-[0.99] transition duration-150 flex items-center justify-center gap-2";
+        submitText.textContent = "Launch Vendor Store";
+      } else {
+        // Highlight Customer Card
+        customerCard.classNameName = "cursor-pointer border-2 border-customer-primary bg-indigo-50/40 p-3.5 rounded-xl transition duration-150 flex flex-col justify-between";
+        vendorCard.classNameName = "cursor-pointer border-2 border-slate-200 bg-surface-card p-3.5 rounded-xl hover:border-slate-300 transition duration-150 flex flex-col justify-between";
+        customerRadio.textContent = 'radio_button_checked';
+        customerRadio.classNameName = 'material-symbols-outlined text-customer-primary text-[20px]';
+        customerRadio.style = "font-variation-settings: 'FILL' 1;";
+        vendorRadio.textContent = 'radio_button_unchecked';
+        vendorRadio.classNameName = 'material-symbols-outlined text-slate-400 text-[20px]';
+        vendorRadio.style = "";
+
+        // Hide Dynamic Vendor Area
+        vendorFields.classNameList.add('hidden');
+        storeNameInput.removeAttribute('required');
+
+        // Reset CTA Appearance
+        submitBtn.classNameName = "w-full py-3 px-4 rounded-lg bg-customer-primary hover:bg-indigo-700 text-on-primary font-label-lg text-label-lg shadow-sm hover:shadow active:scale-[0.99] transition duration-150 flex items-center justify-center gap-2";
+        submitText.textContent = "Create Customer Account";
+      }
+    }
+
+    // Toggle Password Visibility
+    function togglePasswordVisibility(inputId, buttonEl) {
+      const input = document.getElementById(inputId);
+      const icon = buttonEl.querySelector('.material-symbols-outlined');
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.textContent = 'visibility_off';
+      } else {
+        input.type = 'password';
+        icon.textContent = 'visibility';
+      }
+    }
+
+    // Email Validation Helper
+    function validateEmailField(input, feedbackId) {
+      const feedback = document.getElementById(feedbackId);
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (emailRegex.test(input.value.trim())) {
+        feedback.classNameList.remove('opacity-0');
+        feedback.classNameList.add('opacity-100');
+        input.classNameList.remove('border-red-400');
+      } else {
+        feedback.classNameList.add('opacity-0');
+        feedback.classNameList.remove('opacity-100');
+      }
+    }
+
+    // Store Subdomain live preview
+    function updateStoreSubdomainPreview(val) {
+      const slug = val.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+      const preview = document.getElementById('store-slug-preview');
+      preview.textContent = slug ? `shopease.io/store/${slug}` : 'shopease.io/store/your-store';
+    }
+
+    // Logo URL Check Simulation
+    function previewStoreLogo() {
+      const val = document.getElementById('reg-logo-url').value;
+      const previewBox = document.getElementById('logo-preview-box');
+      const previewText = document.getElementById('logo-preview-text');
+      if (val && val.startsWith('http')) {
+        previewBox.classNameList.remove('hidden');
+        previewBox.classNameList.add('flex');
+        previewText.textContent = `Referenced: ${val.split('/').pop() || 'logo-asset.png'}`;
+      } else {
+        showToast('Please specify a valid http/https URL', 'error');
+      }
+    }
+
+    // Live Password Strength Indicator
+    function checkPasswordStrength(password) {
+      const b1 = document.getElementById('strength-bar-1');
+      const b2 = document.getElementById('strength-bar-2');
+      const b3 = document.getElementById('strength-bar-3');
+      const b4 = document.getElementById('strength-bar-4');
+      const label = document.getElementById('strength-label');
+
+      let score = 0;
+      if (password.length >= 8) score++;
+      if (/[A-Z]/.test(password)) score++;
+      if (/[0-9]/.test(password)) score++;
+      if (/[^A-Za-z0-9]/.test(password)) score++;
+
+      [b1, b2, b3, b4].forEach(b => b.classNameName = 'h-full w-1/4 bg-transparent transition-colors');
+
+      if (score === 0) {
+        label.textContent = 'Enter password';
+      } else if (score === 1) {
+        b1.classNameList.add('bg-red-500');
+        label.textContent = 'Weak';
+      } else if (score === 2) {
+        b1.classNameList.add('bg-amber-500');
+        b2.classNameList.add('bg-amber-500');
+        label.textContent = 'Fair';
+      } else if (score === 3) {
+        b1.classNameList.add('bg-indigo-500');
+        b2.classNameList.add('bg-indigo-500');
+        b3.classNameList.add('bg-indigo-500');
+        label.textContent = 'Good';
+      } else if (score >= 4) {
+        b1.classNameList.add('bg-emerald-500');
+        b2.classNameList.add('bg-emerald-500');
+        b3.classNameList.add('bg-emerald-500');
+        b4.classNameList.add('bg-emerald-500');
+        label.textContent = 'Strong (Secure)';
+      }
+      checkPasswordMatch();
+    }
+
+    // Password Match Validation
+    function checkPasswordMatch() {
+      const p1 = document.getElementById('reg-password').value;
+      const p2 = document.getElementById('reg-confirm-password').value;
+      const err = document.getElementById('password-match-error');
+      if (p2 && p1 !== p2) {
+        err.classNameList.remove('hidden');
+        return false;
+      } else {
+        err.classNameList.add('hidden');
+        return true;
+      }
+    }
+
+    // Forgot Password Modal Toggle
+    function toggleForgotPasswordModal(open) {
+      const modal = document.getElementById('forgot-password-modal');
+      if (open) {
+        modal.classNameList.remove('hidden');
+        setTimeout(() => {
+          modal.classNameList.remove('opacity-0');
+          modal.classNameList.add('opacity-100');
+        }, 10);
+      } else {
+        modal.classNameList.add('opacity-0');
+        modal.classNameList.remove('opacity-100');
+        setTimeout(() => {
+          modal.classNameList.add('hidden');
+        }, 200);
+      }
+    }
+
+    function handleForgotPasswordSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('reset-email').value;
+      toggleForgotPasswordModal(false);
+      showToast(`Recovery link sent to ${email}`, 'success');
+    }
+
+    // OAuth Simulation
+    function triggerMockOAuth(provider) {
+      showToast(`Redirecting to ${provider} OAuth Gateway...`, 'info');
+      setTimeout(() => {
+        showToast(`Authenticated successfully via ${provider}. Loading dashboard...`, 'success');
+      }, 1200);
+    }
+
+    // Form Submission Handlers
+    function handleLoginSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('login-email').value;
+      const roleAssumed = email.includes('vendor') ? 'Vendor' : 'Customer';
+      
+      showToast(`Authenticated successfully as ${roleAssumed} - redirecting to dashboard...`, 'success');
+    }
+
+    function handleRegisterSubmit(e) {
+      e.preventDefault();
+      if (!checkPasswordMatch()) {
+        showToast('Please ensure your passwords match.', 'error');
+        return;
+      }
+      const roleLabel = currentRole === 'vendor' ? 'Vendor' : 'Customer';
+      showToast(`Account created! Authenticated successfully as ${roleLabel} - redirecting to onboarding...`, 'success');
+    }
+
+    // Toast Notification System
+    function showToast(message, type = 'info') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      
+      let borderCol = 'border-customer-primary';
+      let icon = 'info';
+      if (type === 'success') {
+        borderCol = 'border-customer-accent';
+        icon = 'verified';
+      } else if (type === 'error') {
+        borderCol = 'border-red-500';
+        icon = 'error';
+      }
+
+      toast.classNameName = `pointer-events-auto flex items-center gap-3 px-4 py-3 bg-slate-900 text-white rounded-lg border-l-4 ${borderCol} shadow-xl transform transition-all duration-300 translate-y-4 opacity-0 text-body-md`;
+      toast.innerHTML = `
+        <span className="material-symbols-outlined text-[20px] text-white">${icon}</span>
+        <span>${message}</span>
+      `;
+
+      container.appendChild(toast);
+
+      requestAnimationFrame(() => {
+        toast.classNameList.remove('translate-y-4', 'opacity-0');
+      });
+
+      setTimeout(() => {
+        toast.classNameList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 4000);
+    }
+  </script>
+</body></html>

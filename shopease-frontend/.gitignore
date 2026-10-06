@@ -1,0 +1,8 @@
+node_modules
+dist
+.env
+.env.local
+.env.example
+README.md
+DESIGN.md
+src/__tests__

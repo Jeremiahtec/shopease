@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ShopEase - Verified Multi-Vendor Marketplace</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "className",
+      theme: {
+        extend: {
+          "colors": {
+            "customer-accent": "#10B981",
+            "error-container": "#ffdad6",
+            "secondary-fixed-dim": "#4edea3",
+            "on-tertiary-container": "#e4d4ff",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed": "#25005a",
+            "outline-variant": "#c7c4d8",
+            "on-background": "#0b1c30",
+            "tertiary-fixed-dim": "#d2bbff",
+            "surface": "#f8f9ff",
+            "on-secondary-fixed": "#002113",
+            "on-primary-container": "#dad7ff",
+            "vendor-accent": "#0D9488",
+            "on-primary-fixed-variant": "#3323cc",
+            "on-tertiary-fixed-variant": "#5a00c6",
+            "on-primary": "#ffffff",
+            "tertiary": "#5c00ca",
+            "surface-container-low": "#eff4ff",
+            "surface-container": "#e5eeff",
+            "surface-bright": "#f8f9ff",
+            "tertiary-container": "#7531e6",
+            "status-processing": "#3B82F6",
+            "on-secondary-container": "#00714d",
+            "on-tertiary": "#ffffff",
+            "surface-container-high": "#dce9ff",
+            "vendor-primary": "#7C3AED",
+            "surface-container-highest": "#d3e4fe",
+            "surface-canvas": "#F8FAFC",
+            "surface-variant": "#d3e4fe",
+            "inverse-surface": "#213145",
+            "error": "#ba1a1a",
+            "on-error": "#ffffff",
+            "secondary": "#006c49",
+            "on-secondary-fixed-variant": "#005236",
+            "on-secondary": "#ffffff",
+            "secondary-fixed": "#6ffbbe",
+            "status-cancelled": "#EF4444",
+            "primary": "#3525cd",
+            "primary-fixed-dim": "#c3c0ff",
+            "status-pending": "#F59E0B",
+            "background": "#f8f9ff",
+            "status-shipped": "#6366F1",
+            "primary-fixed": "#e2dfff",
+            "on-surface-variant": "#464555",
+            "status-paid": "#10B981",
+            "secondary-container": "#6cf8bb",
+            "tertiary-fixed": "#eaddff",
+            "surface-card": "#FFFFFF",
+            "on-primary-fixed": "#0f0069",
+            "outline": "#777587",
+            "surface-container-lowest": "#ffffff",
+            "customer-primary": "#4F46E5",
+            "inverse-on-surface": "#eaf1ff",
+            "inverse-primary": "#c3c0ff",
+            "on-surface": "#0b1c30",
+            "surface-tint": "#4d44e3",
+            "primary-container": "#4f46e5",
+            "surface-dim": "#cbdbf5"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-mobile": "1rem",
+            "gutter": "1.5rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-md": "1rem",
+            "margin": "2rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "margin-mobile": "1rem"
+          },
+          "fontFamily": {
+            "label-sm": ["Inter"],
+            "label-lg": ["Inter"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Inter"],
+            "title-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "display": ["Plus Jakarta Sans"],
+            "label-md": ["Inter"]
+          },
+          "fontSize": {
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "display": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background-color: #CBD5E1;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body className="bg-surface-canvas text-on-surface font-body-md antialiased min-h-screen flex flex-col selection:bg-customer-primary selection:text-on-primary">
+<!-- TOP UTILITY / LOCATION STRIP -->
+<div className="bg-surface-container-high border-b border-surface-variant text-on-surface-variant text-label-sm font-label-sm">
+<div className="w-full max-w-7xl mx-auto px-margin-mobile md:px-margin py-1.5 flex flex-wrap items-center justify-between gap-2">
+<div className="flex items-center gap-space-sm">
+<span className="material-symbols-outlined text-[16px] text-customer-primary">location_on</span>
+<span>Deliver to: <strong className="text-on-surface font-semibold">New York, NY 10001</strong></span>
+<button className="text-customer-primary hover:underline ml-1">Change</button>
+</div>
+<div className="flex items-center gap-space-md">
+<span className="inline-flex items-center gap-1 text-customer-accent font-semibold">
+<span className="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+          100% Escrow &amp; Buyer Protection
+        </span>
+<span className="hidden md:inline text-outline-variant">|</span>
+<a className="hover:text-customer-primary transition-colors hidden md:inline" href="#tracking">Order Tracking</a>
+<a className="text-vendor-primary font-semibold hover:opacity-90 transition-opacity" href="#vendor-portal">Sell on ShopEase</a>
+</div>
+</div>
+</div>
+<!-- SHARED COMPONENT: TopNavBar (Web Header) -->
+<header className="bg-surface-container-lowest dark:bg-surface border-b border-surface-variant dark:border-outline-variant shadow-sm dark:shadow-none sticky top-0 z-40">
+<div className="w-full max-w-7xl mx-auto px-margin-mobile md:px-margin flex items-center justify-between h-20 gap-space-md">
+<!-- Left: Logo & Context -->
+<div className="flex items-center gap-space-lg flex-shrink-0">
+<a className="flex items-center gap-2 group" href="#">
+<img alt="ShopEase Logo" className="h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VEdTpcgB0WgelxqUyhbvFNMlWJlmsdgr7nFsWO2KW2k5P99nUJhxjFcAVEFRJ3LHU2jmMQ4fEMfylea1TSEL1A123neAoMVessAKW_EnLMNZH1FbUoe4nRiGcKLERk9_avC2DdM0wJ_lAuPO0PhYK3Lsx0R0rITuGq9X9NdMml1u7I_siWr-T8-nFdkJ0Lq0PrffMDTNzTzHrCOlwqMuDUyQPGDTVphlJRYz9Jt1-4pZFbzlUfWF92LAi4"/>
+</a>
+<!-- Desktop Global Navigation Links from JSON Anchor -->
+<nav className="hidden lg:flex items-center gap-space-lg">
+<a className="text-customer-primary dark:text-inverse-primary font-bold border-b-2 border-customer-primary dark:border-inverse-primary pb-1 font-label-lg text-label-lg" href="#">Marketplace</a>
+<a className="text-on-surface-variant dark:text-surface-variant font-label-lg text-label-lg hover:text-customer-primary transition-colors duration-150" href="#">Vendors</a>
+<a className="text-on-surface-variant dark:text-surface-variant font-label-lg text-label-lg hover:text-customer-primary transition-colors duration-150" href="#">Help Center</a>
+</nav>
+</div>
+<!-- Center: High-Utility Marketplace Search Bar -->
+<div className="flex-1 max-w-2xl hidden md:block">
+<form className="flex items-center rounded-lg border border-slate-300 bg-surface-card shadow-sm hover:border-customer-primary focus-within:border-customer-primary focus-within:ring-2 focus-within:ring-customer-primary/20 transition-all">
+<div className="relative flex-shrink-0 border-r border-slate-200">
+<select className="appearance-none bg-transparent pl-3 pr-8 py-2.5 text-label-md font-label-md text-on-surface-variant cursor-pointer focus:outline-none">
+<option>All Categories</option>
+<option>Electronics</option>
+<option>Home &amp; Living</option>
+<option>Fashion</option>
+<option>Artisanal &amp; Handmade</option>
+<option>Specialty Roasters</option>
+</select>
+<span className="material-symbols-outlined text-outline-variant pointer-events-none absolute right-2 top-3 text-[18px]">expand_more</span>
+</div>
+<div className="relative flex-1 flex items-center">
+<input className="w-full border-0 py-2.5 px-3 text-body-md font-body-md placeholder-slate-400 focus:ring-0 focus:outline-none bg-transparent" placeholder="Search 50,000+ verified merchant products..." type="text"/>
+<button className="text-slate-400 hover:text-slate-600 mr-2 p-1 rounded-full" type="reset">
+<span className="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<button className="bg-customer-primary hover:bg-[#4338CA] text-on-primary px-5 py-2.5 rounded-r-lg font-label-lg text-label-lg flex items-center gap-1.5 transition-colors" type="submit">
+<span className="material-symbols-outlined text-[20px]">search</span>
+<span>Search</span>
+</button>
+</form>
+</div>
+<!-- Right: User Actions & Cart Trigger -->
+<div className="flex items-center gap-space-sm md:gap-space-md flex-shrink-0">
+<a className="p-2 text-on-surface-variant hover:text-customer-primary rounded-lg transition-colors hidden sm:inline-flex" href="#help" title="Help Center">
+<span className="material-symbols-outlined">help_outline</span>
+</a>
+<!-- Sign In & Register Buttons from JSON Anchor -->
+<div className="hidden sm:flex items-center gap-2">
+<button className="px-3.5 py-2 text-label-lg font-label-lg text-on-surface hover:text-customer-primary transition-colors">
+            Sign In
+          </button>
+<button className="px-4 py-2 bg-customer-primary hover:bg-[#4338CA] text-on-primary rounded-lg font-label-lg text-label-lg transition-transform active:scale-95 shadow-sm">
+            Create Account
+          </button>
+</div>
+<!-- Interactive Cart Trigger Button -->
+<button className="relative flex items-center gap-2 bg-surface-container-high hover:bg-surface-container px-3.5 py-2 rounded-lg border border-slate-200 transition-all cursor-pointer" id="open-cart-btn">
+<div className="relative">
+<span className="material-symbols-outlined text-customer-primary text-[24px]">shopping_bag</span>
+<span className="absolute -top-1.5 -right-2 bg-customer-accent text-white font-label-sm text-[10px] h-4 w-4 rounded-full flex items-center justify-center font-bold" id="cart-badge-count">3</span>
+</div>
+<div className="hidden md:flex flex-col text-left">
+<span className="text-label-sm font-label-sm text-slate-500 leading-none">Cart</span>
+<span className="text-label-md font-label-md text-on-surface font-bold leading-tight">$253.80</span>
+</div>
+</button>
+</div>
+</div>
+</header>
+<!-- PROMOTION / MARKETPLACE HIGHLIGHT BANNER -->
+<section className="bg-gradient-to-r from-[#1E1B4B] via-[#312E81] to-[#4338CA] text-white relative overflow-hidden py-10">
+<div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+<div className="w-full max-w-7xl mx-auto px-margin-mobile md:px-margin relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+<div className="max-w-xl text-center md:text-left">
+<div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-label-sm font-label-sm mb-3 text-secondary-fixed">
+<span className="material-symbols-outlined text-[16px]">verified_user</span>
+          Multi-Vendor Spring Showcase • Over 1,200 Independent Creators
+        </div>
+<h1 className="font-headline-lg text-headline-lg md:text-display tracking-tight text-white mb-2">
+          Curated Craft &amp; Technology Direct From Makers
+        </h1>
+<p className="font-body-md text-body-md text-slate-200 mb-4">
+          Enjoy unified checkout, direct artisan fulfillment guarantees, and fast seamless payment via Paystack.
+        </p>
+<div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
+<a className="bg-white text-customer-primary font-label-lg text-label-lg px-5 py-2.5 rounded-lg hover:bg-slate-100 transition-colors shadow-sm inline-flex items-center gap-2" href="#catalog">
+            Explore Collection
+            <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<div className="flex items-center gap-2 text-label-sm font-label-sm text-slate-200 pl-2">
+<span className="material-symbols-outlined text-secondary-fixed text-[18px]">local_shipping</span>
+            Free shipping on orders over $50
+          </div>
+</div>
+</div>
+<!-- Quick Category Pills -->
+<div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 w-full md:w-auto">
+<div className="bg-white/10 hover:bg-white/20 backdrop-blur-md p-3 rounded-xl border border-white/10 transition-all cursor-pointer text-center">
+<span className="material-symbols-outlined text-secondary-fixed text-[24px]">headphones</span>
+<p className="font-label-md text-label-md mt-1">Consumer Tech</p>
+<span className="text-[11px] text-slate-300">420+ items</span>
+</div>
+<div className="bg-white/10 hover:bg-white/20 backdrop-blur-md p-3 rounded-xl border border-white/10 transition-all cursor-pointer text-center">
+<span className="material-symbols-outlined text-secondary-fixed text-[24px]">chair</span>
+<p className="font-label-md text-label-md mt-1">Ergonomic Home</p>
+<span className="text-[11px] text-slate-300">280+ items</span>
+</div>
+<div className="bg-white/10 hover:bg-white/20 backdrop-blur-md p-3 rounded-xl border border-white/10 transition-all cursor-pointer text-center">
+<span className="material-symbols-outlined text-secondary-fixed text-[24px]">coffee</span>
+<p className="font-label-md text-label-md mt-1">Artisan Roasts</p>
+<span className="text-[11px] text-slate-300">145+ items</span>
+</div>
+</div>
+</div>
+</section>
+<!-- MAIN CATALOG & FILTER CANVAS -->
+<main className="w-full max-w-7xl mx-auto px-margin-mobile md:px-margin py-8 flex-1" id="catalog">
+<div className="flex flex-col lg:flex-row gap-8 items-start">
+<!-- LEFT SIDEBAR: FILTERS (~280px) -->
+<aside className="w-full lg:w-72 flex-shrink-0 bg-surface-card rounded-xl border border-slate-200 p-5 shadow-sm space-y-6">
+<!-- Filter Header -->
+<div className="flex items-center justify-between pb-3 border-b border-slate-100">
+<div className="flex items-center gap-2">
+<span className="material-symbols-outlined text-customer-primary text-[20px]">tune</span>
+<h2 className="font-title-md text-title-md text-on-surface">Filters</h2>
+</div>
+<button className="text-label-sm font-label-sm text-customer-primary hover:underline">Reset All</button>
+</div>
+<!-- Categories Tree -->
+<div>
+<h3 className="font-label-lg text-label-lg text-on-surface mb-3">Categories</h3>
+<ul className="space-y-2 text-body-sm font-body-sm">
+<li className="flex items-center justify-between text-customer-primary font-semibold cursor-pointer">
+<span className="flex items-center gap-2">
+<span className="material-symbols-outlined text-[16px]">chevron_right</span>
+                All Products
+              </span>
+<span className="bg-slate-100 px-2 py-0.5 rounded text-[11px] text-slate-600">124</span>
+</li>
+<li className="flex items-center justify-between text-slate-600 hover:text-on-surface cursor-pointer pl-4">
+<span>Consumer Tech</span>
+<span className="text-slate-400">42</span>
+</li>
+<li className="flex items-center justify-between text-slate-600 hover:text-on-surface cursor-pointer pl-4">
+<span>Ergonomic Home</span>
+<span className="text-slate-400">31</span>
+</li>
+<li className="flex items-center justify-between text-slate-600 hover:text-on-surface cursor-pointer pl-4">
+<span>Artisan Leather &amp; Craft</span>
+<span className="text-slate-400">19</span>
+</li>
+<li className="flex items-center justify-between text-slate-600 hover:text-on-surface cursor-pointer pl-4">
+<span>Specialty Roasters</span>
+<span className="text-slate-400">16</span>
+</li>
+<li className="flex items-center justify-between text-slate-600 hover:text-on-surface cursor-pointer pl-4">
+<span>Sustainable Apparel</span>
+<span className="text-slate-400">16</span>
+</li>
+</ul>
+</div>
+<!-- Price Range Slider & Inputs -->
+<div className="pt-3 border-t border-slate-100">
+<h3 className="font-label-lg text-label-lg text-on-surface mb-2">Price Range</h3>
+<div className="px-1 py-2">
+<input className="w-full accent-customer-primary cursor-pointer" max="1500" min="10" type="range" value="450"/>
+</div>
+<div className="flex items-center gap-2 mt-2">
+<div className="relative flex-1">
+<span className="absolute left-2.5 top-2 text-slate-400 text-body-sm font-body-sm">$</span>
+<input className="w-full pl-6 pr-2 py-1.5 text-body-sm font-body-sm border border-slate-300 rounded-lg focus:border-customer-primary focus:ring-1 focus:ring-customer-primary" type="number" value="10"/>
+</div>
+<span className="text-slate-400 font-bold">-</span>
+<div className="relative flex-1">
+<span className="absolute left-2.5 top-2 text-slate-400 text-body-sm font-body-sm">$</span>
+<input className="w-full pl-6 pr-2 py-1.5 text-body-sm font-body-sm border border-slate-300 rounded-lg focus:border-customer-primary focus:ring-1 focus:ring-customer-primary" type="number" value="500"/>
+</div>
+<button className="px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-on-surface font-label-sm text-label-sm rounded-lg transition-colors">Apply</button>
+</div>
+</div>
+<!-- Merchant Rating Filter -->
+<div className="pt-3 border-t border-slate-100">
+<h3 className="font-label-lg text-label-lg text-on-surface mb-3">Vendor Rating</h3>
+<div className="space-y-2">
+<label className="flex items-center gap-2 text-body-sm font-body-sm cursor-pointer hover:text-on-surface">
+<input checked="" className="rounded border-slate-300 text-customer-primary focus:ring-customer-primary" type="checkbox"/>
+<span className="flex items-center text-amber-500">
+<span className="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span className="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span className="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span className="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span className="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</span>
+<span className="text-slate-600">4.5 &amp; up</span>
+</label>
+<label className="flex items-center gap-2 text-body-sm font-body-sm cursor-pointer hover:text-on-surface">
+<input className="rounded border-slate-300 text-customer-primary focus:ring-customer-primary" type="checkbox"/>
+<span className="flex items-center text-amber-500">
+<span className="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span className="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span className="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span className="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span className="material-symbols-outlined text-[16px]">star</span>
+</span>
+<span className="text-slate-600">4.0 &amp; up</span>
+</label>
+</div>
+</div>
+<!-- Vendor Badges & Fulfillment -->
+<div className="pt-3 border-t border-slate-100">
+<h3 className="font-label-lg text-label-lg text-on-surface mb-3">Merchant Badges</h3>
+<div className="space-y-2.5">
+<label className="flex items-center gap-2 text-body-sm font-body-sm cursor-pointer">
+<input checked="" className="rounded border-slate-300 text-customer-primary focus:ring-customer-primary" type="checkbox"/>
+<span className="inline-flex items-center gap-1 text-slate-700">
+<span className="material-symbols-outlined text-vendor-primary text-[16px]">verified</span>
+                ShopEase Verified
+              </span>
+</label>
+<label className="flex items-center gap-2 text-body-sm font-body-sm cursor-pointer">
+<input className="rounded border-slate-300 text-customer-primary focus:ring-customer-primary" type="checkbox"/>
+<span className="inline-flex items-center gap-1 text-slate-700">
+<span className="material-symbols-outlined text-emerald-600 text-[16px]">handshake</span>
+                Direct Artisan
+              </span>
+</label>
+<label className="flex items-center gap-2 text-body-sm font-body-sm cursor-pointer">
+<input className="rounded border-slate-300 text-customer-primary focus:ring-customer-primary" type="checkbox"/>
+<span className="inline-flex items-center gap-1 text-slate-700">
+<span className="material-symbols-outlined text-customer-primary text-[16px]">bolt</span>
+                Express 2-Day Shipping
+              </span>
+</label>
+</div>
+</div>
+<!-- Toggle: In-Stock Only -->
+<div className="pt-3 border-t border-slate-100 flex items-center justify-between">
+<span className="font-label-md text-label-md text-on-surface">In-Stock Only</span>
+<label className="relative inline-flex items-center cursor-pointer">
+<input checked="" className="sr-only peer" type="checkbox"/>
+<div className="w-10 h-5 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-customer-accent"></div>
+</label>
+</div>
+</aside>
+<!-- MAIN PRODUCT GRID CONTENT -->
+<section className="flex-1 w-full">
+<!-- Controls & Meta Bar -->
+<div className="bg-surface-card rounded-xl border border-slate-200 p-4 mb-6 shadow-sm flex flex-wrap items-center justify-between gap-4">
+<div className="flex items-center gap-2">
+<span className="font-title-md text-title-md text-on-surface font-bold">Verified Merchant Products</span>
+<span className="bg-surface-container-high px-2.5 py-0.5 rounded-full text-label-sm font-label-sm text-customer-primary">124 Items Available</span>
+</div>
+<div className="flex items-center gap-3">
+<!-- Sort dropdown -->
+<div className="flex items-center gap-1.5 text-body-sm font-body-sm text-slate-500">
+<span>Sort by:</span>
+<select className="border-0 py-1 pl-1 pr-6 font-label-md text-label-md text-on-surface font-semibold bg-transparent focus:ring-0 cursor-pointer">
+<option>Featured &amp; Curated</option>
+<option>Top Rated Merchants</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Newest Arrivals</option>
+</select>
+</div>
+<!-- View switchers -->
+<div className="flex items-center border border-slate-200 rounded-lg p-0.5 bg-slate-50">
+<button className="p-1 rounded bg-white text-customer-primary shadow-xs">
+<span className="material-symbols-outlined text-[20px]">grid_view</span>
+</button>
+<button className="p-1 rounded text-slate-400 hover:text-on-surface">
+<span className="material-symbols-outlined text-[20px]">view_list</span>
+</button>
+</div>
+</div>
+</div>
+<!-- PRODUCT GRID (6 Verified Merchant Items) -->
+<div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Product Card 1 -->
+<article className="bg-surface-card rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col">
+<div className="relative w-full h-56 bg-slate-100 overflow-hidden">
+<img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A pair of sleek matte black over-ear wireless noise cancelling headphones resting on a minimalist concrete plinth. The composition is brightly illuminated with soft directional daylight in a pristine modern tech showroom with violet and indigo studio accents. High resolution luxury consumer electronics aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChKUiih1C4x-uTY7-1sPa-NQMRXf_ny8etWNbmmttOgPZSMWQD9qIsloBeMpvXFV0zXfQD6K_iSd0KvJaP8gd7kM1qdSFrWw6CmluFwR_zpB_enc_1iA1DY-1Ch-6WcHuNWVVV7-Wmevv8clEPbHDeiesSH0g1xZ3j6skOOS-PqqHpArPOx3A7t2eLa73kghclYLgF9CRIV4uX8HfFq3Qs6Ziptqa3VRO9UNGRVgUPdWLTkbWaKow6lQ"/>
+<!-- Vendor Tag & Wishlist -->
+<div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md border border-slate-200 px-2.5 py-1 rounded-full text-label-sm font-label-sm text-on-surface flex items-center gap-1.5 shadow-sm">
+<span className="material-symbols-outlined text-vendor-primary text-[14px]">verified</span>
+<span>Apex Audio</span>
+</div>
+<button className="absolute top-3 right-3 bg-white/90 backdrop-blur-md p-1.5 rounded-full text-slate-400 hover:text-red-500 shadow-sm transition-colors">
+<span className="material-symbols-outlined text-[20px]">favorite_border</span>
+</button>
+<span className="absolute bottom-3 left-3 bg-emerald-50 text-customer-accent border border-emerald-200 px-2 py-0.5 rounded text-label-sm font-label-sm font-semibold">
+                In Stock - 8 left
+              </span>
+</div>
+<div className="p-5 flex-1 flex flex-col justify-between">
+<div>
+<div className="flex items-center gap-1.5 mb-1.5 text-label-sm font-label-sm">
+<span className="flex items-center text-amber-500">
+<span className="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<strong className="text-on-surface ml-1 font-semibold">4.9</strong>
+</span>
+<span className="text-slate-400">(342 reviews)</span>
+</div>
+<h3 className="font-title-md text-title-md text-on-surface group-hover:text-customer-primary transition-colors line-clamp-1">
+                  Aura Pro Wireless Noise-Cancelling Headphones
+                </h3>
+<p className="font-body-sm text-body-sm text-slate-500 mt-1 line-clamp-2">
+                  Audiophile grade 40mm beryllium drivers, active hybrid isolation, 38-hour battery with ultra-fast quickcharge.
+                </p>
+</div>
+<div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+<div>
+<div className="flex items-center gap-2">
+<span className="font-headline-sm text-headline-sm text-on-surface font-bold">$149.00</span>
+<span className="text-body-sm text-slate-400 line-through">$199.00</span>
+</div>
+<span className="text-[11px] text-emerald-600 font-semibold font-label-sm">Save $50 (25% OFF)</span>
+</div>
+<button className="bg-customer-primary hover:bg-[#4338CA] text-on-primary p-2.5 rounded-lg flex items-center gap-1 text-label-md font-label-md transition-all active:scale-95 shadow-sm" onclick="handleAddToCart('Aura Pro Wireless Headphones', 149)">
+<span className="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Add</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article className="bg-surface-card rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col">
+<div className="relative w-full h-56 bg-slate-100 overflow-hidden">
+<img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="An artisanal solid natural oak desk organizer caddy with brass pen dividers and charging cable channels set on a clean Scandinavian workspace. High key soft studio lighting casting subtle realistic contact shadows. Modern, warm organic textures with minimalist indigo brand accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZLb5YgucZqCAu6zPLaJ2awPbL27ecsO9_GQfWXJo08KkLtwW7r0fceDRDb6zx2CbjkKeKy9JPe1p47jYEB-WeumZ5vBJpcbYOFEFkMdTo3z6yL-59htIlTVr4__zc8alTS3k8uYJClK_ghCUqOq8bnOFp9nLKtXvLHnzFGATJVjHH9Tkgd-0WVEMzPGm6kqo9FC4Ex8es2NtcomUUCdQF-Ir1H0SpkfHq7DJO7tGXQna-TlH4U14_QA"/>
+<div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md border border-slate-200 px-2.5 py-1 rounded-full text-label-sm font-label-sm text-on-surface flex items-center gap-1.5 shadow-sm">
+<span className="material-symbols-outlined text-vendor-primary text-[14px]">verified</span>
+<span>Nordic Craft Co.</span>
+</div>
+<button className="absolute top-3 right-3 bg-white/90 backdrop-blur-md p-1.5 rounded-full text-slate-400 hover:text-red-500 shadow-sm transition-colors">
+<span className="material-symbols-outlined text-[20px]">favorite_border</span>
+</button>
+<span className="absolute bottom-3 left-3 bg-emerald-50 text-customer-accent border border-emerald-200 px-2 py-0.5 rounded text-label-sm font-label-sm font-semibold">
+                In Stock - 14 left
+              </span>
+</div>
+<div className="p-5 flex-1 flex flex-col justify-between">
+<div>
+<div className="flex items-center gap-1.5 mb-1.5 text-label-sm font-label-sm">
+<span className="flex items-center text-amber-500">
+<span className="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<strong className="text-on-surface ml-1 font-semibold">4.8</strong>
+</span>
+<span className="text-slate-400">(189 reviews)</span>
+</div>
+<h3 className="font-title-md text-title-md text-on-surface group-hover:text-customer-primary transition-colors line-clamp-1">
+                  Minimalist Oak Desk Organizer
+                </h3>
+<p className="font-body-sm text-body-sm text-slate-500 mt-1 line-clamp-2">
+                  Hand-milled sustainably sourced solid white oak with integrated magnetic slots and natural beeswax finish.
+                </p>
+</div>
+<div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+<div>
+<div className="flex items-center gap-2">
+<span className="font-headline-sm text-headline-sm text-on-surface font-bold">$64.00</span>
+<span className="text-body-sm text-slate-400 line-through">$80.00</span>
+</div>
+<span className="text-[11px] text-emerald-600 font-semibold font-label-sm">Direct Artisan pricing</span>
+</div>
+<button className="bg-customer-primary hover:bg-[#4338CA] text-on-primary p-2.5 rounded-lg flex items-center gap-1 text-label-md font-label-md transition-all active:scale-95 shadow-sm" onclick="handleAddToCart('Minimalist Oak Desk Organizer', 64)">
+<span className="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Add</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article className="bg-surface-card rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col">
+<div className="relative w-full h-56 bg-slate-100 overflow-hidden">
+<img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A matte craft paper bag of single origin specialty Ethiopian Yirgacheffe coffee beans displayed next to a ceramic pour over dripper and copper kettle. Warm morning sunlight entering from a cafe window illuminating fine roasted beans scattered gracefully." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4-2UxOBNhdoH07a9h5b49wQba6IrJTJy2GZMvIe7EZmXDv3j0hudzJZTJenaVrsFd8MjO7qvDyU_KoVfoR0JOuzNzNrWts6j98GSqDHJtzyGW1DLQT8EEw64cLP7VrsJbKLO8QBEZORXyyeSPSMF0OzMJLPWfWWw9x0bm3Hj96ouQUzv94_3KmmvyBR9lKUhjMTWcJqr7LLr9WXOmmwKIJ9EFdS2G6T-7XVLZ_BQAq0qv1X-KfXuixA"/>
+<div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md border border-slate-200 px-2.5 py-1 rounded-full text-label-sm font-label-sm text-on-surface flex items-center gap-1.5 shadow-sm">
+<span className="material-symbols-outlined text-vendor-primary text-[14px]">verified</span>
+<span>RoastLab Direct</span>
+</div>
+<button className="absolute top-3 right-3 bg-white/90 backdrop-blur-md p-1.5 rounded-full text-slate-400 hover:text-red-500 shadow-sm transition-colors">
+<span className="material-symbols-outlined text-[20px]">favorite_border</span>
+</button>
+<span className="absolute bottom-3 left-3 bg-amber-50 text-amber-700 border border-amber-200 px-2 py-0.5 rounded text-label-sm font-label-sm font-semibold">
+                Roasted This Week
+              </span>
+</div>
+<div className="p-5 flex-1 flex flex-col justify-between">
+<div>
+<div className="flex items-center gap-1.5 mb-1.5 text-label-sm font-label-sm">
+<span className="flex items-center text-amber-500">
+<span className="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<strong className="text-on-surface ml-1 font-semibold">5.0</strong>
+</span>
+<span className="text-slate-400">(412 reviews)</span>
+</div>
+<h3 className="font-title-md text-title-md text-on-surface group-hover:text-customer-primary transition-colors line-clamp-1">
+                  Specialty Ethiopian Single-Origin Beans
+                </h3>
+<p className="font-body-sm text-body-sm text-slate-500 mt-1 line-clamp-2">
+                  Heirloom varietal with jasmine floral aroma, sweet bergamot notes, and balanced honeycomb finish. 340g bag.
+                </p>
+</div>
+<div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+<div>
+<div className="flex items-center gap-2">
+<span className="font-headline-sm text-headline-sm text-on-surface font-bold">$22.00</span>
+</div>
+<span className="text-[11px] text-slate-500 font-label-sm">Small batch roast</span>
+</div>
+<button className="bg-customer-primary hover:bg-[#4338CA] text-on-primary p-2.5 rounded-lg flex items-center gap-1 text-label-md font-label-md transition-all active:scale-95 shadow-sm" onclick="handleAddToCart('Ethiopian Single-Origin Beans', 22)">
+<span className="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Add</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 4 -->
+<article className="bg-surface-card rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col">
+<div className="relative w-full h-56 bg-slate-100 overflow-hidden">
+<img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A premium hand-stitched tan saddle leather tote bag with brass hardware displayed on a polished architectural marble counter. High-end lifestyle product photography with subtle natural studio backlighting emphasizing rich full grain leather texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl7-j1guhcjHcfG-vT6ssKmtM1EvzrWscuYmFGLJc8ezapwGEy0jPBU2iS8XBkSrTClLBGkxGmL9Vx47h2EXUem-ZWFdbEYCV6ryjAfjeEsEx-sw9Uixjmqlih7ta1Zm0xN_sgrtCza966_sz-KgbcjFLoa3lLaDW84QQX3SOj12P6heAiYJ6oAOZf1VJLCFR1ZMSJ5DnOe9qFxLJCQ8Rw5iTv6Jab01e4XJY9BZPQmzPPdFVu12n6Gg"/>
+<div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md border border-slate-200 px-2.5 py-1 rounded-full text-label-sm font-label-sm text-on-surface flex items-center gap-1.5 shadow-sm">
+<span className="material-symbols-outlined text-vendor-primary text-[14px]">verified</span>
+<span>Atelier Vance</span>
+</div>
+<button className="absolute top-3 right-3 bg-white/90 backdrop-blur-md p-1.5 rounded-full text-slate-400 hover:text-red-500 shadow-sm transition-colors">
+<span className="material-symbols-outlined text-[20px]">favorite_border</span>
+</button>
+<span className="absolute bottom-3 left-3 bg-emerald-50 text-customer-accent border border-emerald-200 px-2 py-0.5 rounded text-label-sm font-label-sm font-semibold">
+                In Stock - 3 left
+              </span>
+</div>
+<div className="p-5 flex-1 flex flex-col justify-between">
+<div>
+<div className="flex items-center gap-1.5 mb-1.5 text-label-sm font-label-sm">
+<span className="flex items-center text-amber-500">
+<span className="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<strong className="text-on-surface ml-1 font-semibold">4.9</strong>
+</span>
+<span className="text-slate-400">(97 reviews)</span>
+</div>
+<h3 className="font-title-md text-title-md text-on-surface group-hover:text-customer-primary transition-colors line-clamp-1">
+                  Handcrafted Full-Grain Leather Tote
+                </h3>
+<p className="font-body-sm text-body-sm text-slate-500 mt-1 line-clamp-2">
+                  Vegetable tanned Tuscan harness leather, solid copper rivets, fits up to 16 inch MacBook Pro securely.
+                </p>
+</div>
+<div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+<div>
+<div className="flex items-center gap-2">
+<span className="font-headline-sm text-headline-sm text-on-surface font-bold">$210.00</span>
+<span className="text-body-sm text-slate-400 line-through">$260.00</span>
+</div>
+<span className="text-[11px] text-emerald-600 font-semibold font-label-sm">Lifetime Guarantee</span>
+</div>
+<button className="bg-customer-primary hover:bg-[#4338CA] text-on-primary p-2.5 rounded-lg flex items-center gap-1 text-label-md font-label-md transition-all active:scale-95 shadow-sm" onclick="handleAddToCart('Handcrafted Leather Tote', 210)">
+<span className="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Add</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 5 -->
+<article className="bg-surface-card rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col">
+<div className="relative w-full h-56 bg-slate-100 overflow-hidden">
+<img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A custom 75 percent wireless mechanical keyboard with anodized navy aluminum casing and cream keycaps, illuminated by subtle soft ambient underglow on a clean grey desk mat with developer workspace aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDerTINW1RsgMx1KoFBTA40kN_1B_tG_bqmya1QL8ixm0xS1IOnqId-ShNpUS0Avbc0e2XKkVxSz2zcVOVSoROn-1nf9oUdw7aRp37OGJ8iYqFTbe9wL27ar9scdDZIOocQtKoItCHu5-EnOQPBdMLPZatQJV5I035b0GrU-X0pXempQMpAuVsZTTwcOzLbp719SAcIAsm_DLF9oVty-_9tp_hJ3M6dGrfsezGFujG_RwIdCsw26meNCQ"/>
+<div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md border border-slate-200 px-2.5 py-1 rounded-full text-label-sm font-label-sm text-on-surface flex items-center gap-1.5 shadow-sm">
+<span className="material-symbols-outlined text-vendor-primary text-[14px]">verified</span>
+<span>KeyCraft Lab</span>
+</div>
+<button className="absolute top-3 right-3 bg-white/90 backdrop-blur-md p-1.5 rounded-full text-slate-400 hover:text-red-500 shadow-sm transition-colors">
+<span className="material-symbols-outlined text-[20px]">favorite_border</span>
+</button>
+<span className="absolute bottom-3 left-3 bg-emerald-50 text-customer-accent border border-emerald-200 px-2 py-0.5 rounded text-label-sm font-label-sm font-semibold">
+                In Stock - 5 left
+              </span>
+</div>
+<div className="p-5 flex-1 flex flex-col justify-between">
+<div>
+<div className="flex items-center gap-1.5 mb-1.5 text-label-sm font-label-sm">
+<span className="flex items-center text-amber-500">
+<span className="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<strong className="text-on-surface ml-1 font-semibold">4.9</strong>
+</span>
+<span className="text-slate-400">(215 reviews)</span>
+</div>
+<h3 className="font-title-md text-title-md text-on-surface group-hover:text-customer-primary transition-colors line-clamp-1">
+                  Custom Keychron Q1 Pro Mechanical Keyboard
+                </h3>
+<p className="font-body-sm text-body-sm text-slate-500 mt-1 line-clamp-2">
+                  Hot-swappable tactile switches, double-gasket acoustic mounting, Bluetooth 5.1 &amp; Type-C wired modes.
+                </p>
+</div>
+<div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+<div>
+<div className="flex items-center gap-2">
+<span className="font-headline-sm text-headline-sm text-on-surface font-bold">$189.00</span>
+</div>
+<span className="text-[11px] text-customer-primary font-label-sm">Factory Lubed</span>
+</div>
+<button className="bg-customer-primary hover:bg-[#4338CA] text-on-primary p-2.5 rounded-lg flex items-center gap-1 text-label-md font-label-md transition-all active:scale-95 shadow-sm" onclick="handleAddToCart('Keychron Mechanical Keyboard', 189)">
+<span className="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Add</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 6 -->
+<article className="bg-surface-card rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col">
+<div className="relative w-full h-56 bg-slate-100 overflow-hidden">
+<img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A minimalist architectural smart ambient desk monitor bar light illuminating an ultra-wide monitor with warm glare-free circadian lighting. Shot in a contemporary dark slate modern home office with gentle ambient glow and clean geometric lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNDfwrO_n9MhR2DzvLgSm0Uy3q7qvNWl49xt38ybwWrTeXA7H5fi0_XoJRpPMZJImO4qhT_pbeH9GoLBrcf0zii9pBdZEQYSwm54mRhIrCUIajBf_THacqo6ME9w-69b2Vo_x3HkEpoGwuPF-ddWtEUAcnF-v80Z_xLHyZt5xl7NDFR7rwG0kbG1JZgIwukM6r-vXbUyJUiXnvHZeAL-SWeIsGqkIqp_8o2ihNU_wxGgUi8oSqSGugyA"/>
+<div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md border border-slate-200 px-2.5 py-1 rounded-full text-label-sm font-label-sm text-on-surface flex items-center gap-1.5 shadow-sm">
+<span className="material-symbols-outlined text-vendor-primary text-[14px]">verified</span>
+<span>LumenStudio</span>
+</div>
+<button className="absolute top-3 right-3 bg-white/90 backdrop-blur-md p-1.5 rounded-full text-slate-400 hover:text-red-500 shadow-sm transition-colors">
+<span className="material-symbols-outlined text-[20px]">favorite_border</span>
+</button>
+<span className="absolute bottom-3 left-3 bg-emerald-50 text-customer-accent border border-emerald-200 px-2 py-0.5 rounded text-label-sm font-label-sm font-semibold">
+                In Stock - 19 left
+              </span>
+</div>
+<div className="p-5 flex-1 flex flex-col justify-between">
+<div>
+<div className="flex items-center gap-1.5 mb-1.5 text-label-sm font-label-sm">
+<span className="flex items-center text-amber-500">
+<span className="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<strong className="text-on-surface ml-1 font-semibold">4.7</strong>
+</span>
+<span className="text-slate-400">(153 reviews)</span>
+</div>
+<h3 className="font-title-md text-title-md text-on-surface group-hover:text-customer-primary transition-colors line-clamp-1">
+                  Smart Ambient Screenbar &amp; Lumbar Light
+                </h3>
+<p className="font-body-sm text-body-sm text-slate-500 mt-1 line-clamp-2">
+                  Zero screen-glare asymmetric optical design with wireless rotary dial and automated ambient light sensor.
+                </p>
+</div>
+<div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+<div>
+<div className="flex items-center gap-2">
+<span className="font-headline-sm text-headline-sm text-on-surface font-bold">$89.00</span>
+<span className="text-body-sm text-slate-400 line-through">$110.00</span>
+</div>
+<span className="text-[11px] text-emerald-600 font-semibold font-label-sm">Save 19%</span>
+</div>
+<button className="bg-customer-primary hover:bg-[#4338CA] text-on-primary p-2.5 rounded-lg flex items-center gap-1 text-label-md font-label-md transition-all active:scale-95 shadow-sm" onclick="handleAddToCart('Smart Ambient Screenbar Light', 89)">
+<span className="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Add</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+<!-- Pagination Bar -->
+<div className="mt-10 flex items-center justify-between border-t border-slate-200 pt-6">
+<p className="text-body-sm font-body-sm text-slate-500">
+            Showing <strong className="text-on-surface font-semibold">1</strong> to <strong className="text-on-surface font-semibold">6</strong> of <strong className="text-on-surface font-semibold">124</strong> verified items
+          </p>
+<div className="flex items-center gap-1">
+<button className="p-2 border border-slate-200 rounded-lg text-slate-400 hover:text-on-surface disabled:opacity-40" disabled="">
+<span className="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button className="w-9 h-9 rounded-lg bg-customer-primary text-white font-label-sm text-label-sm font-bold">1</button>
+<button className="w-9 h-9 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 font-label-sm text-label-sm font-semibold">2</button>
+<button className="w-9 h-9 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 font-label-sm text-label-sm font-semibold">3</button>
+<span className="px-2 text-slate-400">...</span>
+<button className="w-9 h-9 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 font-label-sm text-label-sm font-semibold">11</button>
+<button className="p-2 border border-slate-200 rounded-lg text-slate-600 hover:text-on-surface">
+<span className="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- SLIDE-OUT CART DRAWER (Interactive) -->
+<div className="fixed inset-0 bg-slate-900/50 backdrop-blur-xs z-50 transition-opacity duration-300 opacity-0 pointer-events-none" id="cart-drawer-overlay">
+<div className="absolute top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out" id="cart-drawer">
+<!-- Drawer Header -->
+<div className="p-5 border-b border-slate-200 flex items-center justify-between bg-surface">
+<div className="flex items-center gap-2">
+<span className="material-symbols-outlined text-customer-primary text-[24px]">shopping_bag</span>
+<div>
+<h2 className="font-title-md text-title-md text-on-surface font-bold">Your Shopping Cart</h2>
+<p className="text-body-sm text-slate-500 font-body-sm">3 items from 3 independent vendors</p>
+</div>
+</div>
+<button className="p-1.5 rounded-lg text-slate-400 hover:text-on-surface hover:bg-slate-100 transition-colors" id="close-cart-btn">
+<span className="material-symbols-outlined text-[22px]">close</span>
+</button>
+</div>
+<!-- Free Shipping Progress -->
+<div className="px-5 py-3 bg-emerald-50 border-b border-emerald-100 flex items-center gap-2 text-emerald-800 text-label-sm font-label-sm">
+<span className="material-symbols-outlined text-[18px] text-emerald-600">check_circle</span>
+<span>Qualified for <strong>Free Multi-Vendor Express Shipping!</strong></span>
+</div>
+<!-- Items List -->
+<div className="flex-1 overflow-y-auto p-5 space-y-4 custom-scrollbar">
+<!-- Cart Item 1 -->
+<div className="border border-slate-200 rounded-xl p-3.5 flex gap-3 relative bg-surface-card hover:border-slate-300 transition-colors">
+<div className="w-16 h-16 rounded-lg bg-slate-100 flex-shrink-0 overflow-hidden">
+<img className="w-full h-full object-cover" data-alt="Macro detail of matte black wireless headphones earcups and titanium slider hinge on clean white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj4n_H9cfsT3_mZm_OjTrSc2Yq_uKZjdiAWMErXYHaPqphBO5YrjxYZ5dzuqOixkOWSwrgisq8h2We43TJ2wJv9BwZVgp7mN_1zAoiK_e7b24JgAaY8ZLbDISX07fQNXdGeVJGOgnH1UgnNCzPBmkVZPS5HOik6AtGkKD5x-MqC92tYCVxi2X5-CVjG7eOrSBYJWwiErl5fLf-lmoptskeKoSI2aYF35BaNPv8QGW3wBsk8IneiMVYVA"/>
+</div>
+<div className="flex-1 min-w-0">
+<div className="flex items-center justify-between">
+<span className="text-[11px] font-semibold text-vendor-primary flex items-center gap-1">
+<span className="material-symbols-outlined text-[13px]">verified</span> Apex Audio
+              </span>
+<button className="text-slate-400 hover:text-red-500">
+<span className="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<h4 className="font-label-lg text-label-lg text-on-surface truncate">Aura Pro Wireless Headphones</h4>
+<div className="flex items-center justify-between mt-2">
+<span className="font-title-md text-title-md text-on-surface font-bold">$149.00</span>
+<div className="flex items-center border border-slate-200 rounded-lg">
+<button className="px-2 py-0.5 text-slate-500 hover:bg-slate-100 font-bold">-</button>
+<span className="px-2.5 py-0.5 text-label-sm font-label-sm font-bold text-on-surface">1</span>
+<button className="px-2 py-0.5 text-slate-500 hover:bg-slate-100 font-bold">+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Cart Item 2 -->
+<div className="border border-slate-200 rounded-xl p-3.5 flex gap-3 relative bg-surface-card hover:border-slate-300 transition-colors">
+<div className="w-16 h-16 rounded-lg bg-slate-100 flex-shrink-0 overflow-hidden">
+<img className="w-full h-full object-cover" data-alt="Close up photograph of natural oak wooden desktop stationery caddy showcasing hand milled grain." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUtDSZvQ62jWlXkayD32XAtlFWyEuLgDuYEyHanCwU3_IIvSsZ4AMEfBcKC9wrL8LGA5jtGsuBSql1MupZb7cOPM4JY-DlvcNBmKUfUonem8p20C71dcY5Qk9kXh6D5Wlk9FCxolZRKK7tDTExuZLyck9V7og2CGwMMl_qtZdsF69V1q9gK19nUPMtH8nnWcHQYSkOLO9iWS2-SAVmWqe1mJD3dnAV5ma__3H7y8W7pB5-f0AiXtB6kA"/>
+</div>
+<div className="flex-1 min-w-0">
+<div className="flex items-center justify-between">
+<span className="text-[11px] font-semibold text-vendor-primary flex items-center gap-1">
+<span className="material-symbols-outlined text-[13px]">verified</span> Nordic Craft Co.
+              </span>
+<button className="text-slate-400 hover:text-red-500">
+<span className="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<h4 className="font-label-lg text-label-lg text-on-surface truncate">Minimalist Oak Desk Organizer</h4>
+<div className="flex items-center justify-between mt-2">
+<span className="font-title-md text-title-md text-on-surface font-bold">$64.00</span>
+<div className="flex items-center border border-slate-200 rounded-lg">
+<button className="px-2 py-0.5 text-slate-500 hover:bg-slate-100 font-bold">-</button>
+<span className="px-2.5 py-0.5 text-label-sm font-label-sm font-bold text-on-surface">1</span>
+<button className="px-2 py-0.5 text-slate-500 hover:bg-slate-100 font-bold">+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Cart Item 3 -->
+<div className="border border-slate-200 rounded-xl p-3.5 flex gap-3 relative bg-surface-card hover:border-slate-300 transition-colors">
+<div className="w-16 h-16 rounded-lg bg-slate-100 flex-shrink-0 overflow-hidden">
+<img className="w-full h-full object-cover" data-alt="Artisanal craft paper coffee bag packaging with RoastLab label on kitchen wood table." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqTfqsGoD6yDo1vGHy8ApIetaalHhM3f6EmMzFa96dshrWrZhAAotKteLo7OnpZOZGG9G0pcKUDRVyG8SGE_Asapc0X3ap-oKxGA1lq5PImOf_SFlYm1ogBY0E7bqXLiPot1KPOjLrf8Zx1pf0zTwY4akgmMvLNwLWwKyKxU-a1JWKaNgL-zjJY1tyEZul5kMUwUWwL4bOyJyB2iKCth0EOKm2lWqMkDkW_CO5bRfnL_kFFyH2kbnK0w"/>
+</div>
+<div className="flex-1 min-w-0">
+<div className="flex items-center justify-between">
+<span className="text-[11px] font-semibold text-vendor-primary flex items-center gap-1">
+<span className="material-symbols-outlined text-[13px]">verified</span> RoastLab Direct
+              </span>
+<button className="text-slate-400 hover:text-red-500">
+<span className="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<h4 className="font-label-lg text-label-lg text-on-surface truncate">Ethiopian Single-Origin Beans</h4>
+<div className="flex items-center justify-between mt-2">
+<span className="font-title-md text-title-md text-on-surface font-bold">$22.00</span>
+<div className="flex items-center border border-slate-200 rounded-lg">
+<button className="px-2 py-0.5 text-slate-500 hover:bg-slate-100 font-bold">-</button>
+<span className="px-2.5 py-0.5 text-label-sm font-label-sm font-bold text-on-surface">1</span>
+<button className="px-2 py-0.5 text-slate-500 hover:bg-slate-100 font-bold">+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Drawer Footer & Order Summary -->
+<div className="p-5 border-t border-slate-200 bg-surface space-y-3">
+<div className="space-y-1.5 text-body-sm font-body-sm text-slate-600">
+<div className="flex justify-between">
+<span>Subtotal</span>
+<span className="font-semibold text-on-surface">$235.00</span>
+</div>
+<div className="flex justify-between">
+<span>Multi-Vendor Shipping</span>
+<span className="text-customer-accent font-semibold">FREE ($0.00)</span>
+</div>
+<div className="flex justify-between">
+<span>Estimated Sales Tax</span>
+<span className="text-on-surface">$18.80</span>
+</div>
+<div className="flex justify-between pt-2 border-t border-slate-200 font-headline-sm text-headline-sm text-on-surface font-bold">
+<span>Total</span>
+<span className="text-customer-primary font-bold">$253.80</span>
+</div>
+</div>
+<div className="bg-indigo-50 border border-indigo-100 rounded-lg p-2.5 flex items-start gap-2 text-indigo-900 text-[11px] leading-tight">
+<span className="material-symbols-outlined text-customer-primary text-[16px] flex-shrink-0 mt-0.5">shield</span>
+<span>Items are securely escrowed and dispatched independently by each verified merchant with end-to-end buyer protection.</span>
+</div>
+<button className="w-full bg-customer-primary hover:bg-[#4338CA] text-on-primary py-3 rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-md transition-all active:scale-98" id="open-checkout-modal-btn">
+<span>Proceed to Checkout</span>
+<span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CHECKOUT & PAYSTACK PAYMENT MODAL -->
+<div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200" id="checkout-modal">
+<div className="bg-white rounded-2xl max-w-xl w-full shadow-2xl border border-slate-200 overflow-hidden transform scale-95 transition-transform duration-200">
+<!-- Modal Header -->
+<div className="px-6 py-4 border-b border-slate-200 flex items-center justify-between bg-surface">
+<div className="flex items-center gap-3">
+<img alt="ShopEase" className="h-6 w-auto" src="https://lh3.googleusercontent.com/aida/AEtjO1VEdTpcgB0WgelxqUyhbvFNMlWJlmsdgr7nFsWO2KW2k5P99nUJhxjFcAVEFRJ3LHU2jmMQ4fEMfylea1TSEL1A123neAoMVessAKW_EnLMNZH1FbUoe4nRiGcKLERk9_avC2DdM0wJ_lAuPO0PhYK3Lsx0R0rITuGq9X9NdMml1u7I_siWr-T8-nFdkJ0Lq0PrffMDTNzTzHrCOlwqMuDUyQPGDTVphlJRYz9Jt1-4pZFbzlUfWF92LAi4"/>
+<span className="text-slate-300 font-light">|</span>
+<span className="font-title-md text-title-md text-on-surface font-bold">Secure Order Checkout</span>
+</div>
+<button className="p-1.5 text-slate-400 hover:text-on-surface rounded-lg hover:bg-slate-100 transition-colors" id="close-checkout-modal-btn">
+<span className="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div className="p-6 max-h-[80vh] overflow-y-auto custom-scrollbar space-y-5">
+<!-- Order Review Snippet -->
+<div className="bg-surface-container-low p-3.5 rounded-xl border border-slate-200 flex items-center justify-between">
+<div>
+<span className="text-label-sm font-label-sm text-slate-500 uppercase tracking-wider">Total Payable</span>
+<p className="font-headline-sm text-headline-sm text-customer-primary font-bold">$253.80 <span className="text-body-sm font-normal text-slate-500">(3 items)</span></p>
+</div>
+<div className="text-right text-[11px] text-slate-500">
+<span className="inline-block bg-white px-2 py-0.5 rounded border border-slate-200 font-mono">INV-849102-US</span>
+</div>
+</div>
+<!-- Contact & Delivery Details -->
+<div className="space-y-3">
+<h4 className="font-label-lg text-label-lg text-on-surface flex items-center gap-1.5">
+<span className="material-symbols-outlined text-customer-primary text-[18px]">local_shipping</span>
+            Shipping Address
+          </h4>
+<div className="grid grid-cols-2 gap-3">
+<input className="col-span-2 rounded-lg border-slate-300 text-body-md font-body-md p-2.5 focus:border-customer-primary focus:ring-customer-primary/20" placeholder="Full Name" type="text" value="Jane Doe"/>
+<input className="col-span-2 rounded-lg border-slate-300 text-body-md font-body-md p-2.5 focus:border-customer-primary focus:ring-customer-primary/20" placeholder="Email Address" type="email" value="jane.doe@example.com"/>
+<input className="col-span-2 rounded-lg border-slate-300 text-body-md font-body-md p-2.5 focus:border-customer-primary focus:ring-customer-primary/20" placeholder="Street Address" type="text" value="742 Evergreen Terrace"/>
+<input className="rounded-lg border-slate-300 text-body-md font-body-md p-2.5 focus:border-customer-primary focus:ring-customer-primary/20" placeholder="City" type="text" value="New York"/>
+<input className="rounded-lg border-slate-300 text-body-md font-body-md p-2.5 focus:border-customer-primary focus:ring-customer-primary/20" placeholder="ZIP Code" type="text" value="10001"/>
+</div>
+</div>
+<!-- PAYMENT METHOD: PAYSTACK INTEGRATION -->
+<div className="border-t border-slate-200 pt-5 space-y-3">
+<div className="flex items-center justify-between">
+<h4 className="font-label-lg text-label-lg text-on-surface flex items-center gap-1.5">
+<span className="material-symbols-outlined text-customer-primary text-[18px]">lock</span>
+              Payment Gateway
+            </h4>
+<span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+<span className="material-symbols-outlined text-[13px]">shield</span> 256-Bit Encrypted
+            </span>
+</div>
+<!-- Highlighted Paystack Payment Card -->
+<div className="border-2 border-customer-primary bg-indigo-50/40 rounded-xl p-4 transition-all">
+<div className="flex items-center justify-between mb-3">
+<div className="flex items-center gap-2">
+<!-- Branded Paystack visual indicator -->
+<div className="w-8 h-8 rounded-lg bg-[#00C3F7] text-white flex items-center justify-center font-bold font-headline-sm">
+                  P
+                </div>
+<div>
+<h5 className="font-title-md text-title-md text-on-surface font-bold">Pay via Paystack</h5>
+<p className="text-body-sm font-body-sm text-slate-500">Fast, automated multi-channel checkout</p>
+</div>
+</div>
+<span className="bg-[#00C3F7]/15 text-[#0089B3] px-2.5 py-0.5 rounded-full font-label-sm text-label-sm font-bold">Official Partner</span>
+</div>
+<div className="flex flex-wrap items-center gap-2 py-2 border-t border-slate-200/80 text-[11px] text-slate-600">
+<span className="inline-flex items-center gap-1 bg-white px-2 py-1 rounded border border-slate-200 font-medium">
+<span className="material-symbols-outlined text-[14px] text-customer-primary">credit_card</span> Debit/Credit Cards (Visa, Mastercard, Verve)
+              </span>
+<span className="inline-flex items-center gap-1 bg-white px-2 py-1 rounded border border-slate-200 font-medium">
+<span className="material-symbols-outlined text-[14px] text-customer-primary">account_balance</span> Bank Transfer
+              </span>
+<span className="inline-flex items-center gap-1 bg-white px-2 py-1 rounded border border-slate-200 font-medium">
+<span className="material-symbols-outlined text-[14px] text-customer-primary">phone_iphone</span> Apple Pay &amp; USSD
+              </span>
+</div>
+<!-- Instant simulated Paystack trigger -->
+<button className="mt-4 w-full bg-[#00C3F7] hover:bg-[#00b2e3] text-white font-label-lg text-label-lg py-3 rounded-lg flex items-center justify-center gap-2 shadow-md transition-all active:scale-98" id="paystack-submit-btn">
+<span className="material-symbols-outlined text-[20px]">lock</span>
+<span>Pay $253.80 with Paystack</span>
+</button>
+</div>
+</div>
+<!-- Simulation Feedback Result -->
+<div className="hidden bg-emerald-50 border border-emerald-300 rounded-xl p-4 text-center" id="payment-success-banner">
+<div className="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-2">
+<span className="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<h4 className="font-title-md text-title-md text-emerald-900 font-bold">Payment Verified via Paystack!</h4>
+<p className="text-body-sm font-body-sm text-emerald-700 mt-1">Transaction Ref: PSTK_LIVE_98240294. Your orders have been dispatched to Apex Audio, Nordic Craft Co., and RoastLab.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- TOAST NOTIFICATION CONTAINER -->
+<div className="fixed bottom-5 right-5 z-50 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-xl flex items-center gap-3 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none" id="toast">
+<span className="material-symbols-outlined text-customer-accent text-[22px]">check_circle</span>
+<span className="text-body-md font-body-md font-medium" id="toast-message">Item added to cart</span>
+</div>
+<!-- SHARED COMPONENT: Footer (Web Footer) -->
+<footer className="bg-surface-container-low dark:bg-surface border-t border-surface-variant dark:border-outline-variant mt-16">
+<div className="w-full max-w-7xl mx-auto px-margin-mobile md:px-margin py-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md">
+<!-- Brand & Copyright from JSON Blueprint -->
+<div className="flex flex-col items-center md:items-start gap-1">
+<div className="flex items-center gap-2">
+<img alt="ShopEase Logo" className="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VEdTpcgB0WgelxqUyhbvFNMlWJlmsdgr7nFsWO2KW2k5P99nUJhxjFcAVEFRJ3LHU2jmMQ4fEMfylea1TSEL1A123neAoMVessAKW_EnLMNZH1FbUoe4nRiGcKLERk9_avC2DdM0wJ_lAuPO0PhYK3Lsx0R0rITuGq9X9NdMml1u7I_siWr-T8-nFdkJ0Lq0PrffMDTNzTzHrCOlwqMuDUyQPGDTVphlJRYz9Jt1-4pZFbzlUfWF92LAi4"/>
+</div>
+<p className="text-body-sm font-body-sm text-on-surface-variant dark:text-surface-variant text-center md:text-left">
+          © 2024 ShopEase Marketplace Inc. All rights reserved. Built for modern vendors and smart shoppers.
+        </p>
+</div>
+<!-- Links defined strictly in JSON -->
+<div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-label-md font-label-md">
+<a className="text-on-surface-variant dark:text-surface-variant hover:text-customer-primary dark:hover:text-inverse-primary transition-colors duration-150" href="#terms">Terms of Service</a>
+<a className="text-on-surface-variant dark:text-surface-variant hover:text-customer-primary dark:hover:text-inverse-primary transition-colors duration-150" href="#privacy">Privacy Policy</a>
+<a className="text-on-surface-variant dark:text-surface-variant hover:text-customer-primary dark:hover:text-inverse-primary transition-colors duration-150" href="#vendor">Vendor Policy</a>
+<a className="text-on-surface-variant dark:text-surface-variant hover:text-customer-primary dark:hover:text-inverse-primary transition-colors duration-150" href="#security">Security</a>
+<a className="text-on-surface-variant dark:text-surface-variant hover:text-customer-primary dark:hover:text-inverse-primary transition-colors duration-150" href="#support">Contact Support</a>
+</div>
+</div>
+</footer>
+<!-- SCRIPT: INTERACTIVE CONTROLS -->
+<script>
+    // Cart Slide-out Drawer Logic
+    const openCartBtn = document.getElementById('open-cart-btn');
+    const closeCartBtn = document.getElementById('close-cart-btn');
+    const cartOverlay = document.getElementById('cart-drawer-overlay');
+    const cartDrawer = document.getElementById('cart-drawer');
+
+    function openCart() {
+      cartOverlay.classNameList.remove('opacity-0', 'pointer-events-none');
+      cartOverlay.classNameList.add('opacity-100');
+      cartDrawer.classNameList.remove('translate-x-full');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCart() {
+      cartOverlay.classNameList.remove('opacity-100');
+      cartOverlay.classNameList.add('opacity-0', 'pointer-events-none');
+      cartDrawer.classNameList.add('translate-x-full');
+      document.body.style.overflow = '';
+    }
+
+    openCartBtn?.addEventListener('click', openCart);
+    closeCartBtn?.addEventListener('click', closeCart);
+    cartOverlay?.addEventListener('click', (e) => {
+      if (e.target === cartOverlay) closeCart();
+    });
+
+    // Checkout Modal Logic
+    const openCheckoutBtn = document.getElementById('open-checkout-modal-btn');
+    const closeCheckoutBtn = document.getElementById('close-checkout-modal-btn');
+    const checkoutModal = document.getElementById('checkout-modal');
+    const paystackSubmitBtn = document.getElementById('paystack-submit-btn');
+    const paymentSuccessBanner = document.getElementById('payment-success-banner');
+
+    function openCheckout() {
+      closeCart();
+      checkoutModal.classNameList.remove('opacity-0', 'pointer-events-none');
+      checkoutModal.querySelector('div').classNameList.remove('scale-95');
+      checkoutModal.querySelector('div').classNameList.add('scale-100');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCheckout() {
+      checkoutModal.classNameList.add('opacity-0', 'pointer-events-none');
+      checkoutModal.querySelector('div').classNameList.remove('scale-100');
+      checkoutModal.querySelector('div').classNameList.add('scale-95');
+      document.body.style.overflow = '';
+    }
+
+    openCheckoutBtn?.addEventListener('click', openCheckout);
+    closeCheckoutBtn?.addEventListener('click', closeCheckout);
+    checkoutModal?.addEventListener('click', (e) => {
+      if (e.target === checkoutModal) closeCheckout();
+    });
+
+    // Paystack simulated transaction
+    paystackSubmitBtn?.addEventListener('click', () => {
+      paystackSubmitBtn.disabled = true;
+      paystackSubmitBtn.innerHTML = `
+        <span className="inline-block animate-spin mr-2">⟳</span> Connecting to Paystack Secure Server...
+      `;
+      setTimeout(() => {
+        paymentSuccessBanner.classNameList.remove('hidden');
+        paystackSubmitBtn.innerHTML = `✓ Payment Completed ($253.80)`;
+        paystackSubmitBtn.classNameList.replace('bg-[#00C3F7]', 'bg-emerald-600');
+        showToast("Paystack payment confirmed! Merchant notification sent.");
+      }, 1400);
+    });
+
+    // Toast Notifications
+    function showToast(text) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-message');
+      toastMsg.textContent = text;
+      toast.classNameList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        toast.classNameList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+      }, 3000);
+    }
+
+    function handleAddToCart(productName, price) {
+      showToast(`Added "${productName}" ($${price}) to your cart`);
+      const badge = document.getElementById('cart-badge-count');
+      if (badge) {
+        let current = parseInt(badge.textContent) || 3;
+        badge.textContent = current + 1;
+      }
+    }
+  </script>
+</body></html>

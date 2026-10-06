@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Store Settings &amp; Brand Configuration | ShopEase Vendor Admin</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "className",
+      theme: {
+        extend: {
+          "colors": {
+            "status-shipped": "#6366F1",
+            "secondary-fixed": "#6ffbbe",
+            "on-surface-variant": "#464555",
+            "on-surface": "#0b1c30",
+            "vendor-primary": "#7C3AED",
+            "error": "#ba1a1a",
+            "customer-primary": "#4F46E5",
+            "status-pending": "#F59E0B",
+            "primary": "#3525cd",
+            "on-primary-fixed-variant": "#3323cc",
+            "surface-bright": "#f8f9ff",
+            "on-secondary-container": "#00714d",
+            "on-primary": "#ffffff",
+            "tertiary-fixed-dim": "#d2bbff",
+            "background": "#f8f9ff",
+            "primary-container": "#4f46e5",
+            "surface-container-highest": "#d3e4fe",
+            "status-cancelled": "#EF4444",
+            "primary-fixed-dim": "#c3c0ff",
+            "surface-container-low": "#eff4ff",
+            "surface": "#f8f9ff",
+            "secondary": "#006c49",
+            "vendor-accent": "#0D9488",
+            "tertiary-container": "#7531e6",
+            "surface-canvas": "#F8FAFC",
+            "primary-fixed": "#e2dfff",
+            "surface-tint": "#4d44e3",
+            "customer-accent": "#10B981",
+            "inverse-surface": "#213145",
+            "surface-container": "#e5eeff",
+            "error-container": "#ffdad6",
+            "secondary-container": "#6cf8bb",
+            "on-tertiary": "#ffffff",
+            "status-paid": "#10B981",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed": "#0f0069",
+            "surface-card": "#FFFFFF",
+            "outline-variant": "#c7c4d8",
+            "on-secondary-fixed": "#002113",
+            "surface-container-high": "#dce9ff",
+            "on-background": "#0b1c30",
+            "inverse-primary": "#c3c0ff",
+            "status-processing": "#3B82F6",
+            "on-secondary-fixed-variant": "#005236",
+            "on-tertiary-fixed": "#25005a",
+            "outline": "#777587",
+            "surface-dim": "#cbdbf5",
+            "surface-variant": "#d3e4fe",
+            "on-error-container": "#93000a",
+            "inverse-on-surface": "#eaf1ff",
+            "on-tertiary-fixed-variant": "#5a00c6",
+            "surface-container-lowest": "#ffffff",
+            "on-error": "#ffffff",
+            "secondary-fixed-dim": "#4edea3",
+            "tertiary": "#5c00ca",
+            "tertiary-fixed": "#eaddff",
+            "on-primary-container": "#dad7ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "2.5rem",
+            "gutter": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "margin": "2rem",
+            "margin-mobile": "1rem",
+            "gutter-mobile": "1rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Inter"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Inter"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "label-lg": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Inter"],
+            "title-md": ["Plus Jakarta Sans"],
+            "label-md": ["Inter"],
+            "display": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"]
+          },
+          "fontSize": {
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "display": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body className="bg-surface-canvas text-on-surface font-body-md antialiased min-h-screen flex flex-col">
+<!-- Top Global Header -->
+<header className="sticky top-0 z-40 bg-surface-container-lowest border-b border-surface-variant/40 shadow-sm">
+<div className="w-full px-space-lg flex items-center justify-between h-16">
+<!-- Brand & Hub Name -->
+<div className="flex items-center gap-space-lg">
+<a className="flex items-center gap-2.5" href="#">
+<span className="w-8 h-8 rounded-lg bg-vendor-primary flex items-center justify-center text-on-primary">
+<span className="material-symbols-outlined text-[20px]" data-icon="storefront">storefront</span>
+</span>
+<div className="flex items-baseline gap-1.5">
+<span className="font-headline-md text-headline-sm text-on-surface font-bold tracking-tight">ShopEase</span>
+<span className="font-label-sm text-label-sm bg-purple-100 text-vendor-primary font-semibold px-2 py-0.5 rounded-full border border-purple-200">Vendor Hub</span>
+</div>
+</a>
+<!-- Search Bar -->
+<div className="hidden lg:flex items-center relative w-80">
+<span className="material-symbols-outlined absolute left-3 text-outline text-[18px]" data-icon="search">search</span>
+<input className="w-full pl-9 pr-4 py-1.5 text-body-sm bg-surface-canvas border border-outline-variant/60 rounded-lg focus:outline-none focus:ring-2 focus:ring-vendor-primary/20 focus:border-vendor-primary transition-all text-on-surface placeholder:text-outline" placeholder="Search orders, catalog, or settings..." type="text"/>
+<kbd className="absolute right-2.5 px-1.5 py-0.5 text-[10px] font-mono text-outline bg-surface-container rounded border border-outline-variant/40">⌘K</kbd>
+</div>
+</div>
+<!-- Trailing Quick Actions & Merchant Profile -->
+<div className="flex items-center gap-space-md">
+<!-- Store Operational Badge -->
+<div className="hidden md:flex items-center gap-2 px-2.5 py-1 bg-emerald-50 border border-emerald-200 rounded-full">
+<span className="w-2 h-2 rounded-full bg-status-paid animate-pulse"></span>
+<span className="font-label-sm text-label-sm text-secondary font-semibold">Store Active &amp; Operational</span>
+</div>
+<!-- View Public Storefront Link -->
+<a className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-label-md font-label-md text-on-surface-variant hover:text-customer-primary bg-surface-canvas hover:bg-surface-container rounded-lg border border-outline-variant/40 transition-colors" href="#">
+<span className="material-symbols-outlined text-[16px]" data-icon="open_in_new">open_in_new</span>
+<span>View Public Storefront</span>
+</a>
+<!-- Notifications -->
+<button aria-label="Notifications" className="relative p-2 text-on-surface-variant hover:text-on-surface rounded-lg hover:bg-surface-canvas transition-colors">
+<span className="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+<span className="absolute top-1.5 right-1.5 w-2 h-2 bg-customer-primary rounded-full"></span>
+</button>
+<!-- Help Link -->
+<button aria-label="Vendor Support" className="p-2 text-on-surface-variant hover:text-on-surface rounded-lg hover:bg-surface-canvas transition-colors">
+<span className="material-symbols-outlined text-[20px]" data-icon="help_outline">help_outline</span>
+</button>
+<div className="h-6 w-px bg-outline-variant/40"></div>
+<!-- Merchant Profile Badge -->
+<div className="flex items-center gap-3 pl-1">
+<div className="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center border border-outline-variant/60 font-headline-sm font-bold text-vendor-primary overflow-hidden">
+<span className="text-sm">AA</span>
+</div>
+<div className="hidden xl:flex flex-col text-left">
+<span className="font-label-md text-label-md text-on-surface font-semibold leading-tight">Apex Audio Official</span>
+<span className="font-label-sm text-[11px] text-outline">Merchant ID #VND-84920</span>
+</div>
+<span className="material-symbols-outlined text-outline text-[18px]" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Shell with Sidebar + Content Canvas -->
+<div className="flex-1 flex max-w-[1600px] w-full mx-auto">
+<!-- Sidebar Navigation -->
+<aside className="w-64 flex-shrink-0 hidden md:flex flex-col bg-surface-container-lowest border-r border-surface-variant/40 py-space-lg px-3">
+<div className="px-3 mb-2 font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold">Store Management</div>
+<nav className="space-y-1">
+<!-- Overview -->
+<a className="flex items-center gap-3 px-3 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-canvas transition-colors" href="#">
+<span className="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span>Overview</span>
+</a>
+<!-- Products -->
+<a className="flex items-center justify-between px-3 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-canvas transition-colors" href="#">
+<div className="flex items-center gap-3">
+<span className="material-symbols-outlined text-[20px]" data-icon="inventory_2">inventory_2</span>
+<span>Products</span>
+</div>
+<span className="font-label-sm text-[10px] px-1.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-semibold">142</span>
+</a>
+<!-- Orders -->
+<a className="flex items-center justify-between px-3 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-canvas transition-colors" href="#">
+<div className="flex items-center gap-3">
+<span className="material-symbols-outlined text-[20px]" data-icon="shopping_cart">shopping_cart</span>
+<span>Orders</span>
+</div>
+<span className="font-label-sm text-[10px] px-2 py-0.5 rounded-full bg-status-pending/20 text-status-pending font-bold">12 new</span>
+</a>
+<!-- Storefront -->
+<a className="flex items-center gap-3 px-3 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-canvas transition-colors" href="#">
+<span className="material-symbols-outlined text-[20px]" data-icon="store">store</span>
+<span>Storefront</span>
+</a>
+<!-- Analytics -->
+<a className="flex items-center gap-3 px-3 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-canvas transition-colors" href="#">
+<span className="material-symbols-outlined text-[20px]" data-icon="analytics">analytics</span>
+<span>Analytics</span>
+</a>
+<!-- Escrow & Payouts -->
+<a className="flex items-center gap-3 px-3 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-canvas transition-colors" href="#">
+<span className="material-symbols-outlined text-[20px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span>Escrow &amp; Payouts</span>
+</a>
+<!-- Active Store Settings -->
+<a className="flex items-center gap-3 px-3 py-2 rounded-lg font-label-md text-label-md bg-vendor-primary/10 text-vendor-primary font-bold transition-colors" href="#">
+<span className="material-symbols-outlined text-[20px] text-vendor-primary" data-icon="tune">tune</span>
+<span>Store Settings</span>
+</a>
+</nav>
+<div className="mt-8 px-3 mb-2 font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold">Preferences</div>
+<nav className="space-y-1">
+<a className="flex items-center gap-3 px-3 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-canvas transition-colors" href="#">
+<span className="material-symbols-outlined text-[20px]" data-icon="local_shipping">local_shipping</span>
+<span>Shipping &amp; Delivery</span>
+</a>
+<a className="flex items-center gap-3 px-3 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-canvas transition-colors" href="#">
+<span className="material-symbols-outlined text-[20px]" data-icon="shield">shield</span>
+<span>Security &amp; API</span>
+</a>
+</nav>
+<!-- Sidebar Footer Quick Card -->
+<div className="mt-auto p-3.5 bg-surface-canvas border border-outline-variant/40 rounded-xl">
+<div className="flex items-center gap-2 mb-1.5">
+<span className="material-symbols-outlined text-vendor-primary text-[18px]" data-icon="verified">verified</span>
+<span className="font-label-md text-label-md text-on-surface font-semibold">Tier-1 Merchant</span>
+</div>
+<p className="font-body-sm text-[12px] text-on-surface-variant mb-2.5">Your platform commission rate is 3.5% with instant T+1 escrow settlements.</p>
+<a className="font-label-sm text-label-sm text-vendor-primary hover:underline font-semibold flex items-center gap-1" href="#">
+          Review Service Level Agreement
+          <span className="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main className="flex-1 min-w-0 p-space-md md:p-space-lg lg:p-space-xl pb-28">
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb" className="flex items-center gap-2 text-body-sm font-body-sm text-outline mb-3">
+<span className="hover:text-on-surface cursor-pointer">Vendor Portal</span>
+<span className="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+<span className="hover:text-on-surface cursor-pointer">Storefront &amp; Brand</span>
+<span className="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+<span className="font-label-md text-on-surface font-medium">Store Settings</span>
+</nav>
+<!-- Page Title & Header Actions -->
+<div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-space-lg border-b border-surface-variant/40">
+<div>
+<h1 className="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">Store Settings &amp; Brand Configuration</h1>
+<p className="font-body-md text-body-md text-on-surface-variant mt-1">Configure your public brand identity, manage store status, update contact and fulfillment preferences across ShopEase marketplace.</p>
+</div>
+<div className="flex items-center gap-3 shrink-0">
+<button className="px-4 py-2 bg-surface-card border border-outline-variant/80 hover:bg-surface-container font-label-lg text-label-lg text-on-surface rounded-lg transition-colors" type="button">
+            Discard Changes
+          </button>
+<button className="inline-flex items-center gap-2 px-5 py-2 bg-vendor-primary hover:bg-purple-700 text-on-primary font-label-lg text-label-lg rounded-lg shadow-sm transition-all active:scale-95" type="button">
+<span className="material-symbols-outlined text-[18px]" data-icon="save">save</span>
+<span>Save Changes</span>
+<span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+</button>
+</div>
+</div>
+<!-- Main Form Bento Grid Layout -->
+<form className="mt-space-lg space-y-space-lg">
+<!-- SECTION 1: Store Operational Status Banner (Interactive Card) -->
+<div className="bg-surface-card rounded-xl border border-outline-variant/60 p-space-lg shadow-sm">
+<div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb- space-y-2 sm:space-y-0">
+<div className="flex items-start gap-3.5">
+<div className="p-2.5 rounded-lg bg-emerald-50 text-status-paid border border-emerald-200 shrink-0">
+<span className="material-symbols-outlined text-[24px]" data-icon="toggle_on">toggle_on</span>
+</div>
+<div>
+<div className="flex items-center gap-2">
+<h3 className="font-headline-sm text-title-md text-on-surface font-semibold">Store Status: Active &amp; Accepting Orders</h3>
+<span className="px-2 py-0.5 rounded-full text-label-sm font-semibold bg-emerald-100 text-status-paid border border-emerald-200">LIVE</span>
+</div>
+<p className="font-body-md text-body-sm text-on-surface-variant mt-0.5 max-w-2xl">
+                  When toggled off/suspended, products are temporarily hidden from ShopEase search, catalog, and public merchant showcases. Buyers cannot place new orders, but pending orders remain in fulfillment queue.
+                </p>
+</div>
+</div>
+<!-- Switch Control -->
+<label className="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" className="sr-only peer" type="checkbox"/>
+<div className="w-14 h-7 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-vendor-primary"></div>
+</label>
+</div>
+<!-- Vacation Mode Notice Strip -->
+<div className="mt-4 pt-4 border-t border-surface-variant/40 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 bg-surface-canvas p-3.5 rounded-lg">
+<div className="flex items-center gap-2 text-on-surface">
+<span className="material-symbols-outlined text-status-pending text-[20px]" data-icon="beach_access">beach_access</span>
+<span className="font-label-md text-label-md font-semibold">Vacation / Maintenance Mode Scheduler</span>
+<span className="font-body-sm text-body-sm text-on-surface-variant">Scheduled downtime automatically adds a temporary notice banner on your product pages.</span>
+</div>
+<button className="text-vendor-primary font-label-md text-label-md hover:underline font-semibold shrink-0" type="button">
+              Schedule Maintenance Window →
+            </button>
+</div>
+</div>
+<!-- SECTION 2: General Brand Identity & Storefront Appearance -->
+<div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Left 7 Cols: Textual Brand Fields -->
+<div className="lg:col-span-7 bg-surface-card rounded-xl border border-outline-variant/60 p-space-lg shadow-sm space-y-5">
+<div className="flex items-center gap-2.5 pb-3 border-b border-surface-variant/40">
+<span className="material-symbols-outlined text-vendor-primary text-[22px]" data-icon="badge">badge</span>
+<div>
+<h2 className="font-headline-sm text-title-md text-on-surface font-semibold">General Brand Identity</h2>
+<p className="font-body-sm text-body-sm text-outline">Public store details displayed on customer receipts, marketplace listings, and seller profiles.</p>
+</div>
+</div>
+<!-- Store Name Field -->
+<div>
+<div className="flex justify-between items-center mb-1.5">
+<label className="font-label-md text-label-md text-on-surface font-semibold" for="store_name">
+                  Store Display Name <span className="text-error">*</span>
+</label>
+<span className="font-label-sm text-body-sm text-outline">19 / 50 characters</span>
+</div>
+<input className="w-full px-3.5 py-2.5 text-body-md bg-surface-card border border-outline-variant rounded-lg text-on-surface focus:outline-none focus:ring-2 focus:ring-vendor-primary/20 focus:border-vendor-primary transition-all" id="store_name" type="text" value="Apex Audio Official"/>
+<p className="font-body-sm text-body-sm text-outline mt-1">This name is used on verified invoice receipts and customer-facing chat messages.</p>
+</div>
+<!-- Store Slug / Marketplace URL -->
+<div>
+<label className="block font-label-md text-label-md text-on-surface font-semibold mb-1.5" for="store_slug">
+                Storefront Marketplace Slug &amp; URL <span className="text-error">*</span>
+</label>
+<div className="flex rounded-lg shadow-sm">
+<span className="inline-flex items-center px-3.5 rounded-l-lg border border-r-0 border-outline-variant bg-surface-canvas text-outline text-body-sm font-mono">
+                  shopease.com/vendors/
+                </span>
+<input className="flex-1 block w-full min-w-0 rounded-none px-3.5 py-2.5 text-body-md font-mono bg-surface-card border border-outline-variant text-on-surface focus:outline-none focus:ring-2 focus:ring-vendor-primary/20 focus:border-vendor-primary transition-all" id="store_slug" type="text" value="apex-audio"/>
+<button className="inline-flex items-center gap-1.5 px-4 rounded-r-lg border border-l-0 border-outline-variant bg-surface-canvas hover:bg-surface-container font-label-sm text-label-sm text-on-surface font-medium transition-colors" type="button">
+<span className="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+<span>Copy</span>
+</button>
+</div>
+<p className="font-body-sm text-body-sm text-outline mt-1">Direct public canonical store link. Changing this slug will set up an automatic 30-day redirect.</p>
+</div>
+<!-- Store Tagline -->
+<div>
+<div className="flex justify-between items-center mb-1.5">
+<label className="font-label-md text-label-md text-on-surface font-semibold" for="store_tagline">Store Tagline &amp; Value Proposition</label>
+<span className="font-label-sm text-body-sm text-outline">82 / 120</span>
+</div>
+<input className="w-full px-3.5 py-2.5 text-body-md bg-surface-card border border-outline-variant rounded-lg text-on-surface focus:outline-none focus:ring-2 focus:ring-vendor-primary/20 focus:border-vendor-primary transition-all" id="store_tagline" type="text" value="Premium acoustic engineering, studio monitor gear, and wireless ANC headphones"/>
+</div>
+<!-- Store Category & Primary Segment -->
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<label className="block font-label-md text-label-md text-on-surface font-semibold mb-1.5" for="store_category">Primary Category <span className="text-error">*</span></label>
+<select className="w-full px-3.5 py-2.5 text-body-md bg-surface-card border border-outline-variant rounded-lg text-on-surface focus:outline-none focus:ring-2 focus:ring-vendor-primary/20 focus:border-vendor-primary transition-all" id="store_category">
+<option selected="">Consumer Electronics &amp; Audio</option>
+<option>Pro Audio &amp; Studio Equipment</option>
+<option>Computers &amp; Accessories</option>
+<option>Gaming &amp; VR Peripherals</option>
+</select>
+</div>
+<div>
+<label className="block font-label-md text-label-md text-on-surface font-semibold mb-1.5" for="business_entity">Business Registration Type</label>
+<input className="w-full px-3.5 py-2.5 text-body-md bg-surface-canvas border border-outline-variant/60 rounded-lg text-outline cursor-not-allowed" id="business_entity" readonly="" type="text" value="Registered LLC / Commercial Entity"/>
+</div>
+</div>
+</div>
+<!-- Right 5 Cols: Store Logo Upload Dropzone & Direct URL -->
+<div className="lg:col-span-5 bg-surface-card rounded-xl border border-outline-variant/60 p-space-lg shadow-sm space-y-5 flex flex-col justify-between">
+<div>
+<div className="flex items-center gap-2.5 pb-3 border-b border-surface-variant/40 mb-4">
+<span className="material-symbols-outlined text-vendor-primary text-[22px]" data-icon="image">image</span>
+<div>
+<h2 className="font-headline-sm text-title-md text-on-surface font-semibold">Store Brand Asset &amp; Logo</h2>
+<p className="font-body-sm text-body-sm text-outline">Shown across search chips, checkout carts, and merchant badge headers.</p>
+</div>
+</div>
+<!-- Interactive Drag & Drop Dropzone -->
+<div className="border-2 border-dashed border-outline-variant rounded-xl p-5 text-center hover:border-vendor-primary hover:bg-surface-canvas transition-all cursor-pointer group">
+<div className="w-12 h-12 mx-auto rounded-full bg-vendor-primary/10 text-vendor-primary flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+<span className="material-symbols-outlined text-[26px]" data-icon="cloud_upload">cloud_upload</span>
+</div>
+<h4 className="font-label-lg text-label-lg font-semibold text-on-surface">Drop your high-resolution store logo here, or browse files</h4>
+<p className="font-body-sm text-body-sm text-outline mt-1">SVG, PNG, or JPG up to 5MB (Recommended 500x500px square)</p>
+<button className="mt-3 px-3.5 py-1.5 bg-surface-container text-on-surface hover:bg-surface-container-high rounded-lg font-label-md text-label-md font-semibold transition-colors" type="button">
+                  Choose Local File
+                </button>
+</div>
+<!-- Direct URL Input -->
+<div className="mt-4">
+<label className="block font-label-md text-label-md text-on-surface font-semibold mb-1.5" for="logo_url">
+                  Store Logo Direct URL
+                </label>
+<div className="relative">
+<span className="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[18px]" data-icon="link">link</span>
+<input className="w-full pl-9 pr-3.5 py-2 text-body-sm font-mono bg-surface-card border border-outline-variant rounded-lg text-on-surface focus:outline-none focus:ring-2 focus:ring-vendor-primary/20 focus:border-vendor-primary transition-all" id="logo_url" type="url" value="https://cdn.shopease.io/merchants/vnd-84920/brand/apex-audio-logo-v2.png"/>
+</div>
+</div>
+</div>
+<!-- Current Logo Preview Card -->
+<div className="p-3.5 bg-surface-canvas rounded-xl border border-outline-variant/60 flex items-center justify-between mt-4">
+<div className="flex items-center gap-3">
+<div className="w-14 h-14 rounded-lg bg-surface-card border border-outline-variant/60 flex items-center justify-center p-1.5 overflow-hidden shadow-sm">
+<!-- Visual Brand Logo Representation -->
+<div className="w-full h-full bg-gradient-to-tr from-vendor-primary to-purple-500 rounded flex items-center justify-center text-on-primary font-bold font-headline-sm text-lg">
+                    APEX
+                  </div>
+</div>
+<div>
+<span className="font-label-md text-label-md text-on-surface font-semibold block">apex-audio-logo-v2.png</span>
+<span className="font-body-sm text-[11px] text-outline">512 × 512 px • 48.2 KB • Validated</span>
+</div>
+</div>
+<div className="flex items-center gap-1.5">
+<button className="px-2.5 py-1 text-label-sm font-label-sm font-semibold text-vendor-primary hover:bg-vendor-primary/10 rounded transition-colors" type="button">Replace</button>
+<button className="px-2.5 py-1 text-label-sm font-label-sm font-semibold text-error hover:bg-error-container/30 rounded transition-colors" type="button">Remove</button>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 3: Merchant Contact & Fulfillment Preferences -->
+<div className="bg-surface-card rounded-xl border border-outline-variant/60 p-space-lg shadow-sm">
+<div className="flex items-center gap-2.5 pb-3 border-b border-surface-variant/40 mb-5">
+<span className="material-symbols-outlined text-vendor-primary text-[22px]" data-icon="support_agent">support_agent</span>
+<div>
+<h2 className="font-headline-sm text-title-md text-on-surface font-semibold">Merchant Contact &amp; Support Details</h2>
+<p className="font-body-sm text-body-sm text-outline">Information used for buyer return shipping, order confirmations, and customer resolution tickets.</p>
+</div>
+</div>
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+<!-- Support Email -->
+<div>
+<label className="block font-label-md text-label-md text-on-surface font-semibold mb-1.5" for="support_email">Customer Support Email <span className="text-error">*</span></label>
+<div className="relative">
+<span className="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[18px]" data-icon="mail">mail</span>
+<input className="w-full pl-9 pr-3.5 py-2.5 text-body-md bg-surface-card border border-outline-variant rounded-lg text-on-surface focus:outline-none focus:ring-2 focus:ring-vendor-primary/20 focus:border-vendor-primary transition-all" id="support_email" type="email" value="support@apexaudio.store"/>
+</div>
+<p className="font-body-sm text-body-sm text-outline mt-1">Average response SLA: 4 hours.</p>
+</div>
+<!-- Support Phone -->
+<div>
+<label className="block font-label-md text-label-md text-on-surface font-semibold mb-1.5" for="support_phone">Dedicated Hotline Phone</label>
+<div className="relative">
+<span className="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[18px]" data-icon="call">call</span>
+<input className="w-full pl-9 pr-3.5 py-2.5 text-body-md bg-surface-card border border-outline-variant rounded-lg text-on-surface focus:outline-none focus:ring-2 focus:ring-vendor-primary/20 focus:border-vendor-primary transition-all" id="support_phone" type="tel" value="+1 (800) 555-0199"/>
+</div>
+<p className="font-body-sm text-body-sm text-outline mt-1">Mon - Fri, 9:00 AM - 6:00 PM EST.</p>
+</div>
+<!-- Warehouse Return Address -->
+<div>
+<label className="block font-label-md text-label-md text-on-surface font-semibold mb-1.5" for="warehouse_address">Default Return Warehouse Dispatch</label>
+<div className="relative">
+<span className="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[18px]" data-icon="warehouse">warehouse</span>
+<input className="w-full pl-9 pr-3.5 py-2.5 text-body-md bg-surface-card border border-outline-variant rounded-lg text-on-surface focus:outline-none focus:ring-2 focus:ring-vendor-primary/20 focus:border-vendor-primary transition-all" id="warehouse_address" type="text" value="Apex Logistics Hub, Dock 14B, Austin, TX 78701"/>
+</div>
+<p className="font-body-sm text-body-sm text-outline mt-1">Printed on pre-paid return RMA slips.</p>
+</div>
+</div>
+</div>
+<!-- SECTION 4: Paystack Merchant Subaccount & Split-Escrow Verification Notice -->
+<div className="bg-surface-card rounded-xl border border-outline-variant/60 p-space-lg shadow-sm">
+<div className="flex items-center justify-between pb-3 border-b border-surface-variant/40 mb-4">
+<div className="flex items-center gap-2.5">
+<span className="material-symbols-outlined text-vendor-accent text-[22px]" data-icon="payments">payments</span>
+<div>
+<h2 className="font-headline-sm text-title-md text-on-surface font-semibold">Payouts &amp; Split-Escrow Merchant Verification</h2>
+<p className="font-body-sm text-body-sm text-outline">Secured multi-vendor automated settlement account powered by ShopEase Pay Engine.</p>
+</div>
+</div>
+<span className="inline-flex items-center gap-1 px-3 py-1 bg-teal-50 text-vendor-accent border border-teal-200 rounded-full font-label-sm text-label-sm font-semibold">
+<span className="material-symbols-outlined text-[16px]" data-icon="check_circle">check_circle</span>
+              Connected &amp; Verified
+            </span>
+</div>
+<div className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-surface-canvas p-4 rounded-xl border border-outline-variant/40">
+<div className="border-b md:border-b-0 md:border-r border-outline-variant/40 pb-3 md:pb-0 md:pr-4">
+<span className="font-label-sm text-label-sm text-outline uppercase font-semibold">Paystack Subaccount Code</span>
+<div className="font-mono text-body-md text-on-surface font-semibold mt-1">ACCT_sub_9842a8b91</div>
+<span className="text-[11px] text-outline font-body-sm">Dedicated escrow split recipient ID</span>
+</div>
+<div className="border-b md:border-b-0 md:border-r border-outline-variant/40 pb-3 md:pb-0 md:pr-4">
+<span className="font-label-sm text-label-sm text-outline uppercase font-semibold">Designated Payout Bank</span>
+<div className="font-body-md text-on-surface font-semibold mt-1 flex items-center gap-1.5">
+<span className="material-symbols-outlined text-[16px] text-vendor-primary" data-icon="account_balance">account_balance</span>
+                JPMorgan Chase (**** 4891)
+              </div>
+<span className="text-[11px] text-status-paid font-body-sm font-semibold">Verified via Plaid KYC</span>
+</div>
+<div>
+<span className="font-label-sm text-label-sm text-outline uppercase font-semibold">Settlement Velocity</span>
+<div className="font-body-md text-on-surface font-semibold mt-1">T+1 Rolling Escrow Release</div>
+<span className="text-[11px] text-outline font-body-sm">Automated upon confirmed delivery scan</span>
+</div>
+</div>
+</div>
+</form>
+</main>
+</div>
+<!-- FIXED FLOATING VALIDATION & ACTION FOOTER BAR -->
+<div className="fixed bottom-0 inset-x-0 z-50 bg-surface-card border-t border-outline-variant/60 shadow-[0_-4px_16px_rgba(15,23,42,0.06)] px-space-md md:px-space-xl py-3.5">
+<div className="max-w-[1600px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+<!-- Feedback status message -->
+<div className="flex items-center gap-2.5">
+<span className="w-2.5 h-2.5 rounded-full bg-status-pending animate-ping"></span>
+<div className="text-body-sm">
+<span className="font-label-md text-label-md font-semibold text-on-surface">Unsaved changes detected in 2 fields.</span>
+<span className="text-outline hidden md:inline ml-1">— All required fields marked with <span className="text-error font-bold">*</span> must be valid.</span>
+</div>
+</div>
+<!-- Action Button Group -->
+<div className="flex items-center gap-3 w-full sm:w-auto justify-end">
+<button className="px-4 py-2 text-label-md font-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-canvas rounded-lg transition-colors" type="button">
+          Cancel
+        </button>
+<button className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-vendor-primary hover:bg-purple-700 text-on-primary font-label-lg text-label-lg font-semibold rounded-lg shadow-md transition-all active:scale-95" type="button">
+<span className="material-symbols-outlined text-[18px]" data-icon="check">check</span>
+<span>Save Changes</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Standard Footer Anchor from Shared Components -->
+<footer className="bg-surface-container-low border-t border-surface-variant/40 mt-auto">
+<div className="w-full max-w-7xl mx-auto px-margin-mobile md:px-margin py-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div className="flex items-center gap-2">
+<span className="text-headline-sm font-headline-sm text-customer-primary font-bold">ShopEase</span>
+<span className="text-body-sm font-body-sm text-on-surface-variant">© 2024 ShopEase Marketplace Inc. All rights reserved. Built for modern vendors and smart shoppers.</span>
+</div>
+<div className="flex flex-wrap items-center gap-4 text-label-md font-label-md text-on-surface-variant">
+<a className="hover:text-customer-primary transition-colors duration-150" href="#">Terms of Service</a>
+<a className="hover:text-customer-primary transition-colors duration-150" href="#">Privacy Policy</a>
+<a className="hover:text-customer-primary transition-colors duration-150" href="#">Vendor Policy</a>
+<a className="hover:text-customer-primary transition-colors duration-150" href="#">Security</a>
+<a className="hover:text-customer-primary transition-colors duration-150" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+</body></html>

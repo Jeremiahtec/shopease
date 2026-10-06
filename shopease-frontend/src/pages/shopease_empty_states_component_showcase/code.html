@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ShopEase - User States & Experience Showcase</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "className",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-high": "#dce9ff",
+            "on-secondary-fixed": "#002113",
+            "tertiary-fixed-dim": "#d2bbff",
+            "surface-container-lowest": "#ffffff",
+            "outline": "#777587",
+            "error-container": "#ffdad6",
+            "customer-accent": "#10B981",
+            "on-secondary": "#ffffff",
+            "surface-bright": "#f8f9ff",
+            "secondary-fixed-dim": "#4edea3",
+            "on-background": "#0b1c30",
+            "error": "#ba1a1a",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed-variant": "#5a00c6",
+            "surface-container": "#e5eeff",
+            "status-processing": "#3B82F6",
+            "status-cancelled": "#EF4444",
+            "outline-variant": "#c7c4d8",
+            "surface-tint": "#4d44e3",
+            "on-surface": "#0b1c30",
+            "on-primary-container": "#dad7ff",
+            "on-primary-fixed": "#0f0069",
+            "surface-dim": "#cbdbf5",
+            "tertiary-container": "#7531e6",
+            "surface-card": "#FFFFFF",
+            "status-paid": "#10B981",
+            "primary": "#3525cd",
+            "on-secondary-fixed-variant": "#005236",
+            "customer-primary": "#4F46E5",
+            "on-tertiary-fixed": "#25005a",
+            "vendor-accent": "#0D9488",
+            "on-error": "#ffffff",
+            "background": "#f8f9ff",
+            "surface-container-low": "#eff4ff",
+            "inverse-surface": "#213145",
+            "surface-variant": "#d3e4fe",
+            "tertiary-fixed": "#eaddff",
+            "on-primary-fixed-variant": "#3323cc",
+            "status-shipped": "#6366F1",
+            "tertiary": "#5c00ca",
+            "secondary-fixed": "#6ffbbe",
+            "primary-container": "#4f46e5",
+            "status-pending": "#F59E0B",
+            "inverse-on-surface": "#eaf1ff",
+            "on-tertiary": "#ffffff",
+            "secondary-container": "#6cf8bb",
+            "surface-canvas": "#F8FAFC",
+            "surface": "#f8f9ff",
+            "secondary": "#006c49",
+            "on-primary": "#ffffff",
+            "primary-fixed": "#e2dfff",
+            "vendor-primary": "#7C3AED",
+            "on-secondary-container": "#00714d",
+            "inverse-primary": "#c3c0ff",
+            "on-surface-variant": "#464555",
+            "primary-fixed-dim": "#c3c0ff",
+            "on-tertiary-container": "#e4d4ff",
+            "surface-container-highest": "#d3e4fe"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "gutter-mobile": "1rem",
+            "margin": "2rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "margin-mobile": "1rem",
+            "space-xl": "2.5rem",
+            "space-lg": "1.5rem",
+            "gutter": "1.5rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Inter"],
+            "label-md": ["Inter"],
+            "title-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "label-lg": ["Inter"],
+            "label-sm": ["Inter"],
+            "display": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "display": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body className="bg-surface text-on-surface antialiased min-h-screen flex flex-col justify-between selection:bg-surface-container selection:text-primary">
+<!-- TopNavBar (Shared Component) -->
+<header className="w-full bg-surface-container-lowest dark:bg-surface border-b border-surface-variant dark:border-outline-variant shadow-sm dark:shadow-none sticky top-0 z-50">
+<div className="w-full max-w-7xl mx-auto px-margin-mobile md:px-margin flex items-center justify-between h-16">
+<!-- Brand Anchor -->
+<div className="flex items-center gap-space-lg">
+<a className="text-headline-md font-headline-md text-customer-primary dark:text-inverse-primary tracking-tight flex items-center gap-2" href="#">
+<span className="w-8 h-8 rounded-lg bg-customer-primary flex items-center justify-center text-white shadow-sm">
+<span className="material-symbols-outlined text-[20px]" data-icon="storefront">storefront</span>
+</span>
+          ShopEase
+        </a>
+<!-- Desktop Navigation Links -->
+<nav className="hidden md:flex items-center gap-space-lg ml-space-sm">
+<a className="text-customer-primary dark:text-inverse-primary font-bold border-b-2 border-customer-primary dark:border-inverse-primary pb-1 font-label-lg text-label-lg active:scale-95 transition-transform duration-100" href="#">Marketplace</a>
+<a className="text-on-surface-variant dark:text-surface-variant font-label-lg text-label-lg hover:text-on-surface dark:hover:text-inverse-on-surface hover:text-customer-primary dark:hover:text-inverse-primary transition-colors duration-150 active:scale-95" href="#">Vendors</a>
+<a className="text-on-surface-variant dark:text-surface-variant font-label-lg text-label-lg hover:text-on-surface dark:hover:text-inverse-on-surface hover:text-customer-primary dark:hover:text-inverse-primary transition-colors duration-150 active:scale-95" href="#">Help Center</a>
+</nav>
+</div>
+<!-- Action Cluster -->
+<div className="flex items-center gap-space-md">
+<button aria-label="Help Center Support" className="text-on-surface-variant hover:text-customer-primary transition-colors p-2 rounded-full hover:bg-surface-container">
+<span className="material-symbols-outlined text-[22px]" data-icon="help_outline">help_outline</span>
+</button>
+<div className="h-5 w-[1px] bg-outline-variant hidden sm:block"></div>
+<button className="font-label-lg text-label-lg text-on-surface hover:text-customer-primary px-3 py-2 rounded-lg transition-colors active:scale-95">
+          Sign In
+        </button>
+<button className="font-label-lg text-label-lg bg-customer-primary text-white px-4 py-2 rounded-lg shadow-sm hover:bg-[#4338CA] transition-all duration-150 active:scale-95">
+          Create Account
+        </button>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main className="flex-grow w-full max-w-7xl mx-auto px-margin-mobile md:px-margin py-space-xl">
+<!-- Header Section with Breadcrumb & Architectural Framing -->
+<div className="mb-space-xl">
+<div className="flex items-center gap-2 text-on-surface-variant mb-space-xs font-label-sm text-label-sm">
+<span>Buyer Experience</span>
+<span className="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+<span className="text-customer-primary font-medium">State Architectural Design</span>
+</div>
+<div className="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div>
+<h1 className="text-headline-lg font-headline-lg text-on-surface tracking-tight">Zero-Data Experience States</h1>
+<p className="text-body-lg font-body-lg text-on-surface-variant mt-1 max-w-2xl">
+            Thoughtfully crafted transitional empty states designed to decrease user cognitive drop-off and foster catalog re-engagement through intuitive visual cues.
+          </p>
+</div>
+<!-- Mode Toggle Indicator / Showcase Switcher -->
+<div className="inline-flex p-1 bg-surface-container-high rounded-xl border border-outline-variant/40" role="tablist">
+<button className="px-space-md py-2 rounded-lg text-label-lg font-label-lg transition-all duration-150 bg-surface-card text-customer-primary shadow-sm flex items-center gap-2" id="btn-tab-interactive" onclick="switchTab('interactive')">
+<span className="material-symbols-outlined text-[18px]" data-icon="tune">tune</span>
+            Interactive Canvas
+          </button>
+<button className="px-space-md py-2 rounded-lg text-label-lg font-label-lg transition-all duration-150 text-on-surface-variant hover:text-on-surface flex items-center gap-2" id="btn-tab-grid" onclick="switchTab('grid')">
+<span className="material-symbols-outlined text-[18px]" data-icon="grid_view">grid_view</span>
+            Modular Layout
+          </button>
+</div>
+</div>
+</div>
+<!-- VIEW 1: Interactive Stage Container (Default Focus) -->
+<div className="block transition-all duration-300" id="interactive-view">
+<!-- Component Tab Selectors -->
+<div className="bg-surface-card rounded-xl border border-outline-variant/60 shadow-sm p-2 mb-space-lg flex flex-wrap items-center justify-between gap-space-md">
+<div className="flex flex-wrap items-center gap-2">
+<button className="state-pill px-4 py-2.5 rounded-lg text-label-lg font-label-lg transition-all flex items-center gap-2.5 bg-surface-container text-customer-primary border border-customer-primary/20" id="selector-cart" onclick="selectState('cart')">
+<span className="w-6 h-6 rounded-md bg-customer-primary/10 flex items-center justify-center text-customer-primary">
+<span className="material-symbols-outlined text-[16px]" data-icon="shopping_cart">shopping_cart</span>
+</span>
+<span>Empty Cart State</span>
+<span className="text-label-sm font-label-sm bg-customer-primary text-white rounded-full px-2 py-0.5 ml-1">Live</span>
+</button>
+<button className="state-pill px-4 py-2.5 rounded-lg text-label-lg font-label-lg transition-all flex items-center gap-2.5 text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface" id="selector-wishlist" onclick="selectState('wishlist')">
+<span className="w-6 h-6 rounded-md bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span className="material-symbols-outlined text-[16px]" data-icon="favorite_border">favorite_border</span>
+</span>
+<span>Empty Wishlist State</span>
+</button>
+<button className="state-pill px-4 py-2.5 rounded-lg text-label-lg font-label-lg transition-all flex items-center gap-2.5 text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface" id="selector-orders" onclick="selectState('orders')">
+<span className="w-6 h-6 rounded-md bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span className="material-symbols-outlined text-[16px]" data-icon="inventory_2">inventory_2</span>
+</span>
+<span>No Orders Yet State</span>
+</button>
+</div>
+<!-- Simulation Metric Hint -->
+<div className="hidden lg:flex items-center gap-4 px-3 py-1 bg-surface-container-low rounded-lg text-on-surface-variant font-label-sm text-label-sm">
+<span className="flex items-center gap-1.5 text-customer-accent">
+<span className="w-2 h-2 rounded-full bg-customer-accent animate-pulse"></span>
+            Verified escrows active
+          </span>
+<span className="text-outline-variant">•</span>
+<span>Light Mode Canvas</span>
+</div>
+</div>
+<!-- Live Stage Wrapper -->
+<div className="relative bg-surface-card rounded-2xl border border-outline-variant/60 shadow-[0_1px_3px_0_rgba(15,23,42,0.05),0_1px_2px_-1px_rgba(15,23,42,0.05)] overflow-hidden">
+<!-- Decorative Header Bar of Stage -->
+<div className="h-10 bg-surface-container-low border-b border-outline-variant/40 px-space-md flex items-center justify-between">
+<div className="flex items-center gap-2">
+<span className="w-2.5 h-2.5 rounded-full bg-outline-variant/50"></span>
+<span className="w-2.5 h-2.5 rounded-full bg-outline-variant/50"></span>
+<span className="w-2.5 h-2.5 rounded-full bg-outline-variant/50"></span>
+<span className="text-label-sm font-label-sm text-on-surface-variant ml-2" id="canvas-status-url">https://shopease.io/cart</span>
+</div>
+<span className="text-label-sm font-label-sm text-on-surface-variant font-mono">Viewport: 1080 × 640px</span>
+</div>
+<div className="p-space-lg md:p-space-xl flex flex-col items-center justify-center min-h-[520px]">
+<!-- STATE 1: EMPTY CART -->
+<div className="w-full max-w-xl text-center flex flex-col items-center animate-fadeIn" id="state-panel-cart">
+<!-- Wireframe Cart Graphic -->
+<div className="relative mb-space-lg">
+<div className="w-28 h-28 rounded-full bg-surface-container-low flex items-center justify-center border border-outline-variant/40 relative">
+<span className="material-symbols-outlined text-[54px] text-customer-primary/80 stroke-1" data-icon="shopping_cart">shopping_cart</span>
+<!-- Floating badge pill accent -->
+<span className="absolute -top-1 -right-1 bg-surface-card text-customer-primary text-label-sm font-label-sm px-2.5 py-1 rounded-full border border-customer-primary/30 shadow-sm flex items-center gap-1">
+<span className="w-1.5 h-1.5 rounded-full bg-status-pending"></span>
+                  0 Items
+                </span>
+</div>
+<div className="absolute -bottom-2 inset-x-0 mx-auto w-20 h-3 bg-customer-primary/5 rounded-full blur-[2px]"></div>
+</div>
+<!-- Copy Group -->
+<h2 className="text-headline-md font-headline-md text-on-surface mb-space-xs">Your cart feels a bit light</h2>
+<p className="text-body-lg font-body-lg text-on-surface-variant max-w-md mx-auto mb-space-lg">
+              Explore top rated products, trending vendor deals, and verified essentials to fill it up.
+            </p>
+<!-- Primary Action -->
+<div className="flex flex-col sm:flex-row items-center gap-3 w-full justify-center mb-space-xl">
+<button className="w-full sm:w-auto px-space-lg py-3 rounded-lg bg-customer-primary text-white font-label-lg text-label-lg hover:bg-[#4338CA] transition-all shadow-sm flex items-center justify-center gap-2 active:scale-95">
+<span>Continue Shopping</span>
+<span className="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button className="w-full sm:w-auto px-space-lg py-3 rounded-lg bg-white border border-outline-variant text-on-surface font-label-lg text-label-lg hover:bg-surface-canvas transition-colors active:scale-95">
+                View Saved Items
+              </button>
+</div>
+<!-- Popular Category Quick Anchors -->
+<div className="w-full pt-space-md border-t border-outline-variant/40 flex flex-col items-center">
+<span className="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider mb-space-sm">
+                Explore Popular Categories
+              </span>
+<div className="flex flex-wrap justify-center gap-2">
+<a className="px-3.5 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-customer-primary border border-outline-variant/30 text-label-md font-label-md transition-colors flex items-center gap-1.5" href="#">
+<span className="material-symbols-outlined text-[16px]" data-icon="devices">devices</span>
+                  Electronics
+                </a>
+<a className="px-3.5 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-customer-primary border border-outline-variant/30 text-label-md font-label-md transition-colors flex items-center gap-1.5" href="#">
+<span className="material-symbols-outlined text-[16px]" data-icon="headphones">headphones</span>
+                  Audio Gear
+                </a>
+<a className="px-3.5 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-customer-primary border border-outline-variant/30 text-label-md font-label-md transition-colors flex items-center gap-1.5" href="#">
+<span className="material-symbols-outlined text-[16px]" data-icon="chair">chair</span>
+                  Home & Living
+                </a>
+<a className="px-3.5 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-customer-primary border border-outline-variant/30 text-label-md font-label-md transition-colors flex items-center gap-1.5" href="#">
+<span className="material-symbols-outlined text-[16px]" data-icon="watch">watch</span>
+                  Wearables
+                </a>
+</div>
+</div>
+</div>
+<!-- STATE 2: EMPTY WISHLIST -->
+<div className="w-full max-w-xl text-center hidden flex-col items-center animate-fadeIn" id="state-panel-wishlist">
+<!-- Wireframe Heart Graphic -->
+<div className="relative mb-space-lg">
+<div className="w-28 h-28 rounded-full bg-surface-container-low flex items-center justify-center border border-outline-variant/40 relative">
+<span className="material-symbols-outlined text-[54px] text-customer-primary/80" data-icon="favorite_border">favorite_border</span>
+<!-- Floating bookmark chip accent -->
+<span className="absolute -top-1 -right-1 bg-surface-card text-customer-primary text-label-sm font-label-sm px-2.5 py-1 rounded-full border border-customer-primary/30 shadow-sm flex items-center gap-1">
+<span className="material-symbols-outlined text-[14px]" data-icon="bookmark">bookmark</span>
+                  Curated List
+                </span>
+</div>
+<div className="absolute -bottom-2 inset-x-0 mx-auto w-20 h-3 bg-customer-primary/5 rounded-full blur-[2px]"></div>
+</div>
+<!-- Copy Group -->
+<h2 className="text-headline-md font-headline-md text-on-surface mb-space-xs">Nothing saved just yet</h2>
+<p className="text-body-lg font-body-lg text-on-surface-variant max-w-md mx-auto mb-space-lg">
+              Keep track of items you love by tapping the heart icon on any product page.
+            </p>
+<!-- Primary Action -->
+<div className="flex flex-col sm:flex-row items-center gap-3 w-full justify-center mb-space-xl">
+<button className="w-full sm:w-auto px-space-lg py-3 rounded-lg bg-customer-primary text-white font-label-lg text-label-lg hover:bg-[#4338CA] transition-all shadow-sm flex items-center justify-center gap-2 active:scale-95">
+<span>Browse Marketplace</span>
+<span className="material-symbols-outlined text-[18px]" data-icon="storefront">storefront</span>
+</button>
+<button className="w-full sm:w-auto px-space-lg py-3 rounded-lg bg-white border border-outline-variant text-on-surface font-label-lg text-label-lg hover:bg-surface-canvas transition-colors active:scale-95 flex items-center justify-center gap-2">
+<span className="material-symbols-outlined text-[18px]" data-icon="local_fire_department">local_fire_department</span>
+<span>Explore Deals</span>
+</button>
+</div>
+<!-- Helpful Tooltip hint -->
+<div className="w-full pt-space-md border-t border-outline-variant/40 flex items-center justify-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span className="material-symbols-outlined text-[18px] text-customer-accent" data-icon="verified_user">verified_user</span>
+<span>Price drop alerts will automatically activate for your wishlisted items.</span>
+</div>
+</div>
+<!-- STATE 3: NO ORDERS YET -->
+<div className="w-full max-w-xl text-center hidden flex-col items-center animate-fadeIn" id="state-panel-orders">
+<!-- Wireframe Parcel Box Graphic -->
+<div className="relative mb-space-lg">
+<div className="w-28 h-28 rounded-full bg-surface-container-low flex items-center justify-center border border-outline-variant/40 relative">
+<span className="material-symbols-outlined text-[54px] text-customer-primary/80" data-icon="inventory_2">inventory_2</span>
+<!-- Floating badge status accent -->
+<span className="absolute -top-1 -right-1 bg-surface-card text-customer-accent text-label-sm font-label-sm px-2.5 py-1 rounded-full border border-customer-accent/30 shadow-sm flex items-center gap-1">
+<span className="material-symbols-outlined text-[14px]" data-icon="lock">lock</span>
+                  Escrow Protected
+                </span>
+</div>
+<div className="absolute -bottom-2 inset-x-0 mx-auto w-20 h-3 bg-customer-primary/5 rounded-full blur-[2px]"></div>
+</div>
+<!-- Copy Group -->
+<h2 className="text-headline-md font-headline-md text-on-surface mb-space-xs">No order history found</h2>
+<p className="text-body-lg font-body-lg text-on-surface-variant max-w-md mx-auto mb-space-lg">
+              When you complete a purchase through our secure escrow checkout, your order progress and live tracking details will appear right here.
+            </p>
+<!-- Primary Action -->
+<div className="flex flex-col sm:flex-row items-center gap-3 w-full justify-center mb-space-xl">
+<button className="w-full sm:w-auto px-space-lg py-3 rounded-lg bg-customer-primary text-white font-label-lg text-label-lg hover:bg-[#4338CA] transition-all shadow-sm flex items-center justify-center gap-2 active:scale-95">
+<span>Start Shopping</span>
+<span className="material-symbols-outlined text-[18px]" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button className="w-full sm:w-auto px-space-lg py-3 rounded-lg bg-white border border-outline-variant text-on-surface font-label-lg text-label-lg hover:bg-surface-canvas transition-colors active:scale-95 flex items-center justify-center gap-2">
+<span className="material-symbols-outlined text-[18px]" data-icon="help_center">help_center</span>
+<span>Track Guest Order</span>
+</button>
+</div>
+<!-- Assurance Checklist -->
+<div className="w-full pt-space-md border-t border-outline-variant/40 grid grid-cols-1 sm:grid-cols-3 gap-2 text-left">
+<div className="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low/60">
+<span className="material-symbols-outlined text-[16px] text-customer-primary" data-icon="security">security</span>
+<span className="text-label-sm font-label-sm text-on-surface">Escrow Guarantee</span>
+</div>
+<div className="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low/60">
+<span className="material-symbols-outlined text-[16px] text-customer-primary" data-icon="local_shipping">local_shipping</span>
+<span className="text-label-sm font-label-sm text-on-surface">Real-Time Dispatch</span>
+</div>
+<div className="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low/60">
+<span className="material-symbols-outlined text-[16px] text-customer-primary" data-icon="assignment_return">assignment_return</span>
+<span className="text-label-sm font-label-sm text-on-surface">Hassle-Free Returns</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Stage Footer Information Ribbon -->
+<div className="bg-surface-container-lowest border-t border-outline-variant/50 px-space-lg py-3 flex flex-col sm:flex-row items-center justify-between text-on-surface-variant font-label-sm text-label-sm gap-2">
+<div className="flex items-center gap-2">
+<span className="inline-block w-2 h-2 rounded-full bg-status-paid"></span>
+<span>ShopEase UX Spec: Reassuring Tone, High Visual Affordance, Zero Dead Ends</span>
+</div>
+<div className="flex items-center gap-3">
+<span>Component Version 2.4</span>
+<span className="text-outline-variant">•</span>
+<span>Light Slate Foundation</span>
+</div>
+</div>
+</div>
+</div>
+<!-- VIEW 2: Modular Showcase Layout (Full Side-by-Side Context) -->
+<div className="hidden transition-all duration-300" id="grid-view">
+<div className="grid grid-cols-1 md:grid-cols-3 gap-space-lg items-stretch">
+<!-- Modular Card 1: Empty Cart -->
+<div className="bg-surface-card rounded-2xl border border-outline-variant/60 shadow-sm p-space-lg flex flex-col justify-between hover:shadow-md transition-shadow">
+<div>
+<div className="flex items-center justify-between mb-space-lg">
+<span className="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container text-customer-primary font-medium">Cart Architecture</span>
+<span className="material-symbols-outlined text-outline-variant text-[20px]" data-icon="shopping_cart">shopping_cart</span>
+</div>
+<div className="flex justify-center mb-space-md">
+<div className="w-20 h-20 rounded-full bg-surface-container-low flex items-center justify-center border border-outline-variant/40">
+<span className="material-symbols-outlined text-[40px] text-customer-primary" data-icon="shopping_cart">shopping_cart</span>
+</div>
+</div>
+<h3 className="text-headline-sm font-headline-sm text-on-surface text-center mb-space-xs">Your cart feels a bit light</h3>
+<p className="text-body-md font-body-md text-on-surface-variant text-center mb-space-lg">
+              Explore top rated products, trending vendor deals, and verified essentials to fill it up.
+            </p>
+</div>
+<div>
+<button className="w-full py-2.5 px-space-md rounded-lg bg-customer-primary text-white font-label-lg text-label-lg hover:bg-[#4338CA] transition-colors mb-space-md flex items-center justify-center gap-2 active:scale-95">
+<span>Continue Shopping</span>
+<span className="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<div className="pt-space-sm border-t border-outline-variant/30 flex flex-wrap gap-1.5 justify-center">
+<span className="text-label-sm font-label-sm px-2.5 py-1 bg-surface-container-low text-on-surface-variant rounded-full">Electronics</span>
+<span className="text-label-sm font-label-sm px-2.5 py-1 bg-surface-container-low text-on-surface-variant rounded-full">Audio Gear</span>
+<span className="text-label-sm font-label-sm px-2.5 py-1 bg-surface-container-low text-on-surface-variant rounded-full">Home & Living</span>
+</div>
+</div>
+</div>
+<!-- Modular Card 2: Empty Wishlist -->
+<div className="bg-surface-card rounded-2xl border border-outline-variant/60 shadow-sm p-space-lg flex flex-col justify-between hover:shadow-md transition-shadow">
+<div>
+<div className="flex items-center justify-between mb-space-lg">
+<span className="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container text-customer-primary font-medium">Favorites Spec</span>
+<span className="material-symbols-outlined text-outline-variant text-[20px]" data-icon="favorite">favorite</span>
+</div>
+<div className="flex justify-center mb-space-md">
+<div className="w-20 h-20 rounded-full bg-surface-container-low flex items-center justify-center border border-outline-variant/40">
+<span className="material-symbols-outlined text-[40px] text-customer-primary" data-icon="favorite_border">favorite_border</span>
+</div>
+</div>
+<h3 className="text-headline-sm font-headline-sm text-on-surface text-center mb-space-xs">Nothing saved just yet</h3>
+<p className="text-body-md font-body-md text-on-surface-variant text-center mb-space-lg">
+              Keep track of items you love by tapping the heart icon on any product page.
+            </p>
+</div>
+<div>
+<div className="flex flex-col gap-2 mb-space-md">
+<button className="w-full py-2.5 px-space-md rounded-lg bg-customer-primary text-white font-label-lg text-label-lg hover:bg-[#4338CA] transition-colors flex items-center justify-center gap-2 active:scale-95">
+<span>Browse Marketplace</span>
+<span className="material-symbols-outlined text-[16px]" data-icon="storefront">storefront</span>
+</button>
+<button className="w-full py-2 px-space-md rounded-lg border border-outline-variant text-on-surface font-label-lg text-label-lg hover:bg-surface-canvas transition-colors">
+                Explore Deals
+              </button>
+</div>
+<div className="pt-space-sm border-t border-outline-variant/30 text-center">
+<span className="text-label-sm font-label-sm text-on-surface-variant flex items-center justify-center gap-1">
+<span className="material-symbols-outlined text-[14px] text-customer-accent" data-icon="notifications_active">notifications_active</span>
+                Automatic price alerts enabled
+              </span>
+</div>
+</div>
+</div>
+<!-- Modular Card 3: No Orders Yet -->
+<div className="bg-surface-card rounded-2xl border border-outline-variant/60 shadow-sm p-space-lg flex flex-col justify-between hover:shadow-md transition-shadow">
+<div>
+<div className="flex items-center justify-between mb-space-lg">
+<span className="px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container text-customer-primary font-medium">Order History</span>
+<span className="material-symbols-outlined text-outline-variant text-[20px]" data-icon="local_shipping">local_shipping</span>
+</div>
+<div className="flex justify-center mb-space-md">
+<div className="w-20 h-20 rounded-full bg-surface-container-low flex items-center justify-center border border-outline-variant/40">
+<span className="material-symbols-outlined text-[40px] text-customer-primary" data-icon="inventory_2">inventory_2</span>
+</div>
+</div>
+<h3 className="text-headline-sm font-headline-sm text-on-surface text-center mb-space-xs">No order history found</h3>
+<p className="text-body-md font-body-md text-on-surface-variant text-center mb-space-lg">
+              When you complete a purchase through our secure escrow checkout, your order progress and live tracking details will appear right here.
+            </p>
+</div>
+<div>
+<button className="w-full py-2.5 px-space-md rounded-lg bg-customer-primary text-white font-label-lg text-label-lg hover:bg-[#4338CA] transition-colors mb-space-md flex items-center justify-center gap-2 active:scale-95">
+<span>Start Shopping</span>
+<span className="material-symbols-outlined text-[16px]" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<div className="pt-space-sm border-t border-outline-variant/30 text-center">
+<span className="text-label-sm font-label-sm text-on-surface-variant flex items-center justify-center gap-1">
+<span className="material-symbols-outlined text-[14px] text-customer-accent" data-icon="verified">verified</span>
+                Protected by 100% Escrow Guarantee
+              </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Design System Reference / Token Footnote Strip -->
+<div className="mt-space-xl bg-surface-card rounded-xl border border-outline-variant/50 p-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div className="flex items-center gap-space-md">
+<div className="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-customer-primary">
+<span className="material-symbols-outlined text-[26px]" data-icon="palette">palette</span>
+</div>
+<div>
+<h4 className="text-title-md font-title-md text-on-surface">Experience Design Architecture</h4>
+<p className="text-body-sm font-body-sm text-on-surface-variant">Plus Jakarta Sans typography • 8px harmonic spacing system • High-trust slate container elevations</p>
+</div>
+</div>
+<div className="flex items-center gap-2">
+<span className="px-3 py-1 rounded-full text-label-sm font-label-sm bg-status-paid/15 text-status-paid font-semibold">Accessibility AAA</span>
+<span className="px-3 py-1 rounded-full text-label-sm font-label-sm bg-status-shipped/15 text-status-shipped font-semibold">Tailwind v3 Native</span>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer className="w-full bg-surface-container-low dark:bg-surface border-t border-surface-variant dark:border-outline-variant">
+<div className="w-full max-w-7xl mx-auto px-margin-mobile md:px-margin py-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md">
+<!-- Brand & Copyright -->
+<div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
+<span className="text-headline-sm font-headline-sm text-customer-primary dark:text-inverse-primary font-bold">ShopEase</span>
+<span className="hidden sm:inline text-outline-variant">|</span>
+<p className="text-body-sm font-body-sm text-on-surface-variant dark:text-surface-variant">
+          © 2024 ShopEase Marketplace Inc. All rights reserved. Built for modern vendors and smart shoppers.
+        </p>
+</div>
+<!-- Links Cluster -->
+<nav className="flex flex-wrap items-center justify-center gap-space-md">
+<a className="text-label-md font-label-md text-on-surface-variant dark:text-surface-variant hover:text-on-surface dark:hover:text-inverse-on-surface hover:text-customer-primary dark:hover:text-inverse-primary transition-colors duration-150 active:opacity-80" href="#">Terms of Service</a>
+<a className="text-label-md font-label-md text-on-surface-variant dark:text-surface-variant hover:text-on-surface dark:hover:text-inverse-on-surface hover:text-customer-primary dark:hover:text-inverse-primary transition-colors duration-150 active:opacity-80" href="#">Privacy Policy</a>
+<a className="text-label-md font-label-md text-on-surface-variant dark:text-surface-variant hover:text-on-surface dark:hover:text-inverse-on-surface hover:text-customer-primary dark:hover:text-inverse-primary transition-colors duration-150 active:opacity-80" href="#">Vendor Policy</a>
+<a className="text-label-md font-label-md text-on-surface-variant dark:text-surface-variant hover:text-on-surface dark:hover:text-inverse-on-surface hover:text-customer-primary dark:hover:text-inverse-primary transition-colors duration-150 active:opacity-80" href="#">Security</a>
+<a className="text-label-md font-label-md text-on-surface-variant dark:text-surface-variant hover:text-on-surface dark:hover:text-inverse-on-surface hover:text-customer-primary dark:hover:text-inverse-primary transition-colors duration-150 active:opacity-80" href="#">Contact Support</a>
+</nav>
+</div>
+</footer>
+<!-- Micro-interactions Controller Script -->
+<script>
+    // State switcher for Interactive Stage
+    function selectState(stateName) {
+      // Panels
+      const panels = {
+        cart: document.getElementById('state-panel-cart'),
+        wishlist: document.getElementById('state-panel-wishlist'),
+        orders: document.getElementById('state-panel-orders')
+      };
+
+      // Pills
+      const pills = {
+        cart: document.getElementById('selector-cart'),
+        wishlist: document.getElementById('selector-wishlist'),
+        orders: document.getElementById('selector-orders')
+      };
+
+      // URL bar text simulator
+      const urls = {
+        cart: 'https://shopease.io/cart',
+        wishlist: 'https://shopease.io/account/wishlist',
+        orders: 'https://shopease.io/account/orders'
+      };
+
+      document.getElementById('canvas-status-url').innerText = urls[stateName] || 'https://shopease.io';
+
+      // Reset all
+      Object.keys(panels).forEach(key => {
+        panels[key].classNameList.add('hidden');
+        panels[key].classNameList.remove('flex');
+        
+        pills[key].classNameName = 'state-pill px-4 py-2.5 rounded-lg text-label-lg font-label-lg transition-all flex items-center gap-2.5 text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface';
+      });
+
+      // Activate chosen
+      panels[stateName].classNameList.remove('hidden');
+      panels[stateName].classNameList.add('flex');
+      pills[stateName].classNameName = 'state-pill px-4 py-2.5 rounded-lg text-label-lg font-label-lg transition-all flex items-center gap-2.5 bg-surface-container text-customer-primary border border-customer-primary/20 shadow-sm';
+    }
+
+    // Toggle between Single Live Stage and 3-Card Grid
+    function switchTab(viewName) {
+      const interactiveView = document.getElementById('interactive-view');
+      const gridView = document.getElementById('grid-view');
+      const btnInteractive = document.getElementById('btn-tab-interactive');
+      const btnGrid = document.getElementById('btn-tab-grid');
+
+      if (viewName === 'interactive') {
+        interactiveView.classNameList.remove('hidden');
+        gridView.classNameList.add('hidden');
+
+        btnInteractive.classNameName = 'px-space-md py-2 rounded-lg text-label-lg font-label-lg transition-all duration-150 bg-surface-card text-customer-primary shadow-sm flex items-center gap-2';
+        btnGrid.classNameName = 'px-space-md py-2 rounded-lg text-label-lg font-label-lg transition-all duration-150 text-on-surface-variant hover:text-on-surface flex items-center gap-2';
+      } else {
+        interactiveView.classNameList.add('hidden');
+        gridView.classNameList.remove('hidden');
+
+        btnGrid.classNameName = 'px-space-md py-2 rounded-lg text-label-lg font-label-lg transition-all duration-150 bg-surface-card text-customer-primary shadow-sm flex items-center gap-2';
+        btnInteractive.classNameName = 'px-space-md py-2 rounded-lg text-label-lg font-label-lg transition-all duration-150 text-on-surface-variant hover:text-on-surface flex items-center gap-2';
+      }
+    }
+  </script>
+</body></html>

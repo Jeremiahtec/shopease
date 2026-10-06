@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout — ShopEase</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "className",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-on-surface": "#eaf1ff",
+            "tertiary-container": "#7531e6",
+            "inverse-surface": "#213145",
+            "tertiary-fixed": "#eaddff",
+            "vendor-accent": "#0D9488",
+            "on-tertiary-container": "#e4d4ff",
+            "secondary": "#006c49",
+            "customer-accent": "#10B981",
+            "on-primary-fixed": "#0f0069",
+            "on-background": "#0b1c30",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed-dim": "#d2bbff",
+            "on-tertiary-fixed": "#25005a",
+            "surface-canvas": "#F8FAFC",
+            "status-paid": "#10B981",
+            "primary-fixed": "#e2dfff",
+            "surface-tint": "#4d44e3",
+            "on-primary-container": "#dad7ff",
+            "secondary-container": "#6cf8bb",
+            "on-surface": "#0b1c30",
+            "secondary-fixed-dim": "#4edea3",
+            "primary-container": "#4f46e5",
+            "error-container": "#ffdad6",
+            "error": "#ba1a1a",
+            "status-processing": "#3B82F6",
+            "primary-fixed-dim": "#c3c0ff",
+            "status-cancelled": "#EF4444",
+            "surface-container-highest": "#d3e4fe",
+            "on-secondary-fixed": "#002113",
+            "inverse-primary": "#c3c0ff",
+            "on-error": "#ffffff",
+            "on-secondary": "#ffffff",
+            "surface-container": "#e5eeff",
+            "on-surface-variant": "#464555",
+            "on-secondary-container": "#00714d",
+            "surface-container-high": "#dce9ff",
+            "on-error-container": "#93000a",
+            "surface-container-lowest": "#ffffff",
+            "surface-bright": "#f8f9ff",
+            "status-pending": "#F59E0B",
+            "outline-variant": "#c7c4d8",
+            "customer-primary": "#4F46E5",
+            "on-tertiary-fixed-variant": "#5a00c6",
+            "tertiary": "#5c00ca",
+            "status-shipped": "#6366F1",
+            "on-secondary-fixed-variant": "#005236",
+            "on-primary": "#ffffff",
+            "surface-container-low": "#eff4ff",
+            "surface": "#f8f9ff",
+            "vendor-primary": "#7C3AED",
+            "secondary-fixed": "#6ffbbe",
+            "outline": "#777587",
+            "primary": "#3525cd",
+            "on-primary-fixed-variant": "#3323cc",
+            "surface-variant": "#d3e4fe",
+            "background": "#f8f9ff",
+            "surface-card": "#FFFFFF",
+            "surface-dim": "#cbdbf5"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "1rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2.5rem",
+            "space-md": "1rem",
+            "gutter-mobile": "1rem",
+            "gutter": "1.5rem",
+            "margin": "2rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "display": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"],
+            "label-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Inter"],
+            "label-md": ["Inter"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Inter"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "display": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+            "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+            "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+            "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+            "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+            "headline-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body className="bg-surface-canvas text-on-surface antialiased min-h-screen flex flex-col font-body-md">
+<!-- HEADER -->
+<header className="bg-surface-container-lowest sticky top-0 z-40 shadow-sm">
+<!-- Top Security & Trust Sub-bar -->
+<div className="bg-surface-container-low border-b border-surface-variant">
+<div className="max-w-7xl mx-auto px-margin-mobile md:px-margin h-8 flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<div className="flex items-center gap-space-md">
+<div className="flex items-center gap-1.5 text-customer-accent font-label-sm">
+<span className="material-symbols-outlined text-[16px]">verified_user</span>
+<span className="text-on-surface">256-Bit SSL Secured</span>
+</div>
+<span className="text-outline-variant">•</span>
+<div className="flex items-center gap-1.5 font-label-sm">
+<span className="material-symbols-outlined text-[16px] text-customer-primary">account_balance</span>
+<span>Paystack Certified Partner</span>
+</div>
+<span className="text-outline-variant hidden sm:inline">•</span>
+<div className="hidden sm:flex items-center gap-1.5 font-label-sm">
+<span className="material-symbols-outlined text-[16px] text-vendor-primary">shield</span>
+<span>ShopEase Buyer Protection</span>
+</div>
+</div>
+<div className="flex items-center gap-space-xs font-label-sm text-on-surface-variant">
+<span className="material-symbols-outlined text-[16px]">support_agent</span>
+<span className="hidden md:inline">24/7 Support: support@shopease.io</span>
+</div>
+</div>
+</div>
+<!-- Main Navigation Bar with Breadcrumbs & Logo -->
+<div className="max-w-7xl mx-auto px-margin-mobile md:px-margin h-20 flex items-center justify-between gap-space-md">
+<!-- Logo Container -->
+<a className="flex items-center gap-2.5 flex-shrink-0 active:scale-95 transition-transform duration-100" href="#">
+<img alt="ShopEase Logo" className="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VEdTpcgB0WgelxqUyhbvFNMlWJlmsdgr7nFsWO2KW2k5P99nUJhxjFcAVEFRJ3LHU2jmMQ4fEMfylea1TSEL1A123neAoMVessAKW_EnLMNZH1FbUoe4nRiGcKLERk9_avC2DdM0wJ_lAuPO0PhYK3Lsx0R0rITuGq9X9NdMml1u7I_siWr-T8-nFdkJ0Lq0PrffMDTNzTzHrCOlwqMuDUyQPGDTVphlJRYz9Jt1-4pZFbzlUfWF92LAi4"/>
+</a>
+<!-- Checkout Step Progression Breadcrumb -->
+<nav aria-label="Checkout Progression" className="hidden md:flex items-center gap-space-md">
+<!-- Step 1: Shipping (Completed / Done) -->
+<div className="flex items-center gap-2">
+<span className="w-7 h-7 rounded-full bg-customer-accent text-on-primary flex items-center justify-center font-label-sm shadow-sm">
+<span className="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</span>
+<span className="font-label-lg text-label-lg text-on-surface">1. Shipping &amp; Delivery</span>
+</div>
+<div className="w-10 h-0.5 bg-customer-primary"></div>
+<!-- Step 2: Payment (Active / Highlighted) -->
+<div className="flex items-center gap-2">
+<span className="w-7 h-7 rounded-full bg-customer-primary text-on-primary flex items-center justify-center font-label-sm ring-4 ring-primary-fixed shadow-sm">
+            2
+          </span>
+<span className="font-label-lg text-label-lg text-customer-primary font-bold">2. Review &amp; Payment</span>
+</div>
+<div className="w-10 h-0.5 bg-outline-variant"></div>
+<!-- Step 3: Confirmation (Upcoming) -->
+<div className="flex items-center gap-2 opacity-60">
+<span className="w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-sm">
+            3
+          </span>
+<span className="font-label-lg text-label-lg text-on-surface-variant">3. Confirmation</span>
+</div>
+</nav>
+<!-- Trailing Action -->
+<div className="flex items-center gap-space-sm flex-shrink-0">
+<a className="inline-flex items-center gap-1.5 text-on-surface-variant font-label-md text-label-md hover:text-customer-primary transition-colors duration-150" href="#">
+<span className="material-symbols-outlined text-[18px]">shopping_bag</span>
+<span>Back to Cart</span>
+</a>
+</div>
+</div>
+</header>
+<!-- MAIN VIEWPORT CONTENT -->
+<main className="flex-1 w-full max-w-7xl mx-auto px-margin-mobile md:px-margin py-space-lg md:py-space-xl">
+<!-- Page Title & Mobile Indicator -->
+<div className="mb-space-lg flex flex-col md:flex-row md:items-end justify-between gap-space-sm">
+<div>
+<div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-customer-primary font-label-sm text-label-sm mb-2">
+<span className="material-symbols-outlined text-[14px]">lock</span>
+<span>Encrypted Multi-Vendor Checkout</span>
+</div>
+<h1 className="text-headline-lg font-headline-lg text-on-surface tracking-tight">Express Checkout</h1>
+</div>
+<p className="text-on-surface-variant font-body-sm text-body-sm">
+        Transaction Reference: <span className="font-mono text-on-surface font-label-sm">SE-94829-PAY</span>
+</p>
+</div>
+<!-- 2-COLUMN DESKTOP GRID LAYOUT -->
+<div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- LEFT COLUMN: Steps 1 & 2 (8 Columns) -->
+<div className="lg:col-span-8 space-y-space-lg">
+<!-- STEP 1: DELIVERY ADDRESS & CONTACT CARD -->
+<section className="bg-surface-card rounded-xl border border-surface-variant shadow-sm overflow-hidden transition-all duration-200">
+<!-- Step 1 Card Header -->
+<div className="p-space-lg border-b border-surface-variant flex items-center justify-between bg-surface-container-lowest">
+<div className="flex items-center gap-3">
+<span className="w-8 h-8 rounded-full bg-customer-primary/10 text-customer-primary flex items-center justify-center font-label-lg font-bold">
+                1
+              </span>
+<div>
+<h2 className="text-title-md font-title-md text-on-surface">Delivery Address &amp; Contact</h2>
+<p className="text-body-sm font-body-sm text-on-surface-variant">Where should our registered vendors dispatch your orders?</p>
+</div>
+</div>
+<button className="text-customer-primary hover:text-primary transition-colors font-label-md text-label-md inline-flex items-center gap-1" type="button">
+<span className="material-symbols-outlined text-[16px]">edit</span>
+<span>Edit</span>
+</button>
+</div>
+<!-- Step 1 Form Content -->
+<div className="p-space-lg space-y-space-md">
+<!-- Contact Row -->
+<div className="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-1.5" for="full_name">Full Name *</label>
+<input className="w-full bg-surface-card border border-outline-variant focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 rounded-lg py-2.5 px-3 text-body-md font-body-md text-on-surface placeholder:text-outline transition duration-150" id="full_name" type="text" value="Marcus Vance"/>
+</div>
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-1.5" for="email_address">Email Address *</label>
+<div className="relative">
+<input className="w-full bg-surface-card border border-outline-variant focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 rounded-lg py-2.5 px-3 text-body-md font-body-md text-on-surface placeholder:text-outline transition duration-150" id="email_address" type="email" value="marcus.vance@studioforge.io"/>
+<span className="material-symbols-outlined absolute right-3 top-3 text-[18px] text-customer-accent" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</div>
+<!-- Phone Row with Country Dial Code -->
+<div className="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-1.5" for="phone_code">Country Code</label>
+<select className="w-full bg-surface-card border border-outline-variant focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 rounded-lg py-2.5 px-3 text-body-md font-body-md text-on-surface transition duration-150" id="phone_code">
+<option selected="" value="+1">+1 (United States)</option>
+<option value="+234">+234 (Nigeria)</option>
+<option value="+44">+44 (United Kingdom)</option>
+<option value="+233">+233 (Ghana)</option>
+<option value="+254">+254 (Kenya)</option>
+</select>
+</div>
+<div className="md:col-span-2">
+<label className="block font-label-md text-label-md text-on-surface mb-1.5" for="phone_number">Phone Number *</label>
+<input className="w-full bg-surface-card border border-outline-variant focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 rounded-lg py-2.5 px-3 text-body-md font-body-md text-on-surface placeholder:text-outline transition duration-150" id="phone_number" type="tel" value="(555) 782-9904"/>
+</div>
+</div>
+<!-- Street Address -->
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-1.5" for="street_address">Street Address *</label>
+<input className="w-full bg-surface-card border border-outline-variant focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 rounded-lg py-2.5 px-3 text-body-md font-body-md text-on-surface placeholder:text-outline transition duration-150" id="street_address" type="text" value="742 Evergreen Terrace, Suite 400"/>
+</div>
+<!-- Apartment / City / State / Zip -->
+<div className="grid grid-cols-1 md:grid-cols-4 gap-space-md">
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-1.5" for="apartment">Apt / Suite</label>
+<input className="w-full bg-surface-card border border-outline-variant focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 rounded-lg py-2.5 px-3 text-body-md font-body-md text-on-surface placeholder:text-outline transition duration-150" id="apartment" placeholder="Unit 4B" type="text"/>
+</div>
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-1.5" for="city">City *</label>
+<input className="w-full bg-surface-card border border-outline-variant focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 rounded-lg py-2.5 px-3 text-body-md font-body-md text-on-surface placeholder:text-outline transition duration-150" id="city" type="text" value="Springfield"/>
+</div>
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-1.5" for="state">State / Province *</label>
+<input className="w-full bg-surface-card border border-outline-variant focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 rounded-lg py-2.5 px-3 text-body-md font-body-md text-on-surface placeholder:text-outline transition duration-150" id="state" type="text" value="OR"/>
+</div>
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-1.5" for="postal_code">Postal Code *</label>
+<input className="w-full bg-surface-card border border-outline-variant focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 rounded-lg py-2.5 px-3 text-body-md font-body-md text-on-surface placeholder:text-outline transition duration-150" id="postal_code" type="text" value="97477"/>
+</div>
+</div>
+<!-- Country Selection -->
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-1.5" for="country">Country / Region *</label>
+<select className="w-full bg-surface-card border border-outline-variant focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 rounded-lg py-2.5 px-3 text-body-md font-body-md text-on-surface transition duration-150" id="country">
+<option selected="" value="US">United States of America</option>
+<option value="NG">Nigeria</option>
+<option value="GB">United Kingdom</option>
+<option value="CA">Canada</option>
+<option value="GH">Ghana</option>
+</select>
+</div>
+<!-- Delivery Method Radio Cards -->
+<div className="pt-space-sm">
+<label className="block font-label-md text-label-md text-on-surface mb-space-sm">Dispatch Speed &amp; Carrier Tier</label>
+<div className="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Standard Shipping -->
+<label className="relative flex p-space-md cursor-pointer rounded-lg border-2 border-outline-variant hover:border-customer-primary transition-all duration-150 bg-surface-container-lowest">
+<input className="mt-1 h-4 w-4 text-customer-primary focus:ring-customer-primary border-outline" name="delivery_method" type="radio" value="standard"/>
+<div className="ml-3 flex flex-col justify-between">
+<div>
+<div className="flex items-center justify-between gap-2">
+<span className="font-label-lg text-label-lg text-on-surface">Standard Shipping</span>
+<span className="font-headline-sm text-title-md text-on-surface">$12.00</span>
+</div>
+<p className="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Estimated 3–5 business days</p>
+</div>
+<span className="inline-flex items-center gap-1 text-[11px] text-on-surface-variant mt-2">
+<span className="material-symbols-outlined text-[14px]">local_shipping</span> Multi-vendor consolidated logistics
+                    </span>
+</div>
+</label>
+<!-- Express Tracked Delivery (Checked) -->
+<label className="relative flex p-space-md cursor-pointer rounded-lg border-2 border-customer-primary bg-primary-fixed/20 shadow-sm transition-all duration-150">
+<input checked="" className="mt-1 h-4 w-4 text-customer-primary focus:ring-customer-primary border-outline" name="delivery_method" type="radio" value="express"/>
+<div className="ml-3 flex flex-col justify-between">
+<div>
+<div className="flex items-center justify-between gap-2">
+<span className="font-label-lg text-label-lg text-customer-primary flex items-center gap-1.5">
+                          Express Tracked
+                          <span className="bg-customer-primary text-on-primary text-[10px] font-bold px-1.5 py-0.5 rounded-full">POPULAR</span>
+</span>
+<span className="font-headline-sm text-title-md text-on-surface font-bold">$24.00</span>
+</div>
+<p className="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Priority 1–2 business days via FedEx/DHL</p>
+</div>
+<span className="inline-flex items-center gap-1 text-[11px] text-customer-primary font-medium mt-2">
+<span className="material-symbols-outlined text-[14px]">bolt</span> Dedicated courier dispatch
+                    </span>
+</div>
+</label>
+</div>
+</div>
+<!-- Order Notes Field -->
+<div className="pt-space-xs">
+<label className="block font-label-md text-label-md text-on-surface mb-1.5" for="order_notes">
+                Delivery Instructions &amp; Vendor Notes
+                <span className="text-on-surface-variant font-normal">(Optional)</span>
+</label>
+<textarea className="w-full bg-surface-card border border-outline-variant focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 rounded-lg py-2.5 px-3 text-body-md font-body-md text-on-surface placeholder:text-outline transition duration-150" id="order_notes" placeholder="Optional delivery instructions or notes for vendors (e.g. gate code #4912, leave at doorstep, call upon arrival)" rows="2"></textarea>
+</div>
+<!-- Checkbox: Save Address -->
+<div className="flex items-center gap-2.5 pt-1">
+<input checked="" className="h-4 w-4 text-customer-primary rounded border-outline-variant focus:ring-customer-primary" id="save_address" type="checkbox"/>
+<label className="text-body-md font-body-md text-on-surface select-none" for="save_address">
+                Save address for future purchases &amp; sync across ShopEase vendors
+              </label>
+</div>
+</div>
+</section>
+<!-- STEP 2: PAYMENT METHOD & MULTI-VENDOR ESCROW CARD -->
+<section className="bg-surface-card rounded-xl border-2 border-customer-primary shadow-sm overflow-hidden">
+<!-- Step 2 Header -->
+<div className="p-space-lg border-b border-surface-variant bg-surface-container-lowest flex items-center justify-between">
+<div className="flex items-center gap-3">
+<span className="w-8 h-8 rounded-full bg-customer-primary text-on-primary flex items-center justify-center font-label-lg font-bold">
+                2
+              </span>
+<div>
+<h2 className="text-title-md font-title-md text-on-surface">Payment Details &amp; Multi-Vendor Escrow</h2>
+<p className="text-body-sm font-body-sm text-on-surface-variant">Pay safely through our certified gateway</p>
+</div>
+</div>
+<span className="inline-flex items-center gap-1 text-[11px] font-label-sm font-semibold uppercase px-2.5 py-1 rounded-full bg-customer-accent/15 text-secondary">
+<span className="material-symbols-outlined text-[14px]">lock</span> Escrow Protected
+            </span>
+</div>
+<!-- Gateway & Escrow Guarantee Box -->
+<div className="p-space-lg space-y-space-lg">
+<!-- Paystack Gateway Callout Banner -->
+<div className="p-space-md rounded-xl bg-surface-container-low border border-surface-variant">
+<div className="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-sm border-b border-outline-variant/40">
+<div className="flex items-center gap-2">
+<div className="w-9 h-9 rounded-lg bg-surface-card border border-outline-variant/60 flex items-center justify-center shadow-xs">
+<span className="material-symbols-outlined text-customer-primary text-[22px]">payments</span>
+</div>
+<div>
+<h3 className="font-label-lg text-label-lg text-on-surface">Paystack Secure Checkout</h3>
+<p className="text-body-sm font-body-sm text-on-surface-variant">Official Certified Payment Processor</p>
+</div>
+</div>
+<!-- Payment Rails Badges -->
+<div className="flex items-center gap-1.5 flex-wrap">
+<span className="px-2 py-0.5 rounded text-[11px] font-label-sm bg-surface-card border border-outline-variant text-on-surface">Cards</span>
+<span className="px-2 py-0.5 rounded text-[11px] font-label-sm bg-surface-card border border-outline-variant text-on-surface">Bank Transfer</span>
+<span className="px-2 py-0.5 rounded text-[11px] font-label-sm bg-surface-card border border-outline-variant text-on-surface">USSD</span>
+<span className="px-2 py-0.5 rounded text-[11px] font-label-sm bg-surface-card border border-outline-variant text-on-surface">Apple Pay</span>
+</div>
+</div>
+<!-- Multi-Vendor Escrow Security Explanation -->
+<div className="pt-space-sm flex items-start gap-2.5 text-body-sm font-body-sm text-on-surface-variant">
+<span className="material-symbols-outlined text-[20px] text-customer-primary flex-shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
+<p>
+<strong className="font-label-md text-on-surface">Multi-Vendor Split-Payout Escrow:</strong> 
+                  Funds are held securely in ShopEase escrow until delivery confirmation. Individual vendors (Apex Audio, Nordic Craft Co., RoastLab) are only credited after you receive and inspect your items.
+                </p>
+</div>
+</div>
+<!-- Payment Methods Option Selector (Visual Representation) -->
+<div className="space-y-space-sm">
+<div className="flex items-center justify-between">
+<span className="font-label-md text-label-md text-on-surface">Select Checkout Mechanism:</span>
+<span className="text-body-sm font-body-sm text-on-surface-variant">Encrypted with TLS 1.3</span>
+</div>
+<!-- Paystack Modal Radio (Default) -->
+<div className="p-space-md rounded-lg border-2 border-customer-primary bg-primary-fixed/15 flex items-center justify-between">
+<div className="flex items-center gap-3">
+<span className="material-symbols-outlined text-customer-primary text-[24px]">credit_card</span>
+<div>
+<span className="font-label-lg text-label-lg text-on-surface block">Paystack Instant Modal</span>
+<span className="text-body-sm font-body-sm text-on-surface-variant">Debit/Credit Card, Bank Transfer, or Mobile Money</span>
+</div>
+</div>
+<span className="material-symbols-outlined text-customer-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">radio_button_checked</span>
+</div>
+</div>
+<!-- Primary Action Button CTA -->
+<div className="pt-space-xs space-y-space-sm">
+<button className="w-full bg-customer-primary hover:bg-[#4338CA] text-on-primary py-3.5 px-space-lg rounded-lg font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all duration-150 active:scale-[0.99]" type="button">
+<span className="material-symbols-outlined text-[20px]">lock</span>
+<span>Pay with Paystack ($284.80)</span>
+</button>
+<div className="flex flex-col sm:flex-row items-center justify-between gap-space-sm pt-space-xs">
+<a className="inline-flex items-center gap-1 font-label-md text-label-md text-on-surface-variant hover:text-customer-primary transition-colors duration-150" href="#">
+<span className="material-symbols-outlined text-[16px]">arrow_back</span>
+<span>Back to Shopping Cart</span>
+</a>
+<a className="inline-flex items-center gap-1 font-label-md text-label-md text-customer-primary hover:underline transition-colors duration-150" href="#">
+<span className="material-symbols-outlined text-[16px]">help_outline</span>
+<span>Need Help with Checkout?</span>
+</a>
+</div>
+</div>
+<!-- Small Trust Guarantee Row -->
+<div className="pt-space-sm border-t border-surface-variant grid grid-cols-1 sm:grid-cols-3 gap-space-sm text-center">
+<div className="flex items-center justify-center gap-1.5 text-body-sm font-body-sm text-on-surface-variant">
+<span className="material-symbols-outlined text-[16px] text-customer-accent">check_circle</span>
+<span>No hidden surcharge</span>
+</div>
+<div className="flex items-center justify-center gap-1.5 text-body-sm font-body-sm text-on-surface-variant">
+<span className="material-symbols-outlined text-[16px] text-customer-accent">check_circle</span>
+<span>Instant confirmation</span>
+</div>
+<div className="flex items-center justify-center gap-1.5 text-body-sm font-body-sm text-on-surface-variant">
+<span className="material-symbols-outlined text-[16px] text-customer-accent">check_circle</span>
+<span>Automated tax receipts</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- RIGHT COLUMN: Sticky Order Summary & Vendor Breakdown (4 Columns) -->
+<div className="lg:col-span-4">
+<aside className="sticky top-28 space-y-space-md">
+<!-- Order Summary Card -->
+<div className="bg-surface-card rounded-xl border border-surface-variant shadow-sm p-space-lg space-y-space-md">
+<!-- Summary Header -->
+<div className="flex items-center justify-between pb-space-sm border-b border-surface-variant">
+<div>
+<h2 className="text-title-md font-title-md text-on-surface">Order Summary</h2>
+<span className="text-body-sm font-body-sm text-on-surface-variant">3 Items from 3 Independent Vendors</span>
+</div>
+<span className="w-7 h-7 rounded-full bg-surface-container text-customer-primary flex items-center justify-center font-label-sm font-bold">
+                3
+              </span>
+</div>
+<!-- Multi-Vendor Grouped Breakdown List -->
+<div className="space-y-space-md max-h-[380px] overflow-y-auto pr-1">
+<!-- Vendor 1: Apex Audio Official -->
+<div className="rounded-lg border border-surface-variant/80 p-3 bg-surface-container-lowest">
+<div className="flex items-center justify-between mb-2 pb-1.5 border-b border-surface-variant/50">
+<div className="flex items-center gap-1.5">
+<span className="material-symbols-outlined text-[16px] text-customer-primary">storefront</span>
+<span className="font-label-md text-label-md text-on-surface font-semibold">Apex Audio Official</span>
+</div>
+<span className="px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-customer-accent/15 text-secondary font-bold">
+                    Verified
+                  </span>
+</div>
+<!-- Product item -->
+<div className="flex items-start justify-between gap-2">
+<div className="flex items-start gap-2.5">
+<div className="w-12 h-12 rounded bg-surface-container flex items-center justify-center flex-shrink-0 text-customer-primary">
+<span className="material-symbols-outlined text-[24px]">headphones</span>
+</div>
+<div>
+<h4 className="font-label-md text-label-md text-on-surface leading-snug">Aura Pro Wireless Noise-Cancelling Headphones</h4>
+<p className="text-body-sm font-body-sm text-on-surface-variant">Midnight Black • Qty: 1</p>
+</div>
+</div>
+<span className="font-label-lg text-label-lg text-on-surface font-semibold flex-shrink-0">$149.00</span>
+</div>
+</div>
+<!-- Vendor 2: Nordic Craft Co. -->
+<div className="rounded-lg border border-surface-variant/80 p-3 bg-surface-container-lowest">
+<div className="flex items-center justify-between mb-2 pb-1.5 border-b border-surface-variant/50">
+<div className="flex items-center gap-1.5">
+<span className="material-symbols-outlined text-[16px] text-vendor-primary">hardware</span>
+<span className="font-label-md text-label-md text-on-surface font-semibold">Nordic Craft Co.</span>
+</div>
+<span className="px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-surface-container text-on-surface-variant font-medium">
+                    Direct Artisan
+                  </span>
+</div>
+<!-- Product item -->
+<div className="flex items-start justify-between gap-2">
+<div className="flex items-start gap-2.5">
+<div className="w-12 h-12 rounded bg-surface-container flex items-center justify-center flex-shrink-0 text-vendor-primary">
+<span className="material-symbols-outlined text-[24px]">inventory_2</span>
+</div>
+<div>
+<h4 className="font-label-md text-label-md text-on-surface leading-snug">Minimalist Oak Desk Organizer</h4>
+<p className="text-body-sm font-body-sm text-on-surface-variant">Solid European Oak • Qty: 1</p>
+</div>
+</div>
+<span className="font-label-lg text-label-lg text-on-surface font-semibold flex-shrink-0">$64.00</span>
+</div>
+</div>
+<!-- Vendor 3: RoastLab Direct -->
+<div className="rounded-lg border border-surface-variant/80 p-3 bg-surface-container-lowest">
+<div className="flex items-center justify-between mb-2 pb-1.5 border-b border-surface-variant/50">
+<div className="flex items-center gap-1.5">
+<span className="material-symbols-outlined text-[16px] text-status-pending">local_cafe</span>
+<span className="font-label-md text-label-md text-on-surface font-semibold">RoastLab Direct</span>
+</div>
+<span className="px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-customer-accent/15 text-secondary font-bold">
+                    Verified Merchant
+                  </span>
+</div>
+<!-- Product item -->
+<div className="flex items-start justify-between gap-2">
+<div className="flex items-start gap-2.5">
+<div className="w-12 h-12 rounded bg-surface-container flex items-center justify-center flex-shrink-0 text-status-pending">
+<span className="material-symbols-outlined text-[24px]">coffee</span>
+</div>
+<div>
+<h4 className="font-label-md text-label-md text-on-surface leading-snug">Specialty Ethiopian Single-Origin Coffee</h4>
+<p className="text-body-sm font-body-sm text-on-surface-variant">Whole Bean • 340g • Qty: 2</p>
+</div>
+</div>
+<span className="font-label-lg text-label-lg text-on-surface font-semibold flex-shrink-0">$44.00</span>
+</div>
+</div>
+</div>
+<!-- Promo Code Input Group -->
+<div className="pt-space-xs">
+<label className="block font-label-md text-label-md text-on-surface mb-1.5" for="promo_code">Promotional Discount</label>
+<div className="flex gap-2">
+<div className="relative flex-1">
+<input className="w-full bg-surface-card border border-outline-variant focus:border-customer-primary focus:ring-1 focus:ring-customer-primary rounded-lg py-2 pl-3 pr-8 text-body-sm font-body-sm text-on-surface uppercase tracking-wide" id="promo_code" type="text" value="EASENEV"/>
+<span className="material-symbols-outlined absolute right-2.5 top-2.5 text-[16px] text-customer-accent" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<button className="bg-surface-container-highest hover:bg-surface-variant text-on-surface font-label-md text-label-md px-3.5 py-2 rounded-lg transition duration-150" type="button">
+                  Applied
+                </button>
+</div>
+</div>
+<!-- Financial Breakdown Table -->
+<div className="pt-space-sm space-y-2.5 border-t border-surface-variant text-body-md font-body-md">
+<div className="flex justify-between text-on-surface-variant">
+<span>Items Subtotal</span>
+<span className="font-mono text-on-surface font-medium">$257.00</span>
+</div>
+<div className="flex justify-between text-on-surface-variant">
+<span className="flex items-center gap-1">
+                  Multi-Vendor Shipping
+                  <span className="material-symbols-outlined text-[14px]" title="Consolidated dispatch fee">info</span>
+</span>
+<span className="font-mono text-on-surface font-medium">$18.00</span>
+</div>
+<div className="flex justify-between text-on-surface-variant">
+<span>Estimated Taxes (State / VAT)</span>
+<span className="font-mono text-on-surface font-medium">$9.80</span>
+</div>
+<div className="flex justify-between text-customer-accent font-medium">
+<span className="flex items-center gap-1">
+<span className="material-symbols-outlined text-[16px]">sell</span>
+                  Coupon: EASENEV
+                </span>
+<span className="font-mono">-$15.00</span>
+</div>
+<!-- Final Total Row -->
+<div className="pt-3 border-t border-surface-variant flex items-baseline justify-between">
+<div>
+<span className="font-headline-sm text-headline-sm text-on-surface block">Total Due</span>
+<span className="text-body-sm font-body-sm text-on-surface-variant">Including multi-vendor shipping &amp; tax</span>
+</div>
+<span className="font-headline-lg text-headline-lg text-customer-primary font-bold tracking-tight">
+                  $284.80
+                </span>
+</div>
+</div>
+<!-- Buyer Guarantee Banner -->
+<div className="p-3 rounded-lg bg-surface-container-low border border-surface-variant/80 text-center">
+<div className="flex items-center justify-center gap-1.5 text-customer-primary font-label-md text-label-md font-semibold">
+<span className="material-symbols-outlined text-[18px]">verified</span>
+<span>100% Escrow Protection</span>
+</div>
+<p className="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                30-Day Money-Back Guarantee across all marketplace sellers.
+              </p>
+</div>
+</div>
+<!-- Customer Service Contact Helper -->
+<div className="p-space-md rounded-xl bg-surface-container-lowest border border-surface-variant flex items-center justify-between text-body-sm font-body-sm">
+<div className="flex items-center gap-2">
+<span className="material-symbols-outlined text-customer-primary text-[20px]">headset_mic</span>
+<span className="text-on-surface">Concierge Checkout Support</span>
+</div>
+<a className="text-customer-primary font-label-md text-label-md hover:underline" href="#">Chat with agent</a>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<!-- STANDARDIZED FOOTER FROM SHARED COMPONENTS -->
+<footer className="bg-surface-container-low border-t border-surface-variant mt-space-xl">
+<div className="w-full max-w-7xl mx-auto px-margin-mobile md:px-margin py-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div className="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
+<span className="text-headline-sm font-headline-sm text-customer-primary tracking-tight">ShopEase</span>
+<span className="hidden sm:inline text-outline-variant">•</span>
+<p className="text-body-sm font-body-sm text-on-surface-variant">
+          © 2024 ShopEase Marketplace Inc. All rights reserved. Built for modern vendors and smart shoppers.
+        </p>
+</div>
+<nav aria-label="Footer legal and support links" className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2">
+<a className="text-on-surface-variant font-label-md text-label-md hover:text-customer-primary transition-colors duration-150" href="#">Terms of Service</a>
+<a className="text-on-surface-variant font-label-md text-label-md hover:text-customer-primary transition-colors duration-150" href="#">Privacy Policy</a>
+<a className="text-on-surface-variant font-label-md text-label-md hover:text-customer-primary transition-colors duration-150" href="#">Vendor Policy</a>
+<a className="text-on-surface-variant font-label-md text-label-md hover:text-customer-primary transition-colors duration-150" href="#">Security</a>
+<a className="text-on-surface-variant font-label-md text-label-md hover:text-customer-primary transition-colors duration-150" href="#">Contact Support</a>
+</nav>
+</div>
+</footer>
+</body></html>

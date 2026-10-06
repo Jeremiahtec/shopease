@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Apex Audio Official Storefront | ShopEase Marketplace</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "className",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-canvas": "#F8FAFC",
+            "on-primary-container": "#dad7ff",
+            "tertiary-fixed-dim": "#d2bbff",
+            "secondary-fixed-dim": "#4edea3",
+            "vendor-accent": "#0D9488",
+            "vendor-primary": "#7C3AED",
+            "on-tertiary-fixed": "#25005a",
+            "on-tertiary-fixed-variant": "#5a00c6",
+            "secondary-fixed": "#6ffbbe",
+            "primary-fixed": "#e2dfff",
+            "on-secondary": "#ffffff",
+            "surface-container": "#e5eeff",
+            "on-error": "#ffffff",
+            "status-paid": "#10B981",
+            "status-cancelled": "#EF4444",
+            "status-shipped": "#6366F1",
+            "on-primary-fixed": "#0f0069",
+            "secondary": "#006c49",
+            "on-background": "#0b1c30",
+            "customer-primary": "#4F46E5",
+            "error-container": "#ffdad6",
+            "on-tertiary": "#ffffff",
+            "surface-dim": "#cbdbf5",
+            "on-tertiary-container": "#e4d4ff",
+            "outline": "#777587",
+            "on-error-container": "#93000a",
+            "on-secondary-container": "#00714d",
+            "on-surface": "#0b1c30",
+            "surface-container-highest": "#d3e4fe",
+            "error": "#ba1a1a",
+            "inverse-primary": "#c3c0ff",
+            "surface-card": "#FFFFFF",
+            "surface": "#f8f9ff",
+            "on-primary-fixed-variant": "#3323cc",
+            "outline-variant": "#c7c4d8",
+            "tertiary-fixed": "#eaddff",
+            "primary": "#3525cd",
+            "on-secondary-fixed": "#002113",
+            "customer-accent": "#10B981",
+            "surface-container-high": "#dce9ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#d3e4fe",
+            "primary-container": "#4f46e5",
+            "primary-fixed-dim": "#c3c0ff",
+            "secondary-container": "#6cf8bb",
+            "tertiary-container": "#7531e6",
+            "inverse-on-surface": "#eaf1ff",
+            "status-pending": "#F59E0B",
+            "surface-bright": "#f8f9ff",
+            "on-primary": "#ffffff",
+            "tertiary": "#5c00ca",
+            "surface-container-low": "#eff4ff",
+            "on-surface-variant": "#464555",
+            "surface-tint": "#4d44e3",
+            "on-secondary-fixed-variant": "#005236",
+            "inverse-surface": "#213145",
+            "status-processing": "#3B82F6",
+            "background": "#f8f9ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "margin": "2rem",
+            "space-xl": "2.5rem",
+            "margin-mobile": "1rem",
+            "gutter": "1.5rem",
+            "space-xs": "0.25rem",
+            "gutter-mobile": "1rem"
+          },
+          "fontFamily": {
+            "label-sm": ["Inter"],
+            "label-lg": ["Inter"],
+            "title-md": ["Plus Jakarta Sans"],
+            "display": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Inter"],
+            "body-sm": ["Inter"],
+            "label-md": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "display": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body className="bg-surface-canvas text-on-surface antialiased min-h-screen flex flex-col font-body-md text-body-md selection:bg-customer-primary selection:text-on-primary">
+<!-- ================= TOP NAVIGATION BAR (Anchored from Shared Components) ================= -->
+<header className="sticky top-0 z-50 bg-surface-container-lowest border-b border-surface-variant shadow-sm">
+<div className="w-full max-w-7xl mx-auto px-margin-mobile md:px-margin flex items-center justify-between h-16 gap-space-md">
+<!-- Brand & Global Search -->
+<div className="flex items-center gap-space-lg flex-1 max-w-2xl">
+<a className="flex items-center gap-2 group flex-shrink-0" href="#" title="ShopEase Home">
+<img alt="ShopEase Marketplace" className="h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VEdTpcgB0WgelxqUyhbvFNMlWJlmsdgr7nFsWO2KW2k5P99nUJhxjFcAVEFRJ3LHU2jmMQ4fEMfylea1TSEL1A123neAoMVessAKW_EnLMNZH1FbUoe4nRiGcKLERk9_avC2DdM0wJ_lAuPO0PhYK3Lsx0R0rITuGq9X9NdMml1u7I_siWr-T8-nFdkJ0Lq0PrffMDTNzTzHrCOlwqMuDUyQPGDTVphlJRYz9Jt1-4pZFbzlUfWF92LAi4"/>
+</a>
+<!-- Global Search Bar -->
+<div className="relative w-full max-w-md hidden md:block">
+<span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-xl pointer-events-none" data-icon="search">search</span>
+<input className="w-full pl-10 pr-4 py-2 bg-surface-canvas border border-outline-variant rounded-lg text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-customer-primary/20 focus:border-customer-primary transition-all duration-150" placeholder="Search verified products, brands &amp; sellers..." type="text"/>
+</div>
+</div>
+<!-- Quick Links Navigation (JSON: Marketplace, Vendors, Help Center) -->
+<nav className="hidden lg:flex items-center gap-6">
+<a className="text-on-surface-variant font-label-lg hover:text-customer-primary transition-colors duration-150" href="#">Marketplace</a>
+<!-- Active link: Storefront is under Vendors destination -->
+<a className="text-customer-primary font-bold border-b-2 border-customer-primary pb-1" href="#">Vendors</a>
+<a className="text-on-surface-variant font-label-lg hover:text-customer-primary transition-colors duration-150" href="#">Deals</a>
+<a className="text-on-surface-variant font-label-lg hover:text-customer-primary transition-colors duration-150 flex items-center gap-1" href="#">
+<span className="material-symbols-outlined text-lg" data-icon="help_outline">help_outline</span>
+<span>Help Center</span>
+</a>
+</nav>
+<!-- Trailing Action Icons & Profile -->
+<div className="flex items-center gap-space-md">
+<!-- Cart Action with Badge -->
+<button aria-label="Cart" className="relative p-2 rounded-lg text-on-surface-variant hover:text-customer-primary hover:bg-surface-container-low transition-colors duration-150">
+<span className="material-symbols-outlined text-2xl" data-icon="shopping_bag">shopping_bag</span>
+<span className="absolute -top-1 -right-1 bg-customer-primary text-on-primary font-label-sm text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold shadow-sm">2</span>
+</button>
+<!-- Divider -->
+<div className="h-6 w-px bg-outline-variant hidden sm:block"></div>
+<!-- User Profile Pill -->
+<button className="flex items-center gap-2.5 p-1.5 rounded-lg hover:bg-surface-container-low transition-colors duration-150">
+<div className="w-8 h-8 rounded-full bg-surface-container-high text-customer-primary font-title-md flex items-center justify-center border border-outline-variant">
+<span className="font-bold text-xs">JD</span>
+</div>
+<div className="hidden sm:flex flex-col text-left">
+<span className="font-label-md text-on-surface leading-tight">John D.</span>
+<span className="font-body-sm text-outline leading-tight">Customer</span>
+</div>
+<span className="material-symbols-outlined text-outline text-lg hidden sm:block" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</div>
+</header>
+<!-- ================= BREADCRUMBS ================= -->
+<div className="bg-surface-canvas border-b border-surface-variant/70">
+<div className="max-w-7xl mx-auto px-margin-mobile md:px-margin py-2.5 flex items-center gap-2 text-body-sm text-outline">
+<a className="hover:text-customer-primary transition-colors" href="#">Home</a>
+<span className="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+<a className="hover:text-customer-primary transition-colors" href="#">Vendors</a>
+<span className="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+<a className="hover:text-customer-primary transition-colors" href="#">Electronics &amp; Audio</a>
+<span className="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+<span className="text-on-surface font-label-md">Apex Audio Official</span>
+</div>
+</div>
+<!-- ================= MAIN STOREFRONT CANVAS ================= -->
+<main className="flex-grow max-w-7xl mx-auto w-full px-margin-mobile md:px-margin pt-4 pb-16">
+<!-- 1. VENDOR HERO & BRAND BANNER SECTION -->
+<section className="bg-surface-card rounded-xl border border-outline-variant/60 shadow-sm overflow-hidden mb-8">
+<!-- Store Cover Banner with High-End Acoustic Aesthetic -->
+<div className="h-56 md:h-72 w-full bg-cover bg-center relative flex items-end justify-between p-6 overflow-hidden" data-alt="An ultra-modern professional sound engineering recording studio featuring sleek acoustic diffusers, ambient warm backlighting, brushed slate metal consoles, and state-of-the-art studio monitors. The environment radiates high-end fidelity, minimalist luxury, deep charcoal undertones, and vibrant indigo ambient neon accents, bathed in soft architectural lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDdYrFhsuubU-L47VdaN1odKcigO0RD0pCzbcZDx4CWhDpA_RUgYSQmH2-fwNbuLtlLtpdujvGtM5_VdUGmtE6zihi2Sw8wfs7zYTszThLZLl_ufdynkD8UOU0Arg3OZNTk52AVNVvxu_qqG6LFOvL-RdTVZvtJcXctHWFemhSZX9E4wqUrnb_NL5SNYb4wCWn6V2N0dpeOFT0qI1TxLZdZuJDZeSvjgS_oo10TcSlLE16NFRu9GPTd8w')">
+<!-- Overlay Gradient for contrast -->
+<div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/40 to-transparent"></div>
+<!-- Banner Top Status / Tags -->
+<div className="absolute top-4 left-4 flex flex-wrap gap-2 z-10">
+<span className="bg-surface-card/90 backdrop-blur-md text-on-surface border border-outline-variant/50 px-3 py-1 rounded-full font-label-sm flex items-center gap-1.5 shadow-sm">
+<span className="w-2 h-2 rounded-full bg-status-paid"></span>
+            Official Brand Flagship Store
+          </span>
+<span className="bg-vendor-primary text-on-tertiary px-3 py-1 rounded-full font-label-sm font-semibold flex items-center gap-1 shadow-sm">
+<span className="material-symbols-outlined text-xs" data-icon="verified" data-weight="fill">verified</span>
+            Premier Tier Merchant
+          </span>
+</div>
+<!-- Banner Right Quick Actions -->
+<div className="relative z-10 hidden md:flex items-center gap-3">
+<button className="bg-surface-card/90 hover:bg-surface-card text-on-surface px-3.5 py-1.5 rounded-lg border border-outline-variant/60 font-label-md flex items-center gap-1.5 backdrop-blur-md transition-all shadow-sm">
+<span className="material-symbols-outlined text-lg" data-icon="share">share</span>
+<span>Share Store</span>
+</button>
+<button className="bg-surface-card/90 hover:bg-surface-card text-on-surface px-3.5 py-1.5 rounded-lg border border-outline-variant/60 font-label-md flex items-center gap-1.5 backdrop-blur-md transition-all shadow-sm">
+<span className="material-symbols-outlined text-lg" data-icon="shield">shield</span>
+<span>Buyer Protection</span>
+</button>
+</div>
+</div>
+<!-- Merchant Identity & Metas Bar -->
+<div className="p-6 md:p-8 bg-surface-card">
+<div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+<!-- Avatar + Bio Block -->
+<div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
+<!-- Store Logo Avatar -->
+<div className="relative -mt-16 sm:-mt-20 flex-shrink-0">
+<div className="w-28 h-28 sm:w-32 sm:h-32 rounded-xl bg-surface-canvas border-4 border-surface-card shadow-md bg-cover bg-center overflow-hidden flex items-center justify-center relative" data-alt="A minimalist tech logo emblem of Apex Audio consisting of sleek stylized sound waves forming an apex geometric crest, presented in rich deep indigo and slate gray tones against a pure white clean background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-suZZM1-VfJpezbt8m504ssDm335m7EW4RvIsfm4x6W9f4Cb_jaz1PbKix2HWVYMsAawGu55kntoC_Hpa49YrNsJ4Aqr9C5nmhLkOjxA2gd53hwjlJv5tJIiF-nKhen9L2r7P7kH_rmHlsxwpXHKxN18e4wu6oRL6MhtAqt-aLxlS1nPYQmYjIpUSFINkIGQhwRV2oP7pv_jtfV9crzrBDKikgRM-DBOSbxCVJ34vI6Nsu0KEbMxMlA')">
+</div>
+<div className="absolute bottom-1 right-1 bg-customer-primary text-on-primary rounded-full p-1 shadow-md border-2 border-surface-card" title="Verified Merchant">
+<span className="material-symbols-outlined text-base block" data-icon="verified" data-weight="fill">verified</span>
+</div>
+</div>
+<!-- Identity Info -->
+<div className="flex-1">
+<div className="flex flex-wrap items-center gap-2.5">
+<h1 className="text-headline-sm font-headline-sm text-on-surface font-extrabold tracking-tight">Apex Audio Official</h1>
+<span className="bg-primary-fixed text-on-primary-fixed font-label-sm px-2.5 py-0.5 rounded-full flex items-center gap-1">
+<span className="material-symbols-outlined text-xs" data-icon="verified" data-weight="fill">verified</span> Verified Seller
+                </span>
+<span className="bg-surface-container-high text-on-surface-variant font-label-sm px-2.5 py-0.5 rounded-full">Top Rated 2024</span>
+</div>
+<!-- Rating & Response Rate -->
+<div className="flex flex-wrap items-center gap-y-1 gap-x-4 mt-2 text-body-sm text-on-surface-variant">
+<div className="flex items-center gap-1 font-label-md text-on-surface">
+<span className="material-symbols-outlined text-amber-500 text-base" data-icon="star" data-weight="fill">star</span>
+<span className="font-bold">4.9</span>
+<span className="text-outline font-normal">(1,240+ verified reviews)</span>
+</div>
+<div className="flex items-center gap-1 text-customer-accent font-medium">
+<span className="material-symbols-outlined text-base" data-icon="schedule">schedule</span>
+<span>Replies in under 15m</span>
+</div>
+<div className="flex items-center gap-1 text-outline">
+<span className="material-symbols-outlined text-base" data-icon="location_on">location_on</span>
+<span>San Francisco, CA</span>
+</div>
+</div>
+<!-- Bio -->
+<p className="mt-3 text-on-surface-variant font-body-md max-w-2xl text-sm leading-relaxed">
+                Premium acoustic engineering, studio monitor gear, and wireless ANC headphones crafted for audiophiles, producers, and creators worldwide. Powered by precision hardware.
+              </p>
+</div>
+</div>
+<!-- Merchant Action Buttons & Follower Metrics -->
+<div className="flex flex-col sm:flex-row lg:flex-col items-stretch gap-3 min-w-[210px] self-stretch lg:self-center">
+<div className="flex items-center gap-2">
+<!-- Follow Button -->
+<button className="flex-1 bg-customer-primary hover:bg-[#4338CA] text-on-primary px-4 py-2.5 rounded-lg font-label-lg flex items-center justify-center gap-2 transition-all shadow-sm active:scale-95">
+<span className="material-symbols-outlined text-lg" data-icon="add">add</span>
+<span>Follow Store</span>
+<span className="bg-white/20 text-xs px-2 py-0.5 rounded-full font-label-sm">4.5k</span>
+</button>
+<!-- Ask Question / Contact -->
+<button className="bg-surface-card hover:bg-surface-container-low text-on-surface border border-outline-variant px-3 py-2.5 rounded-lg font-label-lg flex items-center justify-center transition-colors active:scale-95" title="Message Merchant">
+<span className="material-symbols-outlined text-lg" data-icon="chat">chat</span>
+</button>
+</div>
+<!-- Escrow & Guarantee Badge -->
+<div className="bg-surface-container-low p-2.5 rounded-lg border border-outline-variant/40 flex items-center gap-2">
+<span className="material-symbols-outlined text-customer-primary text-xl" data-icon="verified_user">verified_user</span>
+<div className="text-xs">
+<span className="font-label-sm text-on-surface block">Escrow Protected Orders</span>
+<span className="text-outline text-[11px]">14-Day Free Hassle Returns</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Store KPI Metric Strip -->
+<div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6 pt-6 border-t border-outline-variant/40 text-center sm:text-left">
+<div className="flex flex-col">
+<span className="text-outline font-label-sm uppercase tracking-wider text-[11px]">Total Merchant Sales</span>
+<span className="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">12.8k+</span>
+<span className="text-status-paid text-xs font-label-sm flex items-center sm:justify-start justify-center gap-0.5 mt-0.5">
+<span className="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span> 99.4% Fulfillment Rate
+            </span>
+</div>
+<div className="flex flex-col">
+<span className="text-outline font-label-sm uppercase tracking-wider text-[11px]">Active Products</span>
+<span className="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">24 Items</span>
+<span className="text-outline text-xs mt-0.5">100% In Stock Authenticity</span>
+</div>
+<div className="flex flex-col">
+<span className="text-outline font-label-sm uppercase tracking-wider text-[11px]">Customer Satisfaction</span>
+<span className="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">98.8%</span>
+<span className="text-customer-accent text-xs font-label-sm flex items-center sm:justify-start justify-center gap-0.5 mt-0.5">
+<span className="material-symbols-outlined text-xs" data-icon="check_circle">check_circle</span> Verified Merchant
+            </span>
+</div>
+<div className="flex flex-col">
+<span className="text-outline font-label-sm uppercase tracking-wider text-[11px]">Platform Tenancy</span>
+<span className="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">Since 2022</span>
+<span className="text-outline text-xs mt-0.5">Gold Partner Tier</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. IN-STORE CATALOG HEADER & FILTER TOOLBAR -->
+<section className="bg-surface-card rounded-xl border border-outline-variant/60 shadow-sm p-4 md:p-6 mb-6">
+<!-- Sub-header Row: Search in Catalog & Fast Sort -->
+<div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-surface-variant">
+<!-- Search Within Merchant Catalog -->
+<div className="relative flex-1 max-w-lg">
+<span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-xl" data-icon="search">search</span>
+<input className="w-full pl-10 pr-4 py-2 bg-surface-canvas border border-outline-variant rounded-lg text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-customer-primary/20 focus:border-customer-primary transition-all duration-150" placeholder="Search in Apex Audio's catalog..." type="text"/>
+</div>
+<!-- Sort and View Preferences -->
+<div className="flex items-center gap-3 self-end md:self-auto w-full md:w-auto justify-between md:justify-start">
+<div className="flex items-center gap-2">
+<label className="text-outline font-label-md text-sm whitespace-nowrap" for="store-sort">Sort by:</label>
+<div className="relative">
+<select className="bg-surface-canvas border border-outline-variant rounded-lg px-3 py-1.5 pr-8 font-label-md text-on-surface text-sm focus:outline-none focus:border-customer-primary cursor-pointer appearance-none" id="store-sort">
+<option selected="">Featured</option>
+<option>Best Selling</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>New Arrivals</option>
+<option>Customer Rating</option>
+</select>
+<span className="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-base" data-icon="unfold_more">unfold_more</span>
+</div>
+</div>
+<div className="h-6 w-px bg-outline-variant hidden sm:block"></div>
+<!-- View toggles -->
+<div className="flex items-center bg-surface-canvas p-1 rounded-lg border border-outline-variant">
+<button className="p-1 rounded bg-surface-card text-customer-primary shadow-xs" title="Grid View">
+<span className="material-symbols-outlined text-lg block" data-icon="grid_view">grid_view</span>
+</button>
+<button className="p-1 rounded text-outline hover:text-on-surface transition-colors" title="List View">
+<span className="material-symbols-outlined text-lg block" data-icon="view_list">view_list</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Store Category Pills Navigation -->
+<div className="flex items-center justify-between gap-4 mt-4 overflow-x-auto pb-1 scrollbar-none">
+<div className="flex items-center gap-2 flex-nowrap">
+<button className="bg-customer-primary text-on-primary font-label-md px-4 py-1.5 rounded-full text-sm whitespace-nowrap shadow-sm">
+            All Items (24)
+          </button>
+<button className="bg-surface-canvas hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md px-4 py-1.5 rounded-full text-sm whitespace-nowrap transition-colors border border-outline-variant/60">
+            Noise-Cancelling (8)
+          </button>
+<button className="bg-surface-canvas hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md px-4 py-1.5 rounded-full text-sm whitespace-nowrap transition-colors border border-outline-variant/60">
+            Studio Monitors (4)
+          </button>
+<button className="bg-surface-canvas hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md px-4 py-1.5 rounded-full text-sm whitespace-nowrap transition-colors border border-outline-variant/60">
+            Wireless Earbuds (6)
+          </button>
+<button className="bg-surface-canvas hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md px-4 py-1.5 rounded-full text-sm whitespace-nowrap transition-colors border border-outline-variant/60">
+            Audiophile Cables (4)
+          </button>
+<button className="bg-surface-canvas hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md px-4 py-1.5 rounded-full text-sm whitespace-nowrap transition-colors border border-outline-variant/60">
+            DACs &amp; Amps (2)
+          </button>
+</div>
+<div className="hidden xl:flex items-center gap-2 text-outline text-xs font-label-md whitespace-nowrap">
+<span className="material-symbols-outlined text-base" data-icon="tune">tune</span>
+<span>Filtered: All Catalog</span>
+</div>
+</div>
+</section>
+<!-- 3. MAIN PRODUCT GRID (Apex Audio's Catalog) -->
+<section className="mb-12">
+<div className="flex items-center justify-between mb-4">
+<h2 className="font-headline-sm text-headline-sm font-bold text-on-surface">Store Products</h2>
+<span className="text-body-sm text-outline">Showing 6 of 24 verified items</span>
+</div>
+<!-- Product Cards Grid: 12-column layout (3 cards per row on desktop) -->
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Product Card 1: Aura Pro Wireless Noise-Cancelling Headphones -->
+<div className="bg-surface-card rounded-xl border border-outline-variant/70 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col group overflow-hidden">
+<!-- Image Box with Badges -->
+<div className="relative bg-surface-canvas h-64 overflow-hidden flex items-center justify-center p-6 border-b border-surface-variant">
+<div className="w-full h-full bg-contain bg-center bg-no-repeat group-hover:scale-105 transition-transform duration-300" data-alt="Premium sleek over-ear wireless noise cancelling headphones in matte slate finish with soft memory foam earcups and polished gunmetal metallic headband hinges. The product is photographed against a bright studio light background with subtle cool indigo reflections." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCW2DF78UDiuaE8S5y6iDilRJ4IN2oITdR0Y6VZPo9C8-O_B_y1UBecQTki48WOi_ipDQqEsOXjLu506NbvwKM1bFPZ30qP_oJGmBLVAwmA5AYooDsZUMSqRLI3NnGI6ZdM6FrvafcTD4zHzf-QEB5mLGRc5a0K52Bm-G3ZZqnYWS_8Ys4uVDNAR7O98Z0rrcYYt0d1DWeEebEv8hSKFRl3guGDN9Z9PNTSpOHnBtdUo7jDpNNNmKVhVg')"></div>
+<!-- Badges -->
+<div className="absolute top-3 left-3 flex flex-col gap-1.5">
+<span className="bg-customer-primary text-on-primary font-label-sm text-[11px] px-2.5 py-0.5 rounded-full shadow-xs">
+                Flagship Pick
+              </span>
+<span className="bg-emerald-100 text-emerald-800 font-label-sm text-[11px] px-2.5 py-0.5 rounded-full">
+                In Stock
+              </span>
+</div>
+<!-- Wishlist Heart Action -->
+<button aria-label="Add to Wishlist" className="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-card/90 hover:bg-surface-card text-outline hover:text-status-cancelled flex items-center justify-center transition-colors shadow-sm">
+<span className="material-symbols-outlined text-lg" data-icon="favorite">favorite</span>
+</button>
+</div>
+<!-- Content Details -->
+<div className="p-5 flex-1 flex flex-col justify-between">
+<div>
+<div className="flex items-center gap-1.5 text-xs text-outline mb-1">
+<span>Apex Audio</span>
+<span>•</span>
+<span className="flex items-center text-amber-500 font-label-sm">
+<span className="material-symbols-outlined text-xs" data-icon="star" data-weight="fill">star</span> 4.9
+                </span>
+<span className="text-outline">(342)</span>
+</div>
+<h3 className="font-title-md text-title-md text-on-surface group-hover:text-customer-primary transition-colors line-clamp-1">
+                Aura Pro Wireless Noise-Cancelling Headphones
+              </h3>
+<p className="font-body-sm text-on-surface-variant mt-1.5 text-xs line-clamp-2">
+                Active noise cancellation with 40-hour battery life, high-res 40mm drivers, and ambient pass-through mode.
+              </p>
+</div>
+<div className="mt-4 pt-4 border-t border-surface-variant flex items-center justify-between">
+<div>
+<span className="text-outline text-xs block font-label-md">Direct Price</span>
+<span className="font-headline-sm text-headline-sm font-bold text-on-surface">$149.00</span>
+</div>
+<button className="bg-customer-primary hover:bg-[#4338CA] text-on-primary font-label-md px-4 py-2 rounded-lg flex items-center gap-1.5 transition-all shadow-sm active:scale-95">
+<span className="material-symbols-outlined text-lg" data-icon="add_shopping_cart">add_shopping_cart</span>
+<span>Add to Cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2: Apex Studio Monitor Pro (Oak Finish) -->
+<div className="bg-surface-card rounded-xl border border-outline-variant/70 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col group overflow-hidden">
+<div className="relative bg-surface-canvas h-64 overflow-hidden flex items-center justify-center p-6 border-b border-surface-variant">
+<div className="w-full h-full bg-contain bg-center bg-no-repeat group-hover:scale-105 transition-transform duration-300" data-alt="A pair of high-fidelity desktop studio monitor speakers with warm natural oak wood grain veneer cabinet finish, black woven Kevlar cone woofers, and silk dome tweeters. Photographed cleanly in a luminous minimalist product studio setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB6J9gnwu4-709RA_VycSRHeAq2i2SnDHBzKNKtTqUqE0yiCqxpBKUjiDqpcSHpzo74oefRoMHo_0lNiRY3W4_EywuHL5iT4xeWWW-_VVOCqFJPkpP6cQqf-GH_r8j_tsCNMsUMUmwlgXmoM45UGpbee9Tnp0EuffZouFGcGZhUFyJGCcmsOSa9a0HmoUAANVt-0AuZfNDOZ8G5SI_YERa_ZidChBVx4fyV1dzJmDq6ea2kHReZLeuNEQ')"></div>
+<div className="absolute top-3 left-3 flex flex-col gap-1.5">
+<span className="bg-vendor-primary text-on-tertiary font-label-sm text-[11px] px-2.5 py-0.5 rounded-full shadow-xs">
+                Pro Audio
+              </span>
+<span className="bg-emerald-100 text-emerald-800 font-label-sm text-[11px] px-2.5 py-0.5 rounded-full">
+                In Stock
+              </span>
+</div>
+<button aria-label="Add to Wishlist" className="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-card/90 hover:bg-surface-card text-outline hover:text-status-cancelled flex items-center justify-center transition-colors shadow-sm">
+<span className="material-symbols-outlined text-lg" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div className="p-5 flex-1 flex flex-col justify-between">
+<div>
+<div className="flex items-center gap-1.5 text-xs text-outline mb-1">
+<span>Apex Audio</span>
+<span>•</span>
+<span className="flex items-center text-amber-500 font-label-sm">
+<span className="material-symbols-outlined text-xs" data-icon="star" data-weight="fill">star</span> 4.8
+                </span>
+<span className="text-outline">(189)</span>
+</div>
+<h3 className="font-title-md text-title-md text-on-surface group-hover:text-customer-primary transition-colors line-clamp-1">
+                Apex Studio Monitor Pro (Oak Finish)
+              </h3>
+<p className="font-body-sm text-on-surface-variant mt-1.5 text-xs line-clamp-2">
+                Bi-amplified 5-inch reference monitors engineered with flat frequency response for precise mixing and mastering.
+              </p>
+</div>
+<div className="mt-4 pt-4 border-t border-surface-variant flex items-center justify-between">
+<div>
+<span className="text-outline text-xs block font-label-md">Direct Price</span>
+<span className="font-headline-sm text-headline-sm font-bold text-on-surface">$289.00</span>
+</div>
+<button className="bg-customer-primary hover:bg-[#4338CA] text-on-primary font-label-md px-4 py-2 rounded-lg flex items-center gap-1.5 transition-all shadow-sm active:scale-95">
+<span className="material-symbols-outlined text-lg" data-icon="add_shopping_cart">add_shopping_cart</span>
+<span>Add to Cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3: Apex Wireless Earbuds ANC -->
+<div className="bg-surface-card rounded-xl border border-outline-variant/70 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col group overflow-hidden">
+<div className="relative bg-surface-canvas h-64 overflow-hidden flex items-center justify-center p-6 border-b border-surface-variant">
+<div className="w-full h-full bg-contain bg-center bg-no-repeat group-hover:scale-105 transition-transform duration-300" data-alt="Compact ergonomic true wireless stereo ANC earbuds resting alongside an open modern charging case with glowing LED battery indicator. Clean matte dark titanium finish captured in a pristine, bright commercial studio background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDO1bGNDJFWU1p1gQbDzlMO1XZ_ZVZVZteKgccMQvkO0TNefBriRYBgXK1ZKYyFPC9wy3JZ2kh32YdBJBnrNmyAMRks0pencBKN_uxKqS440_lenCVWxJ94Wpp12B6q1i_792C4Bi5cCeN_cy-6N2GR6PlABX4s0xaYDg6JXD6fDvBjHWH3Wl8c4uqU1kH98bS5ABoznOtJaHF0UMYzMf_F4mub6X0yL-YUMuJABnuGXov3tLKCzcJ64A')"></div>
+<div className="absolute top-3 left-3 flex flex-col gap-1.5">
+<span className="bg-amber-100 text-amber-800 font-label-sm text-[11px] px-2.5 py-0.5 rounded-full border border-amber-200 flex items-center gap-1">
+<span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span> Low Stock - 4 left
+              </span>
+</div>
+<button aria-label="Add to Wishlist" className="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-card/90 hover:bg-surface-card text-outline hover:text-status-cancelled flex items-center justify-center transition-colors shadow-sm">
+<span className="material-symbols-outlined text-lg" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div className="p-5 flex-1 flex flex-col justify-between">
+<div>
+<div className="flex items-center gap-1.5 text-xs text-outline mb-1">
+<span>Apex Audio</span>
+<span>•</span>
+<span className="flex items-center text-amber-500 font-label-sm">
+<span className="material-symbols-outlined text-xs" data-icon="star" data-weight="fill">star</span> 4.7
+                </span>
+<span className="text-outline">(512)</span>
+</div>
+<h3 className="font-title-md text-title-md text-on-surface group-hover:text-customer-primary transition-colors line-clamp-1">
+                Apex Wireless Earbuds ANC
+              </h3>
+<p className="font-body-sm text-on-surface-variant mt-1.5 text-xs line-clamp-2">
+                Hybrid noise-canceling with 6-mic beamforming array, IPX5 water resistance, and wireless fast-charging cradle.
+              </p>
+</div>
+<div className="mt-4 pt-4 border-t border-surface-variant flex items-center justify-between">
+<div>
+<span className="text-outline text-xs block font-label-md">Direct Price</span>
+<span className="font-headline-sm text-headline-sm font-bold text-on-surface">$89.00</span>
+</div>
+<button className="bg-customer-primary hover:bg-[#4338CA] text-on-primary font-label-md px-4 py-2 rounded-lg flex items-center gap-1.5 transition-all shadow-sm active:scale-95">
+<span className="material-symbols-outlined text-lg" data-icon="add_shopping_cart">add_shopping_cart</span>
+<span>Add to Cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4: Audiophile Braided Audio Cable 2m -->
+<div className="bg-surface-card rounded-xl border border-outline-variant/70 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col group overflow-hidden">
+<div className="relative bg-surface-canvas h-64 overflow-hidden flex items-center justify-center p-6 border-b border-surface-variant">
+<div className="w-full h-full bg-contain bg-center bg-no-repeat group-hover:scale-105 transition-transform duration-300" data-alt="An ultra-high-end coiled audio cable featuring silver-plated oxygen-free copper braid with gold-plated 3.5mm and 6.35mm jack connectors, displayed cleanly against an airy white background with soft ambient studio shadows." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCVniFM7fDYuiy6baczboNnkLlOapTtcJIUeP_TjkhccEjyn6GjTootoULwz5D9HcLPcQe06F4X_ILcVtF4qCK0Ph09AQpgQlVIe_uSHqaM9Aa2ZdEExDONd5F0mdqkXljlFj5Dj_s3WXffqVeYKpGfNHbQ2jwyGzBcBlzRUMkbZzDuqP3GqyQajBHFL1secI_yoli4pj2GkExApGaA6cphuzpitch0R_MqY-lzmvyFOX8OId3q00ADpA')"></div>
+<div className="absolute top-3 left-3 flex flex-col gap-1.5">
+<span className="bg-emerald-100 text-emerald-800 font-label-sm text-[11px] px-2.5 py-0.5 rounded-full">
+                In Stock
+              </span>
+</div>
+<button aria-label="Add to Wishlist" className="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-card/90 hover:bg-surface-card text-outline hover:text-status-cancelled flex items-center justify-center transition-colors shadow-sm">
+<span className="material-symbols-outlined text-lg" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div className="p-5 flex-1 flex flex-col justify-between">
+<div>
+<div className="flex items-center gap-1.5 text-xs text-outline mb-1">
+<span>Apex Audio</span>
+<span>•</span>
+<span className="flex items-center text-amber-500 font-label-sm">
+<span className="material-symbols-outlined text-xs" data-icon="star" data-weight="fill">star</span> 4.9
+                </span>
+<span className="text-outline">(128)</span>
+</div>
+<h3 className="font-title-md text-title-md text-on-surface group-hover:text-customer-primary transition-colors line-clamp-1">
+                Audiophile Braided Audio Cable 2m
+              </h3>
+<p className="font-body-sm text-on-surface-variant mt-1.5 text-xs line-clamp-2">
+                Silver-plated oxygen-free copper conductors with heavy-duty Kevlar reinforcing weave and gold-plated jacks.
+              </p>
+</div>
+<div className="mt-4 pt-4 border-t border-surface-variant flex items-center justify-between">
+<div>
+<span className="text-outline text-xs block font-label-md">Direct Price</span>
+<span className="font-headline-sm text-headline-sm font-bold text-on-surface">$34.00</span>
+</div>
+<button className="bg-customer-primary hover:bg-[#4338CA] text-on-primary font-label-md px-4 py-2 rounded-lg flex items-center gap-1.5 transition-all shadow-sm active:scale-95">
+<span className="material-symbols-outlined text-lg" data-icon="add_shopping_cart">add_shopping_cart</span>
+<span>Add to Cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 5: Apex Dac/Amp Portable DAC -->
+<div className="bg-surface-card rounded-xl border border-outline-variant/70 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col group overflow-hidden">
+<div className="relative bg-surface-canvas h-64 overflow-hidden flex items-center justify-center p-6 border-b border-surface-variant">
+<div className="w-full h-full bg-contain bg-center bg-no-repeat group-hover:scale-105 transition-transform duration-300" data-alt="A compact pocket-sized digital to analog headphone converter and amplifier crafted from CNC milled anodized aerospace aluminum, featuring a tactile rotary volume knob and subtle LED audio resolution indicator on a crisp studio white surface." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCLd2SNLQqUegfTfbeW5pmWWJiVOoEz-URtONraCpkYLXegf6Y2bDE_sZeOrLL52sHPV3zbNbzTAMsKvwJ4V5ORZcvuMnPtOAMcK8TUb7VgKr0VxlXpN-AeWJe6uwsBHYkG1Xbp0BlkJ-dgbhF_RcVA_0kFkopP9TAtwlhkJnYvwfqk-e0bPbGTC8fyW4wBdK7ge5pJ6JmQob3c9cDgKJu4qPC1jLprxGNbZZFPVPX2I2ReQeMzqplUDQ')"></div>
+<div className="absolute top-3 left-3 flex flex-col gap-1.5">
+<span className="bg-emerald-100 text-emerald-800 font-label-sm text-[11px] px-2.5 py-0.5 rounded-full">
+                In Stock
+              </span>
+<span className="bg-purple-100 text-purple-800 font-label-sm text-[11px] px-2.5 py-0.5 rounded-full">
+                Hi-Res Certified
+              </span>
+</div>
+<button aria-label="Add to Wishlist" className="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-card/90 hover:bg-surface-card text-outline hover:text-status-cancelled flex items-center justify-center transition-colors shadow-sm">
+<span className="material-symbols-outlined text-lg" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div className="p-5 flex-1 flex flex-col justify-between">
+<div>
+<div className="flex items-center gap-1.5 text-xs text-outline mb-1">
+<span>Apex Audio</span>
+<span>•</span>
+<span className="flex items-center text-amber-500 font-label-sm">
+<span className="material-symbols-outlined text-xs" data-icon="star" data-weight="fill">star</span> 5.0
+                </span>
+<span className="text-outline">(94)</span>
+</div>
+<h3 className="font-title-md text-title-md text-on-surface group-hover:text-customer-primary transition-colors line-clamp-1">
+                Apex Dac/Amp Portable DAC
+              </h3>
+<p className="font-body-sm text-on-surface-variant mt-1.5 text-xs line-clamp-2">
+                Dual ESS Sabre ES9219C chips capable of 32-bit/384kHz PCM playback with balanced 4.4mm output.
+              </p>
+</div>
+<div className="mt-4 pt-4 border-t border-surface-variant flex items-center justify-between">
+<div>
+<span className="text-outline text-xs block font-label-md">Direct Price</span>
+<span className="font-headline-sm text-headline-sm font-bold text-on-surface">$119.00</span>
+</div>
+<button className="bg-customer-primary hover:bg-[#4338CA] text-on-primary font-label-md px-4 py-2 rounded-lg flex items-center gap-1.5 transition-all shadow-sm active:scale-95">
+<span className="material-symbols-outlined text-lg" data-icon="add_shopping_cart">add_shopping_cart</span>
+<span>Add to Cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 6: Apex Sound Isolation Pads -->
+<div className="bg-surface-card rounded-xl border border-outline-variant/70 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col group overflow-hidden">
+<div className="relative bg-surface-canvas h-64 overflow-hidden flex items-center justify-center p-6 border-b border-surface-variant">
+<div className="w-full h-full bg-contain bg-center bg-no-repeat group-hover:scale-105 transition-transform duration-300" data-alt="High-density acoustic acoustic foam isolation decoupling pads designed for studio audio speakers, arranged neatly on a sleek modern workbench with angled adjustable wedges." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBxPVEbwuTrE9nSe3NN25ctY1GNmspDTtqVyCQJ5uSL4hDAZqt8mtEQdZDsA56Wgpb-toWSdEdFj3tvOFlz8sZq5Qhvugn9-lVK_pvuo6en8tijSUodYIUw8jV2ikVHQyG2C4FbLrp_ny5qcMYV7lhc0tsHmnd3TvtMZgtasKcLWAGVpmKQ6WR593k9SlnPjowl-vKsL4ptMOVt9KKm0PK4IqgMURXRIiOpOf0OrZH_owBmuxM5ygzswg')"></div>
+<div className="absolute top-3 left-3 flex flex-col gap-1.5">
+<span className="bg-emerald-100 text-emerald-800 font-label-sm text-[11px] px-2.5 py-0.5 rounded-full">
+                In Stock
+              </span>
+</div>
+<button aria-label="Add to Wishlist" className="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-card/90 hover:bg-surface-card text-outline hover:text-status-cancelled flex items-center justify-center transition-colors shadow-sm">
+<span className="material-symbols-outlined text-lg" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div className="p-5 flex-1 flex flex-col justify-between">
+<div>
+<div className="flex items-center gap-1.5 text-xs text-outline mb-1">
+<span>Apex Audio</span>
+<span>•</span>
+<span className="flex items-center text-amber-500 font-label-sm">
+<span className="material-symbols-outlined text-xs" data-icon="star" data-weight="fill">star</span> 4.8
+                </span>
+<span className="text-outline">(76)</span>
+</div>
+<h3 className="font-title-md text-title-md text-on-surface group-hover:text-customer-primary transition-colors line-clamp-1">
+                Apex Sound Isolation Pads
+              </h3>
+<p className="font-body-sm text-on-surface-variant mt-1.5 text-xs line-clamp-2">
+                Acoustic decoupling foam bases with reversible incline angles to eliminate desk resonance and clean up bass.
+              </p>
+</div>
+<div className="mt-4 pt-4 border-t border-surface-variant flex items-center justify-between">
+<div>
+<span className="text-outline text-xs block font-label-md">Direct Price</span>
+<span className="font-headline-sm text-headline-sm font-bold text-on-surface">$29.00</span>
+</div>
+<button className="bg-customer-primary hover:bg-[#4338CA] text-on-primary font-label-md px-4 py-2 rounded-lg flex items-center gap-1.5 transition-all shadow-sm active:scale-95">
+<span className="material-symbols-outlined text-lg" data-icon="add_shopping_cart">add_shopping_cart</span>
+<span>Add to Cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Load More / Pagination -->
+<div className="mt-8 flex justify-center">
+<button className="bg-surface-card hover:bg-surface-container-low text-on-surface border border-outline-variant font-label-lg px-6 py-2.5 rounded-lg flex items-center gap-2 transition-colors shadow-sm">
+<span>Load Remaining 18 Items</span>
+<span className="material-symbols-outlined text-lg" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</section>
+<!-- 4. VENDOR POLICIES & REVIEWS SECTION (BENTO GRID PATTERN) -->
+<section className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+<!-- Vendor About & Store Guarantee -->
+<div className="lg:col-span-1 bg-surface-card p-6 rounded-xl border border-outline-variant/60 shadow-sm flex flex-col justify-between">
+<div>
+<div className="flex items-center gap-2 text-customer-primary mb-3">
+<span className="material-symbols-outlined" data-icon="storefront">storefront</span>
+<h3 className="font-headline-sm text-headline-sm font-bold text-on-surface">About the Merchant</h3>
+</div>
+<p className="text-body-md text-on-surface-variant text-sm leading-relaxed mb-4">
+            Founded by sound engineers in California, Apex Audio has been an authorized manufacturer direct vendor on ShopEase since 2022. Every batch is calibrated and frequency tested in our lab before dispatch.
+          </p>
+<div className="space-y-3 pt-3 border-t border-surface-variant">
+<div className="flex items-start gap-3">
+<span className="material-symbols-outlined text-customer-accent text-xl mt-0.5" data-icon="verified">verified</span>
+<div>
+<span className="font-label-md text-on-surface block text-sm">Authenticity Guaranteed</span>
+<span className="text-outline text-xs">Direct from manufacturer warehouse warranty.</span>
+</div>
+</div>
+<div className="flex items-start gap-3">
+<span className="material-symbols-outlined text-customer-primary text-xl mt-0.5" data-icon="local_shipping">local_shipping</span>
+<div>
+<span className="font-label-md text-on-surface block text-sm">Rapid Express Dispatch</span>
+<span className="text-outline text-xs">Orders ship within 24 hours via tracked carrier.</span>
+</div>
+</div>
+<div className="flex items-start gap-3">
+<span className="material-symbols-outlined text-vendor-primary text-xl mt-0.5" data-icon="assignment_return">assignment_return</span>
+<div>
+<span className="font-label-md text-on-surface block text-sm">14-Day Free Returns</span>
+<span className="text-outline text-xs">Full refund guarantee via ShopEase Escrow.</span>
+</div>
+</div>
+</div>
+</div>
+<div className="mt-6 pt-4 border-t border-surface-variant flex items-center justify-between text-xs text-outline">
+<span>License: #US-APEX-884920</span>
+<a className="text-customer-primary font-label-sm hover:underline" href="#">View Store Policies</a>
+</div>
+</div>
+<!-- Customer Testimonials Snippet (2 columns wide) -->
+<div className="lg:col-span-2 bg-surface-card p-6 rounded-xl border border-outline-variant/60 shadow-sm flex flex-col justify-between">
+<div>
+<div className="flex items-center justify-between mb-4">
+<div>
+<h3 className="font-headline-sm text-headline-sm font-bold text-on-surface">Verified Customer Testimonials</h3>
+<p className="text-body-sm text-outline">Recent reviews from confirmed buyers of Apex Audio</p>
+</div>
+<div className="flex items-center gap-1 bg-amber-50 px-3 py-1.5 rounded-lg border border-amber-200">
+<span className="material-symbols-outlined text-amber-500 text-lg" data-icon="star" data-weight="fill">star</span>
+<span className="font-bold text-amber-900 font-label-md">4.9 / 5.0</span>
+</div>
+</div>
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+<!-- Review 1 -->
+<div className="bg-surface-canvas p-4 rounded-lg border border-outline-variant/50 flex flex-col justify-between">
+<div>
+<div className="flex items-center justify-between mb-2">
+<div className="flex text-amber-500 text-xs">
+<span className="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span className="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span className="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span className="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span className="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+</div>
+<span className="text-outline text-xs">3 days ago</span>
+</div>
+<p className="font-body-sm text-on-surface text-xs leading-relaxed italic">
+                  "The Aura Pro noise cancelling is unreal compared to other brands at twice the price. Arrived in 2 days in custom reinforced packaging."
+                </p>
+</div>
+<div className="mt-3 pt-2 border-t border-outline-variant/30 flex items-center justify-between text-xs">
+<span className="font-label-sm text-on-surface font-semibold">Marcus K.</span>
+<span className="text-customer-accent font-label-sm flex items-center gap-0.5">
+<span className="material-symbols-outlined text-xs" data-icon="check_circle">check_circle</span> Verified Buyer
+                </span>
+</div>
+</div>
+<!-- Review 2 -->
+<div className="bg-surface-canvas p-4 rounded-lg border border-outline-variant/50 flex flex-col justify-between">
+<div>
+<div className="flex items-center justify-between mb-2">
+<div className="flex text-amber-500 text-xs">
+<span className="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span className="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span className="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span className="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span className="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+</div>
+<span className="text-outline text-xs">1 week ago</span>
+</div>
+<p className="font-body-sm text-on-surface text-xs leading-relaxed italic">
+                  "The Studio Monitor Pro oak finish matches my desk setup flawlessly. The mid-range separation is razor sharp for mastering podcast audio."
+                </p>
+</div>
+<div className="mt-3 pt-2 border-t border-outline-variant/30 flex items-center justify-between text-xs">
+<span className="font-label-sm text-on-surface font-semibold">Elena R.</span>
+<span className="text-customer-accent font-label-sm flex items-center gap-0.5">
+<span className="material-symbols-outlined text-xs" data-icon="check_circle">check_circle</span> Verified Buyer
+                </span>
+</div>
+</div>
+</div>
+</div>
+<div className="mt-5 pt-3 border-t border-surface-variant flex items-center justify-between">
+<span className="text-xs text-outline">1,240+ certified ShopEase escrow reviews</span>
+<a className="text-customer-primary font-label-md text-sm hover:underline flex items-center gap-1" href="#">
+<span>Read all merchant feedback</span>
+<span className="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- ================= FOOTER (Anchored from Shared Components JSON) ================= -->
+<footer className="bg-surface-container-low border-t border-surface-variant mt-auto">
+<div className="w-full max-w-7xl mx-auto px-margin-mobile md:px-margin py-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md">
+<!-- Brand & Copyright -->
+<div className="flex flex-col items-center md:items-start text-center md:text-left gap-1">
+<span className="text-headline-sm font-headline-sm text-customer-primary font-extrabold tracking-tight">ShopEase</span>
+<p className="text-body-sm font-body-sm text-on-surface-variant max-w-md">
+          © 2024 ShopEase Marketplace Inc. All rights reserved. Built for modern vendors and smart shoppers.
+        </p>
+</div>
+<!-- Links (Immutable strings from JSON) -->
+<nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+<a className="text-label-md font-label-md text-on-surface-variant hover:text-customer-primary transition-colors duration-150" href="#">Terms of Service</a>
+<a className="text-label-md font-label-md text-on-surface-variant hover:text-customer-primary transition-colors duration-150" href="#">Privacy Policy</a>
+<a className="text-label-md font-label-md text-on-surface-variant hover:text-customer-primary transition-colors duration-150" href="#">Vendor Policy</a>
+<a className="text-label-md font-label-md text-on-surface-variant hover:text-customer-primary transition-colors duration-150" href="#">Security</a>
+<a className="text-label-md font-label-md text-on-surface-variant hover:text-customer-primary transition-colors duration-150" href="#">Contact Support</a>
+</nav>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Receipt #SE-98421 - ShopEase Marketplace</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Plus Jakarta Sans & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration matching Design System & Shared Tokens -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "className",
+      theme: {
+        extend: {
+          "colors": {
+            "status-shipped": "#6366F1",
+            "tertiary-fixed": "#eaddff",
+            "surface-container-highest": "#d3e4fe",
+            "outline-variant": "#c7c4d8",
+            "status-cancelled": "#EF4444",
+            "on-background": "#0b1c30",
+            "on-primary-fixed": "#0f0069",
+            "on-tertiary-fixed-variant": "#5a00c6",
+            "on-error-container": "#93000a",
+            "background": "#f8f9ff",
+            "primary-container": "#4f46e5",
+            "on-primary": "#ffffff",
+            "on-secondary-container": "#00714d",
+            "secondary-fixed": "#6ffbbe",
+            "on-surface": "#0b1c30",
+            "on-secondary": "#ffffff",
+            "vendor-primary": "#7C3AED",
+            "surface-container": "#e5eeff",
+            "surface-container-low": "#eff4ff",
+            "surface-tint": "#4d44e3",
+            "status-paid": "#10B981",
+            "on-secondary-fixed": "#002113",
+            "on-tertiary": "#ffffff",
+            "inverse-primary": "#c3c0ff",
+            "vendor-accent": "#0D9488",
+            "tertiary": "#5c00ca",
+            "on-tertiary-container": "#e4d4ff",
+            "status-processing": "#3B82F6",
+            "tertiary-fixed-dim": "#d2bbff",
+            "on-surface-variant": "#464555",
+            "surface-container-lowest": "#ffffff",
+            "primary": "#3525cd",
+            "secondary-container": "#6cf8bb",
+            "secondary": "#006c49",
+            "secondary-fixed-dim": "#4edea3",
+            "primary-fixed": "#e2dfff",
+            "surface-bright": "#f8f9ff",
+            "on-error": "#ffffff",
+            "surface-card": "#FFFFFF",
+            "status-pending": "#F59E0B",
+            "tertiary-container": "#7531e6",
+            "surface": "#f8f9ff",
+            "on-secondary-fixed-variant": "#005236",
+            "surface-canvas": "#F8FAFC",
+            "outline": "#777587",
+            "surface-dim": "#cbdbf5",
+            "inverse-surface": "#213145",
+            "error": "#ba1a1a",
+            "customer-accent": "#10B981",
+            "error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#3323cc",
+            "surface-variant": "#d3e4fe",
+            "surface-container-high": "#dce9ff",
+            "primary-fixed-dim": "#c3c0ff",
+            "inverse-on-surface": "#eaf1ff",
+            "customer-primary": "#4F46E5",
+            "on-primary-container": "#dad7ff",
+            "on-tertiary-fixed": "#25005a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "gutter": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin": "2rem",
+            "space-xs": "0.25rem",
+            "gutter-mobile": "1rem",
+            "space-xl": "2.5rem",
+            "space-md": "1rem",
+            "margin-mobile": "1rem"
+          },
+          "fontFamily": {
+            "label-md": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Inter"],
+            "title-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-lg": ["Inter"],
+            "body-sm": ["Inter"],
+            "label-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "display": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "display": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-smoothing: antialiased;
+      vertical-align: middle;
+    }
+    @media print {
+      header, footer, .no-print {
+        display: none !important;
+      }
+      body {
+        background-color: #ffffff !important;
+      }
+    }
+  </style>
+</head>
+<body className="bg-surface-canvas text-on-surface antialiased min-h-screen flex flex-col font-body-md text-body-md selection:bg-customer-primary selection:text-on-primary">
+<!-- Top Navigation Bar (Shared Component: TopNavBar) -->
+<header className="bg-surface-container-lowest dark:bg-surface border-b border-surface-variant dark:border-outline-variant shadow-sm dark:shadow-none docked full-width top-0 sticky z-40">
+<div className="w-full max-w-7xl mx-auto px-margin-mobile md:px-margin flex items-center justify-between h-16">
+<!-- Brand Anchor -->
+<div className="flex items-center gap-space-lg">
+<a className="flex items-center gap-2 group" href="#">
+<div className="w-9 h-9 rounded-lg bg-customer-primary flex items-center justify-center text-on-primary shadow-sm group-hover:bg-primary transition-colors">
+<span className="material-symbols-outlined text-xl" data-icon="shopping_bag">shopping_bag</span>
+</div>
+<span className="text-headline-md font-headline-md text-customer-primary dark:text-inverse-primary tracking-tight">ShopEase</span>
+</a>
+<!-- Desktop Navigation Links -->
+<nav className="hidden md:flex items-center gap-6 ml-4">
+<a className="text-on-surface-variant dark:text-surface-variant font-label-lg hover:text-on-surface dark:hover:text-inverse-on-surface hover:text-customer-primary dark:hover:text-inverse-primary transition-colors duration-150" href="#">Marketplace</a>
+<a className="text-on-surface-variant dark:text-surface-variant font-label-lg hover:text-on-surface dark:hover:text-inverse-on-surface hover:text-customer-primary dark:hover:text-inverse-primary transition-colors duration-150" href="#">Vendors</a>
+<a className="text-on-surface-variant dark:text-surface-variant font-label-lg hover:text-on-surface dark:hover:text-inverse-on-surface hover:text-customer-primary dark:hover:text-inverse-primary transition-colors duration-150" href="#">Help Center</a>
+</nav>
+</div>
+<!-- Trailing Action Cluster -->
+<div className="flex items-center gap-3">
+<a className="p-2 text-on-surface-variant hover:text-customer-primary hover:bg-surface-container-low rounded-lg transition-colors duration-150 flex items-center justify-center" href="#" title="Help Center">
+<span className="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</a>
+<div className="h-5 w-[1px] bg-outline-variant/50 hidden sm:block"></div>
+<a className="hidden sm:inline-flex text-on-surface-variant dark:text-surface-variant font-label-lg hover:text-customer-primary dark:hover:text-inverse-primary transition-colors duration-150 px-3 py-2 rounded-lg" href="#">
+          Sign In
+        </a>
+<a className="bg-customer-primary text-on-primary font-label-lg px-4 py-2 rounded-lg hover:bg-primary active:scale-95 transition-all shadow-sm flex items-center gap-1.5" href="#">
+<span className="material-symbols-outlined text-sm" data-icon="person">person</span>
+<span>Create Account</span>
+</a>
+</div>
+</div>
+</header>
+<!-- Main Canvas Container -->
+<main className="flex-grow w-full max-w-7xl mx-auto px-margin-mobile md:px-margin py-6 md:py-8">
+<!-- Top Breadcrumb -->
+<nav aria-label="Breadcrumb" className="mb-5 flex items-center gap-2 text-body-sm font-body-sm text-on-surface-variant">
+<a className="hover:text-customer-primary transition-colors flex items-center gap-1" href="#">
+<span className="material-symbols-outlined text-base" data-icon="home">home</span>
+<span>Home</span>
+</a>
+<span className="text-outline-variant font-normal">/</span>
+<a className="hover:text-customer-primary transition-colors" href="#">Customer Portal</a>
+<span className="text-outline-variant font-normal">/</span>
+<a className="hover:text-customer-primary transition-colors" href="#">Order History</a>
+<span className="text-outline-variant font-normal">/</span>
+<span aria-current="page" className="text-on-surface font-label-md font-semibold text-customer-primary">Receipt #SE-98421</span>
+</nav>
+<!-- Header Section (Receipt Anchor Banner) -->
+<section className="bg-surface-card rounded-xl border border-slate-200/80 p-space-md md:p-space-lg shadow-sm mb-6 relative overflow-hidden">
+<!-- Background subtle decorative gradient line -->
+<div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-customer-primary via-vendor-primary to-customer-accent"></div>
+<div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+<!-- Left: Order Identification & Timing -->
+<div className="space-y-2">
+<div className="flex flex-wrap items-center gap-3">
+<h1 className="text-headline-sm md:text-headline-md font-headline-md text-on-surface tracking-tight flex items-center gap-2">
+<span>Receipt</span>
+<span className="text-customer-primary font-bold">#SE-98421</span>
+</h1>
+<button className="inline-flex items-center gap-1 px-2.5 py-1 text-label-sm font-label-sm bg-surface-container-low hover:bg-surface-container text-on-surface-variant rounded-md border border-slate-200 transition-colors" id="copyBtn" onclick="copyOrderId()" title="Copy Order Reference">
+<span className="material-symbols-outlined text-sm" data-icon="content_copy">content_copy</span>
+<span id="copyText">Copy</span>
+</button>
+</div>
+<div className="flex flex-wrap items-center gap-y-2 gap-x-4 text-body-sm font-body-sm text-on-surface-variant">
+<div className="flex items-center gap-1.5">
+<span className="material-symbols-outlined text-base text-outline" data-icon="calendar_today">calendar_today</span>
+<span>Placed on <strong className="text-on-surface font-medium">October 24, 2024 at 10:14 AM EST</strong></span>
+</div>
+<span className="hidden sm:inline text-outline-variant">•</span>
+<div className="flex items-center gap-1.5">
+<span className="material-symbols-outlined text-base text-status-paid" data-icon="verified_user">verified_user</span>
+<span>Authorized via Multi-Vendor Gateway</span>
+</div>
+</div>
+<!-- Badges Cluster -->
+<div className="flex flex-wrap items-center gap-2 pt-1">
+<!-- Shipped Badge -->
+<span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-label-sm font-label-sm bg-indigo-50 text-status-shipped border border-indigo-100 shadow-xs">
+<span className="relative flex h-2 w-2">
+<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-status-shipped opacity-75"></span>
+<span className="relative inline-flex rounded-full h-2 w-2 bg-status-shipped"></span>
+</span>
+<span className="material-symbols-outlined text-sm" data-icon="local_shipping">local_shipping</span>
+<span className="tracking-wide font-semibold">SHIPPED</span>
+</span>
+<!-- Escrow Secured Badge -->
+<span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-label-sm font-label-sm bg-emerald-50 text-status-paid border border-emerald-100">
+<span className="material-symbols-outlined text-sm" data-icon="lock">lock</span>
+<span>Paystack Escrow Secured</span>
+</span>
+<!-- Portal Notice -->
+<span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-slate-100 text-on-surface-variant">
+              Customer Mode
+            </span>
+</div>
+</div>
+<!-- Right: Action Buttons -->
+<div className="flex flex-wrap sm:flex-nowrap items-center gap-2.5 self-start lg:self-center w-full lg:w-auto">
+<!-- Track Package Action -->
+<button className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-customer-primary text-on-primary font-label-lg text-label-lg hover:bg-primary active:scale-95 transition-all shadow-sm">
+<span className="material-symbols-outlined text-base" data-icon="near_me">near_me</span>
+<span>Track Package</span>
+</button>
+<!-- Download Invoice (PDF) -->
+<button className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-surface-card border border-slate-300 text-on-surface hover:bg-slate-50 font-label-lg text-label-lg active:scale-95 transition-all shadow-xs" onclick="window.print()">
+<span className="material-symbols-outlined text-base text-customer-primary" data-icon="download">download</span>
+<span>Download Invoice</span>
+</button>
+<!-- Print Receipt -->
+<button className="p-2.5 rounded-lg bg-surface-card border border-slate-300 text-on-surface-variant hover:text-on-surface hover:bg-slate-50 transition-colors" onclick="window.print()" title="Print Receipt">
+<span className="material-symbols-outlined text-base" data-icon="print">print</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Two-Column Split Layout -->
+<div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Purchased Items & Vendor Breakdown (7 cols on Desktop) -->
+<section className="lg:col-span-7 flex flex-col gap-6">
+<!-- Items Section Header -->
+<div className="flex items-center justify-between pb-1">
+<h2 className="text-headline-sm font-headline-sm text-on-surface flex items-center gap-2">
+<span>Purchased Items</span>
+<span className="text-label-md font-label-md px-2.5 py-0.5 bg-surface-container text-customer-primary rounded-full font-semibold">
+              3 Items from 2 Vendors
+            </span>
+</h2>
+<span className="text-body-sm font-body-sm text-on-surface-variant hidden sm:inline">Individual vendor dispatch</span>
+</div>
+<!-- Vendor Group 1: Apex Audio Official -->
+<article className="bg-surface-card rounded-xl border border-slate-200/90 shadow-sm overflow-hidden transition-all duration-200 hover:border-slate-300">
+<!-- Vendor Header Strip -->
+<div className="bg-slate-50/80 px-space-md md:px-space-lg py-3 border-b border-slate-200 flex flex-wrap items-center justify-between gap-2">
+<div className="flex items-center gap-2">
+<span className="w-6 h-6 rounded-md bg-indigo-100 text-customer-primary flex items-center justify-center">
+<span className="material-symbols-outlined text-sm" data-icon="storefront">storefront</span>
+</span>
+<span className="font-title-md text-title-md text-on-surface font-semibold">Apex Audio Official</span>
+<span className="inline-flex items-center gap-0.5 text-label-sm font-label-sm text-customer-primary bg-indigo-50 px-2 py-0.5 rounded-full border border-indigo-100">
+<span className="material-symbols-outlined text-xs" data-icon="check_circle">check_circle</span>
+<span>Verified Merchant</span>
+</span>
+</div>
+<a className="text-label-sm font-label-sm text-customer-primary hover:underline flex items-center gap-0.5" href="#">
+<span>Contact Vendor</span>
+<span className="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+<!-- Item Body -->
+<div className="p-space-md md:p-space-lg">
+<div className="flex flex-col sm:flex-row gap-4">
+<!-- Item Image -->
+<div className="w-full sm:w-24 h-24 rounded-lg bg-slate-100 flex-shrink-0 overflow-hidden border border-slate-200 relative">
+<img alt="Aura Pro Wireless Headphones" className="w-full h-full object-cover" data-alt="A sleek pair of matte midnight black over-ear wireless headphones resting cleanly on a minimalist studio podium, bathed in high-key soft modern lighting with cool slate undertones matching modern tech marketplace aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxwYnCqeDRQ49I-EEfrhKdisQwWyT3xYK9ztpG_kXUYHa0F66CzLwDYastcBNNnWsreRAisa_DLJSVOBtrjZLc1dMmSXbtD7lGZCTIxPCJnTrvV3I7YH1hw6-qAZUvip5rJ_KgiwDTG_6B6U-pmiT1TO58bWvTkaDDJdseyblDPG3EPsy8mEJxFuSCVCSRx2qB13FlbTw071n93HhJIeRT10OfL7T3CODKOx69eEbQ5U8OpPsh4nMw8w"/>
+</div>
+<!-- Item Details -->
+<div className="flex-grow flex flex-col justify-between">
+<div>
+<div className="flex flex-col sm:flex-row sm:items-start justify-between gap-1">
+<h3 className="font-title-md text-title-md text-on-surface font-semibold">
+                      Aura Pro Wireless Noise-Cancelling Headphones
+                    </h3>
+<div className="text-right sm:text-right">
+<span className="font-headline-sm text-headline-sm text-on-surface font-bold">$149.00</span>
+</div>
+</div>
+<p className="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                    Color: Midnight Black • Edition: 2024 Spatial Edition
+                  </p>
+<p className="text-label-sm font-label-sm text-outline mt-1 font-mono">
+                    SKU: APX-901-BLK • Qty: 1 × $149.00
+                  </p>
+</div>
+<!-- Fulfillment & Tracking Status Strip -->
+<div className="mt-4 pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2">
+<div className="flex items-center gap-1.5 text-body-sm font-body-sm text-on-surface">
+<span className="material-symbols-outlined text-base text-status-shipped" data-icon="flight_takeoff">flight_takeoff</span>
+<span>Shipped via <strong className="font-medium">FedEx Express</strong></span>
+</div>
+<div className="flex items-center gap-2">
+<span className="font-mono text-label-sm font-label-sm text-on-surface-variant bg-slate-100 px-2 py-0.5 rounded">
+                      FX-8492049182
+                    </span>
+<a className="text-label-sm font-label-sm text-customer-primary font-semibold hover:text-primary flex items-center" href="#">
+<span>Track</span>
+<span className="material-symbols-outlined text-xs" data-icon="open_in_new">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Vendor Group 2: Nordic Craft Co. -->
+<article className="bg-surface-card rounded-xl border border-slate-200/90 shadow-sm overflow-hidden transition-all duration-200 hover:border-slate-300">
+<!-- Vendor Header Strip -->
+<div className="bg-slate-50/80 px-space-md md:px-space-lg py-3 border-b border-slate-200 flex flex-wrap items-center justify-between gap-2">
+<div className="flex items-center gap-2">
+<span className="w-6 h-6 rounded-md bg-purple-100 text-vendor-primary flex items-center justify-center">
+<span className="material-symbols-outlined text-sm" data-icon="draw">draw</span>
+</span>
+<span className="font-title-md text-title-md text-on-surface font-semibold">Nordic Craft Co.</span>
+<span className="inline-flex items-center gap-0.5 text-label-sm font-label-sm text-vendor-primary bg-purple-50 px-2 py-0.5 rounded-full border border-purple-100">
+<span className="material-symbols-outlined text-xs" data-icon="verified">verified</span>
+<span>Direct Artisan</span>
+</span>
+</div>
+<a className="text-label-sm font-label-sm text-customer-primary hover:underline flex items-center gap-0.5" href="#">
+<span>Contact Vendor</span>
+<span className="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+<!-- Item Body -->
+<div className="p-space-md md:p-space-lg">
+<div className="flex flex-col sm:flex-row gap-4">
+<!-- Item Image -->
+<div className="w-full sm:w-24 h-24 rounded-lg bg-slate-100 flex-shrink-0 overflow-hidden border border-slate-200 relative">
+<img alt="Minimalist Solid Oak Desk Organizer" className="w-full h-full object-cover" data-alt="Handcrafted minimalist solid oak desktop organizer with precision brass stationery slots sitting on a bright Nordic workstation with subtle plant accents in soft morning sunlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoW7oLD674EFKBLXKuaJbe8QY4Pf3P7sc-Wv2Qlg1Eg9j-ef494kpxbGsQ_Gle_u8ULn95s5dhVIvehqGfBVUbg4FAAkFdkhnACJmAWeFNhdHnPXXVfg2QJ4o2Gz07fNAQbiBkpQxlqOxHq1J4b0ZFwTX59OILJbtHhwQq6WPA_IPmZFagwrkEkazUOQpyuja69GoJkTBUaROn-suLcLW_f_i6ZNjGKOGsUWfk3tYpDRhQJTcHpCuukA"/>
+</div>
+<!-- Item Details -->
+<div className="flex-grow flex flex-col justify-between">
+<div>
+<div className="flex flex-col sm:flex-row sm:items-start justify-between gap-1">
+<h3 className="font-title-md text-title-md text-on-surface font-semibold">
+                      Minimalist Solid Oak Desk Organizer
+                    </h3>
+<div className="text-right sm:text-right">
+<span className="font-headline-sm text-headline-sm text-on-surface font-bold">$64.00</span>
+</div>
+</div>
+<p className="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                    Finish: Natural Matte Oak • Eco-Certified FSC Wood
+                  </p>
+<p className="text-label-sm font-label-sm text-outline mt-1 font-mono">
+                    SKU: NDC-712-OAK • Qty: 1 × $64.00
+                  </p>
+</div>
+<!-- Fulfillment & Tracking Status Strip -->
+<div className="mt-4 pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2">
+<div className="flex items-center gap-1.5 text-body-sm font-body-sm text-on-surface">
+<span className="material-symbols-outlined text-base text-status-shipped" data-icon="local_shipping">local_shipping</span>
+<span>Shipped via <strong className="font-medium">DHL Express</strong></span>
+</div>
+<div className="flex items-center gap-2">
+<span className="font-mono text-label-sm font-label-sm text-on-surface-variant bg-slate-100 px-2 py-0.5 rounded">
+                      DHL-90218432
+                    </span>
+<a className="text-label-sm font-label-sm text-customer-primary font-semibold hover:text-primary flex items-center" href="#">
+<span>Track</span>
+<span className="material-symbols-outlined text-xs" data-icon="open_in_new">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Vendor Group 3: RoastLab Direct -->
+<article className="bg-surface-card rounded-xl border border-slate-200/90 shadow-sm overflow-hidden transition-all duration-200 hover:border-slate-300">
+<!-- Vendor Header Strip -->
+<div className="bg-slate-50/80 px-space-md md:px-space-lg py-3 border-b border-slate-200 flex flex-wrap items-center justify-between gap-2">
+<div className="flex items-center gap-2">
+<span className="w-6 h-6 rounded-md bg-amber-100 text-amber-700 flex items-center justify-center">
+<span className="material-symbols-outlined text-sm" data-icon="local_cafe">local_cafe</span>
+</span>
+<span className="font-title-md text-title-md text-on-surface font-semibold">RoastLab Direct</span>
+<span className="inline-flex items-center gap-0.5 text-label-sm font-label-sm text-customer-primary bg-indigo-50 px-2 py-0.5 rounded-full border border-indigo-100">
+<span className="material-symbols-outlined text-xs" data-icon="check_circle">check_circle</span>
+<span>Verified Merchant</span>
+</span>
+</div>
+<a className="text-label-sm font-label-sm text-customer-primary hover:underline flex items-center gap-0.5" href="#">
+<span>Contact Vendor</span>
+<span className="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+<!-- Item Body -->
+<div className="p-space-md md:p-space-lg">
+<div className="flex flex-col sm:flex-row gap-4">
+<!-- Item Image -->
+<div className="w-full sm:w-24 h-24 rounded-lg bg-slate-100 flex-shrink-0 overflow-hidden border border-slate-200 relative">
+<img alt="Ethiopian Yirgacheffe Coffee Beans" className="w-full h-full object-cover" data-alt="Modern artisanal matte craft paper specialty coffee bean packaging bag with elegant typographic label for Ethiopian Yirgacheffe coffee, captured in crisp daylight on a marble counter." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhw7EwDqmTG1MA16Q2JYIDQWIOdQXM7o_PDXmqbecWRtYxaAHPvno6Ddwz1HOlug8iGPDUDqRuHkxIzNRodTx0ukLB2TjLV9fsPYoSDfPGfjkkDeVKtEPJvllzQWlvuPFh3LRnuafRZEXdQnw7C4EcYvnkpAbS0_4iNycZAhNcZJ9kZeeCvkvn08STEGIg73DATQgLJ9i6NqWj5nzw4iVDVKnr6lg1vDzzAhtzs4oj4BtziTsezCNjQA"/>
+</div>
+<!-- Item Details -->
+<div className="flex-grow flex flex-col justify-between">
+<div>
+<div className="flex flex-col sm:flex-row sm:items-start justify-between gap-1">
+<h3 className="font-title-md text-title-md text-on-surface font-semibold">
+                      Specialty Single-Origin Ethiopian Yirgacheffe Coffee Beans
+                    </h3>
+<div className="text-right sm:text-right">
+<span className="font-headline-sm text-headline-sm text-on-surface font-bold">$44.00</span>
+</div>
+</div>
+<p className="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                    Bag Size: 340g • Grind: Whole Bean • Fresh Roast Oct 23
+                  </p>
+<p className="text-label-sm font-label-sm text-outline mt-1 font-mono">
+                    SKU: RST-554-ETH • Qty: 2 × $22.00
+                  </p>
+</div>
+<!-- Fulfillment & Tracking Status Strip -->
+<div className="mt-4 pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2">
+<div className="flex items-center gap-1.5 text-body-sm font-body-sm text-on-surface">
+<span className="material-symbols-outlined text-base text-status-shipped" data-icon="local_shipping">local_shipping</span>
+<span>Fresh roast dispatched via <strong className="font-medium">USPS Priority</strong></span>
+</div>
+<div className="flex items-center gap-2">
+<span className="font-mono text-label-sm font-label-sm text-on-surface-variant bg-slate-100 px-2 py-0.5 rounded">
+                      9400111899223
+                    </span>
+<a className="text-label-sm font-label-sm text-customer-primary font-semibold hover:text-primary flex items-center" href="#">
+<span>Track</span>
+<span className="material-symbols-outlined text-xs" data-icon="open_in_new">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Timeline / Milestone Summary Card -->
+<div className="bg-surface-card rounded-xl border border-slate-200 p-space-md shadow-xs">
+<h4 className="font-title-md text-title-md text-on-surface font-semibold mb-3 flex items-center gap-2">
+<span className="material-symbols-outlined text-customer-primary" data-icon="timeline">timeline</span>
+<span>Order Milestone Progress</span>
+</h4>
+<div className="grid grid-cols-1 sm:grid-cols-4 gap-3 text-center">
+<div className="p-2.5 rounded-lg bg-emerald-50 border border-emerald-100">
+<span className="text-status-paid material-symbols-outlined text-xl mb-1" data-icon="check_circle">check_circle</span>
+<p className="font-label-sm text-label-sm font-semibold text-emerald-800">Order Placed</p>
+<p className="text-body-sm text-slate-500 text-[11px]">Oct 24, 10:14 AM</p>
+</div>
+<div className="p-2.5 rounded-lg bg-emerald-50 border border-emerald-100">
+<span className="text-status-paid material-symbols-outlined text-xl mb-1" data-icon="verified">verified</span>
+<p className="font-label-sm text-label-sm font-semibold text-emerald-800">Escrow Locked</p>
+<p className="text-body-sm text-slate-500 text-[11px]">Oct 24, 10:15 AM</p>
+</div>
+<div className="p-2.5 rounded-lg bg-indigo-50 border border-indigo-200 ring-2 ring-indigo-500/20">
+<span className="text-status-shipped material-symbols-outlined text-xl mb-1" data-icon="local_shipping">local_shipping</span>
+<p className="font-label-sm text-label-sm font-semibold text-status-shipped">Dispatched (2/2)</p>
+<p className="text-body-sm text-indigo-600 text-[11px]">In Transit</p>
+</div>
+<div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200">
+<span className="text-slate-400 material-symbols-outlined text-xl mb-1" data-icon="package_2">package_2</span>
+<p className="font-label-sm text-label-sm font-semibold text-slate-600">Delivered &amp; Released</p>
+<p className="text-body-sm text-slate-400 text-[11px]">Est. Oct 26</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Column: Delivery, Payment & Financial Summary (5 cols on Desktop) -->
+<section className="lg:col-span-5 flex flex-col gap-6">
+<!-- Financial Breakdown (Summary Card) -->
+<div className="bg-surface-card rounded-xl border border-slate-200/90 p-space-md md:p-space-lg shadow-sm">
+<div className="flex items-center justify-between border-b border-slate-200 pb-3 mb-4">
+<h3 className="font-title-md text-title-md text-on-surface font-semibold flex items-center gap-2">
+<span className="material-symbols-outlined text-customer-primary" data-icon="receipt_long">receipt_long</span>
+<span>Financial Summary</span>
+</h3>
+<span className="inline-flex items-center gap-1 text-label-sm font-label-sm text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full font-medium">
+<span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+<span>Paid in Full</span>
+</span>
+</div>
+<div className="space-y-3 text-body-md font-body-md text-on-surface-variant">
+<div className="flex justify-between items-center">
+<span>Items Subtotal</span>
+<span className="font-medium text-on-surface font-mono">$257.00</span>
+</div>
+<div className="flex justify-between items-center">
+<div className="flex items-center gap-1">
+<span>Multi-Vendor Shipping</span>
+<span className="material-symbols-outlined text-xs text-outline cursor-pointer" title="Calculated across 2 separate vendor dispatch hubs">info</span>
+</div>
+<span className="font-medium text-on-surface font-mono">$18.00</span>
+</div>
+<div className="flex justify-between items-center">
+<span>Estimated Sales Tax (State / VAT)</span>
+<span className="font-medium text-on-surface font-mono">$9.80</span>
+</div>
+<div className="flex justify-between items-center text-status-paid">
+<div className="flex items-center gap-1.5">
+<span className="material-symbols-outlined text-base" data-icon="sell">sell</span>
+<span>Promotional Discount (<span className="font-mono text-label-sm uppercase">EASENEV</span>)</span>
+</div>
+<span className="font-medium font-mono">-$15.00</span>
+</div>
+<!-- Divider Line -->
+<div className="border-t border-dashed border-slate-300 my-2"></div>
+<!-- Total Paid Highlight -->
+<div className="flex justify-between items-baseline pt-1">
+<div>
+<span className="font-title-md text-title-md font-bold text-on-surface block">Total Paid</span>
+<span className="text-body-sm font-body-sm text-outline">Inclusive of all local marketplace taxes</span>
+</div>
+<div className="text-right">
+<span className="font-headline-lg font-headline-lg text-customer-primary font-bold tracking-tight font-mono">
+                  $269.80
+                </span>
+<span className="text-label-sm font-label-sm text-on-surface-variant block uppercase font-mono">USD</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Delivery Address Card -->
+<div className="bg-surface-card rounded-xl border border-slate-200/90 p-space-md md:p-space-lg shadow-sm">
+<div className="flex items-center justify-between border-b border-slate-200 pb-3 mb-4">
+<h3 className="font-title-md text-title-md text-on-surface font-semibold flex items-center gap-2">
+<span className="material-symbols-outlined text-customer-primary" data-icon="local_shipping">local_shipping</span>
+<span>Delivery Information</span>
+</h3>
+<span className="text-label-sm font-label-sm text-on-surface-variant font-mono bg-slate-100 px-2 py-0.5 rounded">
+              Priority Express
+            </span>
+</div>
+<div className="space-y-3.5">
+<div>
+<p className="font-semibold text-on-surface text-body-lg font-body-lg flex items-center gap-1.5">
+<span>Alex Morgan</span>
+<span className="inline-flex items-center text-label-sm font-label-sm text-slate-500 bg-slate-100 px-1.5 py-0.2 rounded font-normal">Primary</span>
+</p>
+<p className="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span className="material-symbols-outlined text-sm text-outline" data-icon="call">call</span>
+<span>+1 (555) 782-9904</span>
+</p>
+<p className="text-body-md font-body-md text-on-surface mt-1.5 leading-relaxed">
+                742 Evergreen Terrace, Suite 400<br/>
+                Springfield, OR 97477<br/>
+                United States
+              </p>
+</div>
+<div className="bg-slate-50 rounded-lg p-3 border border-slate-200/80 space-y-2 text-body-sm font-body-sm">
+<div className="flex items-start gap-2">
+<span className="material-symbols-outlined text-base text-customer-primary mt-0.5" data-icon="schedule">schedule</span>
+<div>
+<span className="font-semibold text-on-surface block">Estimated Delivery Window</span>
+<span className="text-on-surface-variant">Saturday, October 26, 2024 by 7:00 PM</span>
+</div>
+</div>
+<div className="flex items-start gap-2 pt-2 border-t border-slate-200/60">
+<span className="material-symbols-outlined text-base text-amber-600 mt-0.5" data-icon="notes">notes</span>
+<div>
+<span className="font-semibold text-on-surface block">Driver Delivery Notes</span>
+<span className="text-on-surface-variant italic">"Gate code #4912, leave at doorstep under covered porch."</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Payment Information Card -->
+<div className="bg-surface-card rounded-xl border border-slate-200/90 p-space-md md:p-space-lg shadow-sm">
+<div className="flex items-center justify-between border-b border-slate-200 pb-3 mb-4">
+<h3 className="font-title-md text-title-md text-on-surface font-semibold flex items-center gap-2">
+<span className="material-symbols-outlined text-customer-primary" data-icon="credit_card">credit_card</span>
+<span>Payment Details</span>
+</h3>
+<span className="inline-flex items-center gap-1 text-label-sm font-label-sm text-status-paid font-medium">
+<span className="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+<span>Captured</span>
+</span>
+</div>
+<div className="space-y-3.5">
+<!-- Card & Processor Row -->
+<div className="flex items-center justify-between">
+<div className="flex items-center gap-3">
+<!-- Mastercard Visual Representation -->
+<div className="w-11 h-7 rounded bg-slate-900 flex items-center justify-center text-white px-1">
+<div className="flex -space-x-1.5">
+<div className="w-4 h-4 rounded-full bg-red-500 opacity-90"></div>
+<div className="w-4 h-4 rounded-full bg-amber-400 opacity-90"></div>
+</div>
+</div>
+<div>
+<p className="font-title-md text-title-md text-on-surface font-semibold">Mastercard ending in 4242</p>
+<p className="text-body-sm font-body-sm text-on-surface-variant">Paystack Verified Settlement</p>
+</div>
+</div>
+</div>
+<!-- Paystack Reference Key -->
+<div className="bg-surface-container-low/60 rounded-lg p-3 border border-indigo-100 flex flex-col gap-1">
+<div className="flex justify-between items-center">
+<span className="text-label-sm font-label-sm text-on-surface-variant">Paystack Reference</span>
+<button className="text-label-sm font-label-sm text-customer-primary hover:underline flex items-center gap-0.5" onclick="navigator.clipboard.writeText('pstk_ref_98a742c8d19e4f'); alert('Reference copied!');">
+<span className="material-symbols-outlined text-xs" data-icon="content_copy">content_copy</span>
+<span>Copy</span>
+</button>
+</div>
+<span className="font-mono text-body-sm font-body-sm font-medium text-customer-primary break-all select-all">
+                pstk_ref_98a742c8d19e4f
+              </span>
+</div>
+<!-- Escrow Notice Box -->
+<div className="flex items-start gap-2.5 p-3 rounded-lg bg-emerald-50/70 border border-emerald-200/80">
+<span className="material-symbols-outlined text-emerald-600 mt-0.5 flex-shrink-0" data-icon="lock_clock">lock_clock</span>
+<p className="text-body-sm font-body-sm text-emerald-950 leading-snug">
+<strong className="font-semibold text-emerald-900">Escrow Protected:</strong> Funds are held securely in the ShopEase Multi-Vendor Escrow vault and will only be disbursed to vendors after you confirm inspection.
+              </p>
+</div>
+</div>
+</div>
+<!-- Trust & Buyer Protection Box -->
+<div className="bg-gradient-to-br from-indigo-50/50 via-white to-purple-50/40 rounded-xl border border-indigo-100/90 p-space-md shadow-xs space-y-3">
+<div className="flex items-center gap-2">
+<span className="w-8 h-8 rounded-full bg-customer-primary/10 text-customer-primary flex items-center justify-center">
+<span className="material-symbols-outlined text-base" data-icon="verified_user">verified_user</span>
+</span>
+<div>
+<h4 className="font-title-md text-title-md text-on-surface font-semibold">ShopEase Buyer Guarantee</h4>
+<p className="text-body-sm font-body-sm text-on-surface-variant">Complete purchase protection on every vendor order</p>
+</div>
+</div>
+<ul className="space-y-2 text-body-sm font-body-sm text-on-surface-variant pt-1">
+<li className="flex items-center gap-2">
+<span className="material-symbols-outlined text-sm text-customer-accent" data-icon="check">check</span>
+<span>100% Escrow Protection guarantee until delivery</span>
+</li>
+<li className="flex items-center gap-2">
+<span className="material-symbols-outlined text-sm text-customer-accent" data-icon="check">check</span>
+<span>14-day hassle-free return policy across verified stores</span>
+</li>
+<li className="flex items-center gap-2">
+<span className="material-symbols-outlined text-sm text-customer-accent" data-icon="check">check</span>
+<span>Automated transit damage and dispute resolution</span>
+</li>
+</ul>
+<div className="pt-2 border-t border-indigo-100 flex items-center justify-between text-body-sm font-body-sm">
+<span className="text-on-surface-variant">Need assistance?</span>
+<a className="font-semibold text-customer-primary hover:text-primary inline-flex items-center gap-1 group" href="#">
+<span>Contact Support</span>
+<span className="material-symbols-outlined text-xs group-hover:translate-x-0.5 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Web Footer (Shared Component: Footer) -->
+<footer className="bg-surface-container-low dark:bg-surface border-t border-surface-variant dark:border-outline-variant flat no-shadows docked full-width bottom-0 mt-12">
+<div className="w-full max-w-7xl mx-auto px-margin-mobile md:px-margin py-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md">
+<!-- Footer Brand & Copyright -->
+<div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
+<span className="text-headline-sm font-headline-sm text-customer-primary dark:text-inverse-primary tracking-tight">ShopEase</span>
+<span className="text-body-sm font-body-sm text-on-surface-variant dark:text-surface-variant">
+          © 2024 ShopEase Marketplace Inc. All rights reserved. Built for modern vendors and smart shoppers.
+        </span>
+</div>
+<!-- Footer Policy Links -->
+<nav className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-label-md font-label-md">
+<a className="text-on-surface-variant dark:text-surface-variant hover:text-on-surface dark:hover:text-inverse-on-surface hover:text-customer-primary dark:hover:text-inverse-primary transition-colors duration-150 active:opacity-80" href="#">Terms of Service</a>
+<a className="text-on-surface-variant dark:text-surface-variant hover:text-on-surface dark:hover:text-inverse-on-surface hover:text-customer-primary dark:hover:text-inverse-primary transition-colors duration-150 active:opacity-80" href="#">Privacy Policy</a>
+<a className="text-on-surface-variant dark:text-surface-variant hover:text-on-surface dark:hover:text-inverse-on-surface hover:text-customer-primary dark:hover:text-inverse-primary transition-colors duration-150 active:opacity-80" href="#">Vendor Policy</a>
+<a className="text-on-surface-variant dark:text-surface-variant hover:text-on-surface dark:hover:text-inverse-on-surface hover:text-customer-primary dark:hover:text-inverse-primary transition-colors duration-150 active:opacity-80" href="#">Security</a>
+<a className="text-customer-primary dark:text-inverse-primary font-semibold hover:text-customer-primary dark:hover:text-inverse-primary transition-colors duration-150 active:opacity-80" href="#">Contact Support</a>
+</nav>
+</div>
+</footer>
+<!-- Micro-interaction Scripts -->
+<script>
+    function copyOrderId() {
+      const orderId = "#SE-98421";
+      navigator.clipboard.writeText(orderId).then(() => {
+        const copyText = document.getElementById("copyText");
+        const original = copyText.innerText;
+        copyText.innerText = "Copied!";
+        setTimeout(() => {
+          copyText.innerText = original;
+        }, 2000);
+      }).catch(err => {
+        console.error("Failed to copy order ID: ", err);
+      });
+    }
+  </script>
+</body></html>

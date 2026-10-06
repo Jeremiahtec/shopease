@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Dashboard - ShopEase</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "className",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary": "#ffffff",
+            "on-primary-fixed": "#0f0069",
+            "surface-container-high": "#dce9ff",
+            "background": "#f8f9ff",
+            "secondary-container": "#6cf8bb",
+            "on-secondary-fixed-variant": "#005236",
+            "tertiary": "#5c00ca",
+            "tertiary-fixed": "#eaddff",
+            "on-primary": "#ffffff",
+            "on-tertiary-container": "#e4d4ff",
+            "primary-container": "#4f46e5",
+            "primary-fixed-dim": "#c3c0ff",
+            "customer-primary": "#4F46E5",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "inverse-primary": "#c3c0ff",
+            "secondary": "#006c49",
+            "tertiary-fixed-dim": "#d2bbff",
+            "status-pending": "#F59E0B",
+            "surface-bright": "#f8f9ff",
+            "outline": "#777587",
+            "status-processing": "#3B82F6",
+            "error": "#ba1a1a",
+            "secondary-fixed": "#6ffbbe",
+            "status-cancelled": "#EF4444",
+            "on-surface": "#0b1c30",
+            "surface-canvas": "#F8FAFC",
+            "on-tertiary-fixed": "#25005a",
+            "surface-container-low": "#eff4ff",
+            "status-paid": "#10B981",
+            "surface-container": "#e5eeff",
+            "on-primary-container": "#dad7ff",
+            "secondary-fixed-dim": "#4edea3",
+            "vendor-primary": "#7C3AED",
+            "surface-container-highest": "#d3e4fe",
+            "inverse-surface": "#213145",
+            "primary": "#3525cd",
+            "on-surface-variant": "#464555",
+            "surface-card": "#FFFFFF",
+            "surface": "#f8f9ff",
+            "on-background": "#0b1c30",
+            "surface-dim": "#cbdbf5",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed-variant": "#3323cc",
+            "on-secondary-fixed": "#002113",
+            "outline-variant": "#c7c4d8",
+            "surface-tint": "#4d44e3",
+            "vendor-accent": "#0D9488",
+            "status-shipped": "#6366F1",
+            "on-secondary-container": "#00714d",
+            "on-error": "#ffffff",
+            "primary-fixed": "#e2dfff",
+            "customer-accent": "#10B981",
+            "on-tertiary-fixed-variant": "#5a00c6",
+            "tertiary-container": "#7531e6",
+            "surface-container-lowest": "#ffffff",
+            "inverse-on-surface": "#eaf1ff",
+            "surface-variant": "#d3e4fe"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "gutter-mobile": "1rem",
+            "margin": "2rem",
+            "margin-mobile": "1rem",
+            "space-xl": "2.5rem",
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "gutter": "1.5rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Inter"],
+            "label-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "display": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "label-sm": ["Inter"],
+            "title-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "display": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body className="bg-surface-canvas font-body-md text-on-surface antialiased min-h-screen flex flex-col selection:bg-customer-primary selection:text-on-primary">
+<!-- Top Navigation Header -->
+<header className="bg-surface-container-lowest sticky top-0 z-40 border-b border-surface-variant shadow-sm">
+<div className="w-full max-w-7xl mx-auto px-margin-mobile md:px-margin flex items-center justify-between h-16 gap-space-md">
+<!-- Brand & Search cluster -->
+<div className="flex items-center gap-space-lg flex-1">
+<a className="flex items-center gap-space-xs focus:outline-none" href="#">
+<img alt="ShopEase" className="h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VEdTpcgB0WgelxqUyhbvFNMlWJlmsdgr7nFsWO2KW2k5P99nUJhxjFcAVEFRJ3LHU2jmMQ4fEMfylea1TSEL1A123neAoMVessAKW_EnLMNZH1FbUoe4nRiGcKLERk9_avC2DdM0wJ_lAuPO0PhYK3Lsx0R0rITuGq9X9NdMml1u7I_siWr-T8-nFdkJ0Lq0PrffMDTNzTzHrCOlwqMuDUyQPGDTVphlJRYz9Jt1-4pZFbzlUfWF92LAi4"/>
+</a>
+<!-- Global Search Bar -->
+<div className="hidden md:flex items-center relative max-w-md w-full">
+<span className="material-symbols-outlined absolute left-3 text-on-surface-variant pointer-events-none text-[20px]">search</span>
+<input className="w-full bg-surface pl-10 pr-4 py-2 border border-outline-variant rounded-lg text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 transition-all outline-none" placeholder="Search verified vendors, gear &amp; products..." type="search"/>
+</div>
+</div>
+<!-- Center Links (Desktop) -->
+<nav className="hidden lg:flex items-center gap-space-lg">
+<a className="text-on-surface-variant font-label-lg text-label-lg hover:text-customer-primary transition-colors duration-150" href="#">Marketplace</a>
+<a className="text-on-surface-variant font-label-lg text-label-lg hover:text-customer-primary transition-colors duration-150" href="#">Vendors</a>
+<a className="text-on-surface-variant font-label-lg text-label-lg hover:text-customer-primary transition-colors duration-150" href="#">Help Center</a>
+</nav>
+<!-- Trailing Action Icons & Customer Profile -->
+<div className="flex items-center gap-space-md">
+<!-- Support Help Link -->
+<button className="p-2 text-on-surface-variant hover:text-customer-primary rounded-lg hover:bg-surface-container-low transition-colors duration-150" title="Help Center">
+<span className="material-symbols-outlined text-[22px]">help_outline</span>
+</button>
+<!-- Notification Bell with Ping -->
+<div className="relative">
+<button className="p-2 text-on-surface-variant hover:text-customer-primary rounded-lg hover:bg-surface-container-low transition-colors duration-150" title="Notifications">
+<span className="material-symbols-outlined text-[22px]">notifications</span>
+<span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-customer-primary ring-2 ring-surface-container-lowest"></span>
+</button>
+</div>
+<!-- Cart Quick Indicator -->
+<button className="relative p-2 text-on-surface-variant hover:text-customer-primary rounded-lg hover:bg-surface-container-low transition-colors duration-150 flex items-center" title="Cart">
+<span className="material-symbols-outlined text-[22px]">shopping_bag</span>
+<span className="absolute -top-1 -right-1 bg-customer-primary text-on-primary font-label-sm text-label-sm w-5 h-5 rounded-full flex items-center justify-center font-bold">3</span>
+</button>
+<div className="h-6 w-[1px] bg-outline-variant mx-1"></div>
+<!-- User Menu Chip -->
+<div className="flex items-center gap-2.5 pl-1 cursor-pointer">
+<div className="relative">
+<img className="w-9 h-9 rounded-full object-cover border border-outline-variant ring-2 ring-customer-primary/10" data-alt="Close up professional portrait of a customer named Alex Morgan, confident warm expression, neutral soft studio background, soft flattering lighting, clean high-trust commercial marketplace aesthetic with subtle indigo accent hues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqWFhBCP-reISVlKn1XvjQG7bOXodI_YBDM3VWZ6SG7elbTQ7THvDAnPP5Mmu5F-nUDeYWIjHyIVCRU34bij80h3E6eI6sP2X7OWgPN4frY4ZHBM2HWcgtvC0hrQcxd8aMjXLPj_wWQyOeqUD15kW8zksuXNPhrqci_9e8b8nrp2qajnK1Tsuf-BiwnDa-4jNl6ji_RDg5kk0Q9CzXSOBva2bXqmy766Dz4RtxEPaTvmEwu_HVgaxjPg"/>
+<span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-status-paid rounded-full ring-2 ring-white"></span>
+</div>
+<div className="hidden sm:block text-left">
+<div className="font-label-lg text-label-lg text-on-surface leading-tight">Alex Morgan</div>
+<div className="font-label-sm text-label-sm text-on-surface-variant">Verified Buyer</div>
+</div>
+<span className="material-symbols-outlined text-on-surface-variant text-[18px]">expand_more</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Container Layout (Sidebar + Content Workspace) -->
+<main className="w-full max-w-7xl mx-auto px-margin-mobile md:px-margin py-space-lg flex-1">
+<!-- Top Breadcrumb & Page Banner -->
+<div className="mb-space-lg flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-sm border-b border-surface-variant">
+<div>
+<div className="flex items-center gap-2 text-body-sm font-body-sm text-on-surface-variant mb-1">
+<a className="hover:text-customer-primary transition-colors" href="#">Home</a>
+<span className="material-symbols-outlined text-[14px]">chevron_right</span>
+<a className="hover:text-customer-primary transition-colors" href="#">Customer Portal</a>
+<span className="material-symbols-outlined text-[14px]">chevron_right</span>
+<span className="text-on-surface font-semibold">Account Dashboard</span>
+</div>
+<h1 className="text-headline-md font-headline-md text-on-surface tracking-tight">Customer Account Center</h1>
+</div>
+<div className="flex items-center gap-space-sm">
+<span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-label-sm font-label-sm bg-[#D1FAE5] text-[#059669]">
+<span className="w-1.5 h-1.5 rounded-full bg-[#059669]"></span>
+          Active Member
+        </span>
+<span className="text-body-sm font-body-sm text-on-surface-variant">ID: #CUS-88402</span>
+</div>
+</div>
+<!-- 12-Column Responsive Dashboard Grid -->
+<div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT SIDEBAR NAVIGATION (4 Cols on 12-col grid) -->
+<aside className="lg:col-span-4 xl:col-span-3 space-y-space-md">
+<!-- Customer Profile Overview Card -->
+<div className="bg-surface-card rounded-xl border border-outline-variant/60 shadow-sm p-space-md">
+<div className="flex items-center gap-space-md pb-space-md border-b border-surface-variant">
+<div className="relative">
+<img className="w-14 h-14 rounded-full object-cover border-2 border-surface-container ring-2 ring-customer-primary/20" data-alt="Editorial headshot of Alex Morgan, casual stylish modern customer portrait, smiling, high resolution studio photograph with clean soft lighting in an indigo and slate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMjlJdzqdi4DkqKYhtmFJF8_dDR5Pw0Zzsv_rDBluxUnNKjRhcPK26mddW1s7-R6abZ2lBfRgmV-Z-EwpWrILNzXceScM9xxC6lNI_C9jAUp6BMHYMyaRJH1s6rIaIDdH6hfw5J_WHUSTyYEDbE6NrtdB877oZF_qBWBRf2q-Zib8Ke-grmVDMRbw9rMKPJbl65othq_yYID9WVDaPDQaoQymjx8UjziviqRdM15dKMFyKN6rldc6Fyw"/>
+<div className="absolute -bottom-1 -right-1 bg-customer-primary text-on-primary rounded-full p-0.5 shadow-sm" title="Verified Customer">
+<span className="material-symbols-outlined text-[14px] block" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div className="overflow-hidden">
+<div className="flex items-center gap-1.5">
+<h3 className="font-headline-sm text-title-md text-on-surface truncate">Alex Morgan</h3>
+</div>
+<p className="text-body-sm font-body-sm text-on-surface-variant truncate">alex.morgan@example.com</p>
+<div className="mt-1 flex items-center gap-1 text-label-sm font-label-sm text-on-surface-variant">
+<span className="material-symbols-outlined text-[14px] text-customer-primary">calendar_today</span>
+                Member since Oct 2023
+              </div>
+</div>
+</div>
+<!-- Quick Stats Chip Strip -->
+<div className="grid grid-cols-2 gap-2 pt-3">
+<div className="bg-surface p-2.5 rounded-lg border border-outline-variant/40 text-center">
+<div className="font-headline-sm text-headline-sm text-customer-primary">8</div>
+<div className="font-label-sm text-label-sm text-on-surface-variant">Total Orders</div>
+</div>
+<div className="bg-surface p-2.5 rounded-lg border border-outline-variant/40 text-center">
+<div className="font-headline-sm text-headline-sm text-customer-accent">5</div>
+<div className="font-label-sm text-label-sm text-on-surface-variant">Saved Wishlist</div>
+</div>
+</div>
+</div>
+<!-- Navigation Tabs Group -->
+<nav className="bg-surface-card rounded-xl border border-outline-variant/60 shadow-sm p-2 space-y-1">
+<!-- 1. My Profile (Active by Default) -->
+<button className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-customer-primary bg-surface-container-low font-label-lg text-label-lg transition-all duration-150" id="nav-profile" onclick="switchTab('profile')">
+<div className="flex items-center gap-3">
+<span className="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">person</span>
+<span>My Profile</span>
+</div>
+<span className="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+<!-- 2. Order History -->
+<button className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface font-label-lg text-label-lg transition-all duration-150" id="nav-orders" onclick="switchTab('orders')">
+<div className="flex items-center gap-3">
+<span className="material-symbols-outlined text-[20px]">package_2</span>
+<span>Order History</span>
+</div>
+<span className="inline-flex items-center px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-surface-container-highest text-on-surface font-semibold">8 Orders</span>
+</button>
+<!-- 3. Wishlist -->
+<button className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface font-label-lg text-label-lg transition-all duration-150" id="nav-wishlist" onclick="switchTab('wishlist')">
+<div className="flex items-center gap-3">
+<span className="material-symbols-outlined text-[20px]">favorite_border</span>
+<span>Wishlist</span>
+</div>
+<span className="inline-flex items-center px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-customer-accent/10 text-customer-accent font-semibold">5 Items</span>
+</button>
+<!-- 4. Saved Payment Methods -->
+<button className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface font-label-lg text-label-lg transition-all duration-150">
+<div className="flex items-center gap-3">
+<span className="material-symbols-outlined text-[20px]">credit_card</span>
+<span>Saved Payment Methods</span>
+</div>
+<span className="font-label-sm text-label-sm text-on-surface-variant">2 cards</span>
+</button>
+<!-- 5. Notification Preferences -->
+<button className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface font-label-lg text-label-lg transition-all duration-150">
+<div className="flex items-center gap-3">
+<span className="material-symbols-outlined text-[20px]">tune</span>
+<span>Notification Preferences</span>
+</div>
+</button>
+<div className="pt-2 pb-1 border-t border-surface-variant my-1"></div>
+<!-- 6. Log Out -->
+<button className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-error hover:bg-[#FEE2E2]/50 font-label-lg text-label-lg transition-all duration-150">
+<span className="material-symbols-outlined text-[20px]">logout</span>
+<span>Log Out</span>
+</button>
+</nav>
+<!-- Buyer Protection Micro-Banner -->
+<div className="bg-surface rounded-xl border border-outline-variant/60 p-space-md flex items-start gap-3">
+<div className="p-2 bg-customer-primary/10 rounded-lg text-customer-primary shrink-0">
+<span className="material-symbols-outlined text-[22px]">verified_user</span>
+</div>
+<div>
+<h4 className="font-title-md text-title-md text-on-surface leading-tight">ShopEase Guarantee</h4>
+<p className="text-body-sm font-body-sm text-on-surface-variant mt-1 leading-normal">Every checkout is escrow-protected with 30-day vendor dispute resolution.</p>
+</div>
+</div>
+</aside>
+<!-- MAIN CONTENT WORKSPACE (8 Cols on 12-col grid) -->
+<section className="lg:col-span-8 xl:col-span-9 space-y-space-lg">
+<!-- TAB SECTION 1: MY PROFILE -->
+<div className="space-y-space-lg" id="tab-profile-content">
+<!-- Personal Info Card -->
+<div className="bg-surface-card rounded-xl border border-outline-variant/60 shadow-sm p-space-md md:p-space-lg">
+<div className="border-b border-surface-variant pb-space-md mb-space-lg flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<h2 className="text-headline-sm font-headline-sm text-on-surface">Profile &amp; Account Settings</h2>
+<p className="text-body-md font-body-md text-on-surface-variant">Manage your personal details, default shipping addresses, and account security.</p>
+</div>
+<span className="inline-flex items-center gap-1 text-label-sm font-label-sm text-status-paid bg-[#D1FAE5] px-2.5 py-1 rounded-full font-semibold">
+<span className="material-symbols-outlined text-[14px]">check_circle</span>
+                All credentials verified
+              </span>
+</div>
+<form className="space-y-space-md" onsubmit="event.preventDefault();">
+<div className="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Full Name -->
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-1.5">Full Name</label>
+<div className="relative">
+<input className="w-full bg-surface-card border border-outline-variant rounded-lg px-3.5 py-2.5 text-body-md font-body-md text-on-surface focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 transition-all outline-none" type="text" value="Alex Morgan"/>
+<span className="material-symbols-outlined absolute right-3 top-3 text-on-surface-variant text-[18px]">badge</span>
+</div>
+</div>
+<!-- Email Address (Verified) -->
+<div>
+<div className="flex items-center justify-between mb-1.5">
+<label className="font-label-md text-label-md text-on-surface">Email Address</label>
+<span className="text-label-sm font-label-sm text-[#059669] flex items-center gap-0.5">
+<span className="material-symbols-outlined text-[13px]">verified</span> Verified
+                    </span>
+</div>
+<div className="relative">
+<input className="w-full bg-surface-card border border-outline-variant rounded-lg px-3.5 py-2.5 text-body-md font-body-md text-on-surface focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 transition-all outline-none" type="email" value="alex.morgan@example.com"/>
+<span className="material-symbols-outlined absolute right-3 top-3 text-on-surface-variant text-[18px]">mail</span>
+</div>
+</div>
+<!-- Phone Number -->
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-1.5">Phone Number</label>
+<div className="relative">
+<input className="w-full bg-surface-card border border-outline-variant rounded-lg px-3.5 py-2.5 text-body-md font-body-md text-on-surface focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 transition-all outline-none" type="tel" value="+1 (555) 234-5678"/>
+<span className="material-symbols-outlined absolute right-3 top-3 text-on-surface-variant text-[18px]">call</span>
+</div>
+</div>
+<!-- Country -->
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-1.5">Country</label>
+<select className="w-full bg-surface-card border border-outline-variant rounded-lg px-3.5 py-2.5 text-body-md font-body-md text-on-surface focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 transition-all outline-none">
+<option selected="">United States</option>
+<option>Canada</option>
+<option>United Kingdom</option>
+<option>Germany</option>
+</select>
+</div>
+</div>
+<!-- Default Delivery Address Sub-group -->
+<div className="pt-space-sm border-t border-surface-variant">
+<div className="flex items-center gap-2 mb-space-sm">
+<span className="material-symbols-outlined text-customer-primary text-[20px]">local_shipping</span>
+<h3 className="font-title-md text-title-md text-on-surface">Default Delivery Address</h3>
+</div>
+<div className="space-y-space-sm">
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-1.5">Street Address</label>
+<input className="w-full bg-surface-card border border-outline-variant rounded-lg px-3.5 py-2.5 text-body-md font-body-md text-on-surface focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 transition-all outline-none" type="text" value="742 Evergreen Terrace"/>
+</div>
+<div className="grid grid-cols-1 sm:grid-cols-3 gap-space-md">
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-1.5">City</label>
+<input className="w-full bg-surface-card border border-outline-variant rounded-lg px-3.5 py-2.5 text-body-md font-body-md text-on-surface focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 transition-all outline-none" type="text" value="Springfield"/>
+</div>
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-1.5">State / Province</label>
+<input className="w-full bg-surface-card border border-outline-variant rounded-lg px-3.5 py-2.5 text-body-md font-body-md text-on-surface focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 transition-all outline-none" type="text" value="OR"/>
+</div>
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-1.5">Zip Code</label>
+<input className="w-full bg-surface-card border border-outline-variant rounded-lg px-3.5 py-2.5 text-body-md font-body-md text-on-surface focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 transition-all outline-none" type="text" value="97477"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Bar -->
+<div className="flex items-center justify-end gap-space-sm pt-space-sm">
+<button className="px-5 py-2.5 border border-outline-variant rounded-lg bg-surface-card text-on-surface font-label-lg text-label-lg hover:bg-surface-container-low transition-colors duration-150" type="button">Cancel</button>
+<button className="px-6 py-2.5 rounded-lg bg-customer-primary text-on-primary font-label-lg text-label-lg hover:bg-[#4338CA] shadow-sm transition-all duration-150 flex items-center gap-1.5 active:scale-95" type="submit">
+<span className="material-symbols-outlined text-[18px]">save</span>
+                  Save Changes
+                </button>
+</div>
+</form>
+</div>
+<!-- Security & Change Password Subsection -->
+<div className="bg-surface-card rounded-xl border border-outline-variant/60 shadow-sm p-space-md md:p-space-lg">
+<div className="border-b border-surface-variant pb-space-sm mb-space-md flex items-center justify-between">
+<div>
+<h3 className="text-headline-sm font-headline-sm text-on-surface">Account Security</h3>
+<p className="text-body-md font-body-md text-on-surface-variant">Update password and configure Multi-Factor Authentication.</p>
+</div>
+<span className="material-symbols-outlined text-customer-primary text-[28px]">lock_reset</span>
+</div>
+<!-- Two-Factor Authentication Status Bar -->
+<div className="mb-space-md p-space-md rounded-lg bg-surface flex flex-col sm:flex-row sm:items-center justify-between gap-3 border border-outline-variant/40">
+<div className="flex items-start gap-3">
+<div className="p-2 rounded-lg bg-[#D1FAE5] text-[#059669] shrink-0">
+<span className="material-symbols-outlined text-[20px]">shield</span>
+</div>
+<div>
+<h4 className="font-title-md text-title-md text-on-surface">Two-Factor Authentication (2FA)</h4>
+<p className="text-body-sm font-body-sm text-on-surface-variant">Protect orders and stored cards with an SMS or authenticator passkey verification prompt.</p>
+</div>
+</div>
+<!-- Toggle Switch -->
+<label className="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" className="sr-only peer" type="checkbox"/>
+<div className="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-customer-primary"></div>
+</label>
+</div>
+<!-- Password Fields -->
+<form className="space-y-space-md" onsubmit="event.preventDefault();">
+<div className="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-1.5">Current Password</label>
+<input className="w-full bg-surface-card border border-outline-variant rounded-lg px-3.5 py-2.5 text-body-md font-body-md text-on-surface focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 transition-all outline-none" type="password" value="••••••••••••"/>
+</div>
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-1.5">New Password</label>
+<input className="w-full bg-surface-card border border-outline-variant rounded-lg px-3.5 py-2.5 text-body-md font-body-md text-on-surface focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 transition-all outline-none" placeholder="Enter new password" type="password" value="ShopEase2024Secure!"/>
+<!-- Strength Meter -->
+<div className="mt-2">
+<div className="flex items-center justify-between text-label-sm font-label-sm mb-1">
+<span className="text-on-surface-variant">Strength</span>
+<span className="text-status-paid font-semibold">Strong</span>
+</div>
+<div className="h-1.5 w-full bg-surface-variant rounded-full overflow-hidden flex gap-1">
+<div className="h-full w-1/3 bg-status-paid rounded-full"></div>
+<div className="h-full w-1/3 bg-status-paid rounded-full"></div>
+<div className="h-full w-1/3 bg-status-paid rounded-full"></div>
+</div>
+</div>
+</div>
+<div>
+<label className="block font-label-md text-label-md text-on-surface mb-1.5">Confirm New Password</label>
+<input className="w-full bg-surface-card border border-outline-variant rounded-lg px-3.5 py-2.5 text-body-md font-body-md text-on-surface focus:border-customer-primary focus:ring-2 focus:ring-customer-primary/20 transition-all outline-none" placeholder="Re-enter password" type="password" value="ShopEase2024Secure!"/>
+</div>
+</div>
+<div className="flex justify-end pt-2">
+<button className="px-5 py-2 rounded-lg bg-surface-card border border-customer-primary text-customer-primary hover:bg-customer-primary hover:text-on-primary font-label-lg text-label-lg transition-colors duration-150" type="submit">
+                  Update Password
+                </button>
+</div>
+</form>
+</div>
+</div>
+<!-- TAB SECTION 2: ORDER HISTORY -->
+<div className="space-y-space-md" id="tab-orders-content">
+<!-- Orders Header & Filters -->
+<div className="bg-surface-card rounded-xl border border-outline-variant/60 shadow-sm p-space-md">
+<div className="flex flex-col md:flex-row md:items-center justify-between gap-space-md pb-space-sm border-b border-surface-variant">
+<div>
+<h2 className="text-headline-sm font-headline-sm text-on-surface">Your Orders</h2>
+<p className="text-body-md font-body-md text-on-surface-variant">Track ongoing shipments, review purchases, and download official vendor receipts.</p>
+</div>
+<div className="flex items-center gap-2">
+<select className="bg-surface border border-outline-variant rounded-lg px-3 py-1.5 text-body-sm font-body-sm text-on-surface outline-none">
+<option>Last 6 months</option>
+<option>Year 2024</option>
+<option>Year 2023</option>
+<option>All time</option>
+</select>
+</div>
+</div>
+<!-- Status Tabs & Search Bar -->
+<div className="pt-space-sm flex flex-col lg:flex-row lg:items-center justify-between gap-3">
+<!-- Filter Pill Tabs -->
+<div className="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0">
+<button className="px-3.5 py-1.5 rounded-full font-label-sm text-label-sm bg-customer-primary text-on-primary font-bold shadow-xs">
+                  All Orders (8)
+                </button>
+<button className="px-3.5 py-1.5 rounded-full font-label-sm text-label-sm bg-surface hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors">
+                  In Transit (2)
+                </button>
+<button className="px-3.5 py-1.5 rounded-full font-label-sm text-label-sm bg-surface hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors">
+                  Delivered (5)
+                </button>
+<button className="px-3.5 py-1.5 rounded-full font-label-sm text-label-sm bg-surface hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors">
+                  Cancelled (1)
+                </button>
+</div>
+<!-- Order Search Bar -->
+<div className="relative min-w-[260px]">
+<span className="material-symbols-outlined absolute left-3 top-2 text-on-surface-variant text-[18px]">search</span>
+<input className="w-full bg-surface pl-9 pr-3 py-1.5 rounded-lg border border-outline-variant text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:border-customer-primary outline-none" placeholder="Filter by Order ID or item..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Order 1: SE-98421 (SHIPPED) - Highlighted for Modal Demo -->
+<div className="bg-surface-card rounded-xl border-2 border-customer-primary/30 shadow-sm overflow-hidden transition-all duration-200 hover:shadow-md">
+<!-- Header bar -->
+<div className="bg-surface px-space-md py-space-sm border-b border-surface-variant flex flex-wrap items-center justify-between gap-3">
+<div className="flex flex-wrap items-center gap-x-space-md gap-y-1">
+<div>
+<span className="text-label-sm font-label-sm text-on-surface-variant">Order placed</span>
+<div className="text-body-sm font-body-sm font-semibold text-on-surface">Oct 24, 2024</div>
+</div>
+<div className="h-6 w-[1px] bg-outline-variant"></div>
+<div>
+<span className="text-label-sm font-label-sm text-on-surface-variant">Total</span>
+<div className="text-body-sm font-body-sm font-bold text-on-surface">$178.50</div>
+</div>
+<div className="h-6 w-[1px] bg-outline-variant"></div>
+<div>
+<span className="text-label-sm font-label-sm text-on-surface-variant">Ship To</span>
+<div className="text-body-sm font-body-sm text-on-surface">Alex Morgan</div>
+</div>
+</div>
+<div className="flex items-center gap-3">
+<span className="font-label-sm text-label-sm text-on-surface-variant">Order #SE-98421</span>
+<!-- Status Badge -->
+<span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-label-sm font-label-sm bg-[#EEF2FF] text-[#4F46E5] font-semibold border border-[#C7D2FE]">
+<span className="w-1.5 h-1.5 rounded-full bg-customer-primary animate-pulse"></span>
+                  SHIPPED
+                </span>
+</div>
+</div>
+<!-- Body Contents -->
+<div className="p-space-md flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div className="flex items-start gap-space-md">
+<!-- Thumbnail Stack -->
+<div className="flex -space-x-3 overflow-hidden shrink-0">
+<img className="w-16 h-16 rounded-lg object-cover border-2 border-white shadow-xs" data-alt="Studio photograph of sleek matte black wireless over-ear noise-cancelling headphones resting on an elevated minimal oak podium, soft indigo ambient lighting, professional commercial electronics product photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPWtUPo87K5_EmJBMig-LdBq21BW14UctJd46vw1UmzGfGmFUj8FkwytgB_cR3dzm5GQpUVZRFlRLdR3UdG70-JBu9XcKGprcmAUNONiVKMuNaHS8h8x6A94uXANCSUxfgZA4_XaxXaeeeMDFA5mjUzF2NJorHiNUDRwwkGBM_vVHZe1wrif9xkzXD46BNpSBbb5LA_-iipo6auIXyQhFpEkfZUdPvDSbPrlZmD48dHhBrrJqweuOyvQ"/>
+<img className="w-16 h-16 rounded-lg object-cover border-2 border-white shadow-xs" data-alt="Close up photograph of a custom mechanical keyboard with sleek gradient artisan keycaps, clean architectural desk workspace, crisp natural daylight, high resolution modern hardware catalog photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARiAs8hbxw_qA6oasymzdFWZoE_o-5YOCO63lj0-q3nvToqBm8wnckUN3cjRdkLaA4p0Z9apMYH28m-qFKkV14WEQaff53sOjIHPvJ6Isv6Pi3a-lYWhme4JFtYnJ7OYmhk7qaWccxRWC1N6sQe5nPQc8xG0rsnIcMn6Jer6irpJbexwjuWCO4NjfcUUyz0cgoiTKW4aNQ6uJtIgcApQJ55-0U3vXFGWxNOYrcDY5Lk1hawr1aMm9NDw"/>
+</div>
+<div>
+<h4 className="font-title-md text-title-md text-on-surface">Aura Pro Wireless Headphones + 1 other item</h4>
+<p className="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Vendors: <span className="font-medium text-customer-primary">Apex Audio</span> &amp; <span className="font-medium text-customer-primary">KeyCraft Lab</span></p>
+<div className="flex items-center gap-2 mt-2 text-label-sm font-label-sm text-[#059669]">
+<span className="material-symbols-outlined text-[16px]">local_shipping</span>
+<span>Carrier: FedEx Express (FX-8492049182) • Estimated Delivery: Oct 26</span>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div className="flex flex-wrap sm:flex-nowrap items-center gap-2 shrink-0">
+<button className="px-4 py-2 bg-customer-primary hover:bg-[#4338CA] text-on-primary font-label-lg text-label-lg rounded-lg shadow-sm transition-all duration-150 flex items-center gap-1.5 active:scale-95" onclick="openTrackingModal()">
+<span className="material-symbols-outlined text-[18px]">navigation</span>
+                  Track Order
+                </button>
+<button className="px-3.5 py-2 border border-outline-variant bg-surface-card hover:bg-surface text-on-surface font-label-md text-label-md rounded-lg transition-colors">
+                  View Invoice
+                </button>
+<button className="px-3.5 py-2 border border-outline-variant bg-surface-card hover:bg-surface text-on-surface font-label-md text-label-md rounded-lg transition-colors">
+                  Order Again
+                </button>
+</div>
+</div>
+</div>
+<!-- Order 2: SE-97304 (DELIVERED) -->
+<div className="bg-surface-card rounded-xl border border-outline-variant/60 shadow-sm overflow-hidden">
+<div className="bg-surface px-space-md py-space-sm border-b border-surface-variant flex flex-wrap items-center justify-between gap-3">
+<div className="flex flex-wrap items-center gap-x-space-md gap-y-1">
+<div>
+<span className="text-label-sm font-label-sm text-on-surface-variant">Order placed</span>
+<div className="text-body-sm font-body-sm font-semibold text-on-surface">Oct 12, 2024</div>
+</div>
+<div className="h-6 w-[1px] bg-outline-variant"></div>
+<div>
+<span className="text-label-sm font-label-sm text-on-surface-variant">Total</span>
+<div className="text-body-sm font-body-sm font-bold text-on-surface">$89.00</div>
+</div>
+<div className="h-6 w-[1px] bg-outline-variant"></div>
+<div>
+<span className="text-label-sm font-label-sm text-on-surface-variant">Items</span>
+<div className="text-body-sm font-body-sm text-on-surface">1 item</div>
+</div>
+</div>
+<div className="flex items-center gap-3">
+<span className="font-label-sm text-label-sm text-on-surface-variant">Order #SE-97304</span>
+<span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-label-sm font-label-sm bg-[#D1FAE5] text-[#059669] font-semibold">
+<span className="material-symbols-outlined text-[14px]">check</span>
+                  DELIVERED
+                </span>
+</div>
+</div>
+<div className="p-space-md flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div className="flex items-start gap-space-md">
+<img className="w-16 h-16 rounded-lg object-cover border border-outline-variant shrink-0" data-alt="Minimalist architectural smart screenbar light mounted on an ultra-thin curved monitor in a moody modern workstation, warm ambient glow against slate backdrop, premium modern catalog commercial photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAymy1j-Cl29lRweEkSkM1KAhf5llAVaCVu6f-PThBSvqjncDv1YupMwuNstd-E2IglCmzze_nE5yatu9XNdyq7soZZAWA6_35yy2RyRn767CUItabxQigaRBnhcLY9VFKybBucLNv9VC_RoLM2877k49LfmHLQmVvoG7DdtOLddLdSJXcxbSUSoNAdgAB6uUwpElbwR4FNMI1tlJJnGPUvNQdjL52RCP_8R1WCrEoYdpG0uFpTTXCHNA"/>
+<div>
+<h4 className="font-title-md text-title-md text-on-surface">Smart Ambient Screenbar Monitor Light</h4>
+<p className="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Vendor: <span className="font-medium text-customer-primary">LumenStudio</span></p>
+<p className="text-body-sm font-body-sm text-on-surface-variant mt-1">Delivered to front door on Oct 15, 2024.</p>
+</div>
+</div>
+<div className="flex flex-wrap sm:flex-nowrap items-center gap-2 shrink-0">
+<button className="px-3.5 py-2 border border-outline-variant bg-surface-card hover:bg-surface text-on-surface font-label-md text-label-md rounded-lg transition-colors flex items-center gap-1">
+<span className="material-symbols-outlined text-[16px] text-status-pending">rate_review</span>
+                  Write Review
+                </button>
+<button className="px-3.5 py-2 border border-outline-variant bg-surface-card hover:bg-surface text-on-surface font-label-md text-label-md rounded-lg transition-colors">
+                  Buy Again
+                </button>
+</div>
+</div>
+</div>
+<!-- Order 3: SE-96112 (PROCESSING) -->
+<div className="bg-surface-card rounded-xl border border-outline-variant/60 shadow-sm overflow-hidden">
+<div className="bg-surface px-space-md py-space-sm border-b border-surface-variant flex flex-wrap items-center justify-between gap-3">
+<div className="flex flex-wrap items-center gap-x-space-md gap-y-1">
+<div>
+<span className="text-label-sm font-label-sm text-on-surface-variant">Order placed</span>
+<div className="text-body-sm font-body-sm font-semibold text-on-surface">Sep 28, 2024</div>
+</div>
+<div className="h-6 w-[1px] bg-outline-variant"></div>
+<div>
+<span className="text-label-sm font-label-sm text-on-surface-variant">Total</span>
+<div className="text-body-sm font-body-sm font-bold text-on-surface">$64.00</div>
+</div>
+</div>
+<div className="flex items-center gap-3">
+<span className="font-label-sm text-label-sm text-on-surface-variant">Order #SE-96112</span>
+<span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-label-sm font-label-sm bg-[#EFF6FF] text-[#2563EB] font-semibold border border-[#BFDBFE]">
+<span className="material-symbols-outlined text-[14px]">sync</span>
+                  PROCESSING
+                </span>
+</div>
+</div>
+<div className="p-space-md flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div className="flex items-start gap-space-md">
+<img className="w-16 h-16 rounded-lg object-cover border border-outline-variant shrink-0" data-alt="Handcrafted solid Scandinavian oak desk organizer tray with brass accents, holding pens and tech accessories, soft morning sunlight, studio product shot in clean minimalist white and warm wood aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0b1wgmDCDZVMnq0AWSxwnmRENZiBuXsF2lTGgrDn9Ui1gU02yXbCy5blA6pLs5kdZCXRHPfEjk5lYUFoYE1YOMfRmf-6xmSRiidnh8dW9q2KW3FGyWgviGwhA4P3lDeE7-rmH6ELOiZMRxGjlMOUekI2tPQSPCA_PoEF4K5Yr2AY_-ue3geYutjeAiaW-KNxzFJwf4X1XQfDS5Ic8hmeFJRkyBfVJqzFvas7KiFbjE6z2R7yf5WZlCw"/>
+<div>
+<h4 className="font-title-md text-title-md text-on-surface">Minimalist Oak Desk Organizer Tray</h4>
+<p className="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Vendor: <span className="font-medium text-customer-primary">Nordic Craft Co.</span></p>
+<p className="text-body-sm font-body-sm text-on-surface-variant mt-1">Vendor is preparing parcel packaging for courier pickup.</p>
+</div>
+</div>
+<div className="flex items-center gap-2 shrink-0">
+<button className="px-3.5 py-2 border border-outline-variant bg-surface-card hover:bg-surface text-on-surface font-label-md text-label-md rounded-lg transition-colors">
+                  Contact Vendor
+                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB SECTION 3: WISHLIST -->
+<div className="space-y-space-md" id="tab-wishlist-content">
+<!-- Wishlist Header -->
+<div className="bg-surface-card rounded-xl border border-outline-variant/60 shadow-sm p-space-md flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<div className="flex items-center gap-2">
+<h2 className="text-headline-sm font-headline-sm text-on-surface">Saved Items</h2>
+<span className="px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-customer-primary/10 text-customer-primary font-bold">5 Items</span>
+</div>
+<p className="text-body-md font-body-md text-on-surface-variant">Products curated across independent creators and top electronics brands.</p>
+</div>
+<button className="px-4 py-2 border border-customer-primary text-customer-primary hover:bg-surface-container-low font-label-lg text-label-lg rounded-lg transition-colors flex items-center justify-center gap-1.5">
+<span className="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+              Add All to Cart
+            </button>
+</div>
+<!-- Wishlist Cards Grid -->
+<div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-2 gap-space-md">
+<!-- Item 1 -->
+<div className="bg-surface-card rounded-xl border border-outline-variant/60 shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden flex flex-col group">
+<div className="relative bg-surface-container-low aspect-[16/10] overflow-hidden">
+<img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Aura Pro Wireless Headphones rendered with premium studio lighting on clean white platform, brushed titanium accents, modern audiophile consumer tech aesthetic in slate and soft indigo light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOXuG6JIRO5pO8dwTyP16sMz5XTK7RAxB1wXzO5eUlX0TII7wmbNqk0FTSosSM6Wh1qLYERf_WRSFwJsPSr9Jw6O-Cr0bs8DYeBJe-7M3UagMAK27z5SpES037LBrcurgvElRzBVG4jN6U_3b1CzQoiHhqGTCkEfEONOMNjCXvFY59PjOmS4ssTlaEWgw784A1hGhECTlglYvtLIJAB5n2k8pqVMeIFQJ439nbMfsZCiQuTb3GoJfRnQ"/>
+<button className="absolute top-3 right-3 p-2 bg-surface-card/90 backdrop-blur-sm rounded-full text-error hover:bg-surface-card transition-colors shadow-xs" title="Remove from wishlist">
+<span className="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<div className="absolute bottom-3 left-3 bg-[#D1FAE5] text-[#059669] text-label-sm font-label-sm px-2 py-0.5 rounded-md font-semibold">
+                  In Stock
+                </div>
+</div>
+<div className="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div className="text-label-sm font-label-sm text-customer-primary font-semibold mb-1">Apex Audio</div>
+<h3 className="font-title-md text-title-md text-on-surface line-clamp-1">Aura Pro Wireless Headphones</h3>
+<div className="mt-2 text-headline-sm font-headline-sm text-on-surface">$149.00</div>
+</div>
+<div className="mt-4 pt-3 border-t border-surface-variant flex items-center gap-2">
+<button className="w-full py-2.5 px-4 bg-customer-primary hover:bg-[#4338CA] text-on-primary rounded-lg font-label-lg text-label-lg transition-colors flex items-center justify-center gap-2 shadow-xs active:scale-95">
+<span className="material-symbols-outlined text-[18px]">shopping_bag</span>
+                    Move to Cart
+                  </button>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div className="bg-surface-card rounded-xl border border-outline-variant/60 shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden flex flex-col group">
+<div className="relative bg-surface-container-low aspect-[16/10] overflow-hidden">
+<img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Nordic style handcrafted desk organizer tray made from sustainably sourced solid oak wood, clean lines, minimalist workspace decor, studio catalogue photograph with soft shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUVOsOUlERLS5DPg0-elz9BtJizN_sLwZOGsFF5aD66JLnzB6NtCq210jB0gvuMp2DH6ee6qK-Jcqa29hIFzqgNAsrBJh6x4nmQhPPT9N0r-qxj4XYfLm06NHj1sK2FCMY5_PqeZSpWnM08xtPaGj9sFNV6rBTMv729juZOJfS6S3AS9KVxMrp8ogpIUjsoYEWp9u-FL4cyDP-_cpalUOlZ_-6AoZ_T5PCib9IOIECxvxub5QPFAL1hQ"/>
+<button className="absolute top-3 right-3 p-2 bg-surface-card/90 backdrop-blur-sm rounded-full text-error hover:bg-surface-card transition-colors shadow-xs" title="Remove from wishlist">
+<span className="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<div className="absolute bottom-3 left-3 bg-[#D1FAE5] text-[#059669] text-label-sm font-label-sm px-2 py-0.5 rounded-md font-semibold">
+                  In Stock
+                </div>
+</div>
+<div className="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div className="text-label-sm font-label-sm text-customer-primary font-semibold mb-1">Nordic Craft Co.</div>
+<h3 className="font-title-md text-title-md text-on-surface line-clamp-1">Minimalist Oak Desk Organizer</h3>
+<div className="mt-2 text-headline-sm font-headline-sm text-on-surface">$64.00</div>
+</div>
+<div className="mt-4 pt-3 border-t border-surface-variant flex items-center gap-2">
+<button className="w-full py-2.5 px-4 bg-customer-primary hover:bg-[#4338CA] text-on-primary rounded-lg font-label-lg text-label-lg transition-colors flex items-center justify-center gap-2 shadow-xs active:scale-95">
+<span className="material-symbols-outlined text-[18px]">shopping_bag</span>
+                    Move to Cart
+                  </button>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div className="bg-surface-card rounded-xl border border-outline-variant/60 shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden flex flex-col group">
+<div className="relative bg-surface-container-low aspect-[16/10] overflow-hidden">
+<img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Keychron mechanical keyboard with CNC machined aluminum body, custom double shot PBT keycaps, backlighting, on a pristine grey felt desk mat, commercial hardware shot." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkM6C97e45zcdebmBqFSTLA5CspvDCBGTekrCdGPQQIdARmR-NPKaTrq95SdU7C44SMPWH6iqeEFmTGg_dC0dplgm0FnpJtZm08K28UdN9gmU3yg749y80gVvcwZjRgg8HfBqdCzBBBeeUUWeNTgXuYPoDRUZcOxiBGkhl4ONjleoR48eQLbkDBlg8VIY7xBwO1SQAIfzYCxwUyn1yd8-7Gfi8yI9EtQvVWqU867BJoVUUW3kxg5KczQ"/>
+<button className="absolute top-3 right-3 p-2 bg-surface-card/90 backdrop-blur-sm rounded-full text-error hover:bg-surface-card transition-colors shadow-xs" title="Remove from wishlist">
+<span className="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<div className="absolute bottom-3 left-3 bg-[#FEF3C7] text-[#D97706] text-label-sm font-label-sm px-2 py-0.5 rounded-md font-semibold">
+                  Low Stock - 3 left
+                </div>
+</div>
+<div className="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div className="text-label-sm font-label-sm text-customer-primary font-semibold mb-1">KeyCraft Lab</div>
+<h3 className="font-title-md text-title-md text-on-surface line-clamp-1">Custom Keychron Q1 Pro Mechanical Keyboard</h3>
+<div className="mt-2 text-headline-sm font-headline-sm text-on-surface">$189.00</div>
+</div>
+<div className="mt-4 pt-3 border-t border-surface-variant flex items-center gap-2">
+<button className="w-full py-2.5 px-4 bg-customer-primary hover:bg-[#4338CA] text-on-primary rounded-lg font-label-lg text-label-lg transition-colors flex items-center justify-center gap-2 shadow-xs active:scale-95">
+<span className="material-symbols-outlined text-[18px]">shopping_bag</span>
+                    Move to Cart
+                  </button>
+</div>
+</div>
+</div>
+<!-- Item 4 -->
+<div className="bg-surface-card rounded-xl border border-outline-variant/60 shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden flex flex-col group">
+<div className="relative bg-surface-container-low aspect-[16/10] overflow-hidden">
+<img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Smart ambient monitor light bar fixture perched on a desktop display, emitting soft warm glare-free illumination over a keyboard, modern moody high-tech product photograph." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOqAxwRQPd0CExwx9MbD2s0pY_vWIxjGAHhl_YHD-2niIRoz8_KpG-BgprfQ-Rh0j9d8dMd08apMBRvvoqz34AqQ6jy5inR2B7lKcda1K2g6N6gGKAq1HlYK1BJooRPsO0t3ZwrZb2Tt6gPHVIAkDHLSOgkOOGK8y16qXqir5g86jSgqk4TtAe65ivzrHPSGhyIV79MG1pqzx_htyrQNoGSez1__gSHV5fdNRBfInYeZqC9KnEt5L9cw"/>
+<button className="absolute top-3 right-3 p-2 bg-surface-card/90 backdrop-blur-sm rounded-full text-error hover:bg-surface-card transition-colors shadow-xs" title="Remove from wishlist">
+<span className="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<div className="absolute bottom-3 left-3 bg-[#D1FAE5] text-[#059669] text-label-sm font-label-sm px-2 py-0.5 rounded-md font-semibold">
+                  In Stock
+                </div>
+</div>
+<div className="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div className="text-label-sm font-label-sm text-customer-primary font-semibold mb-1">LumenStudio</div>
+<h3 className="font-title-md text-title-md text-on-surface line-clamp-1">Smart Ambient Screenbar</h3>
+<div className="mt-2 text-headline-sm font-headline-sm text-on-surface">$89.00</div>
+</div>
+<div className="mt-4 pt-3 border-t border-surface-variant flex items-center gap-2">
+<button className="w-full py-2.5 px-4 bg-customer-primary hover:bg-[#4338CA] text-on-primary rounded-lg font-label-lg text-label-lg transition-colors flex items-center justify-center gap-2 shadow-xs active:scale-95">
+<span className="material-symbols-outlined text-[18px]">shopping_bag</span>
+                    Move to Cart
+                  </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- TRACK ORDER INTERACTIVE MODAL OVERLAY (Order #SE-98421) -->
+<div className="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-xs flex items-center justify-center p-4 transition-opacity duration-200" id="tracking-modal">
+<div className="bg-surface-card rounded-2xl max-w-2xl w-full border border-outline-variant shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+<!-- Modal Header -->
+<div className="bg-surface px-space-lg py-space-md border-b border-surface-variant flex items-center justify-between">
+<div>
+<div className="flex items-center gap-2">
+<span className="material-symbols-outlined text-customer-primary">local_shipping</span>
+<h3 className="text-headline-sm font-headline-sm text-on-surface">Tracking Order #SE-98421</h3>
+</div>
+<p className="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+            Carrier: <span className="font-semibold text-on-surface">FedEx Express</span> • Tracking ID: <span className="font-mono text-customer-primary font-medium">FX-8492049182</span>
+</p>
+</div>
+<button className="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" onclick="closeTrackingModal()" title="Close Tracking Modal">
+<span className="material-symbols-outlined text-[24px]">close</span>
+</button>
+</div>
+<!-- Estimated Arrival Banner -->
+<div className="bg-surface-container-low px-space-lg py-3 flex items-center justify-between border-b border-surface-variant">
+<div className="flex items-center gap-2.5">
+<span className="material-symbols-outlined text-customer-primary text-[22px]">schedule</span>
+<div>
+<span className="text-label-sm font-label-sm text-on-surface-variant block">Estimated Delivery</span>
+<span className="font-title-md text-title-md text-on-surface">Tomorrow, Oct 26 by 7:00 PM</span>
+</div>
+</div>
+<span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-label-sm font-label-sm bg-[#EEF2FF] text-customer-primary font-bold">
+<span className="w-2 h-2 rounded-full bg-customer-primary animate-ping"></span>
+          ON SCHEDULE
+        </span>
+</div>
+<!-- 5-Step Order Stepper Container -->
+<div className="p-space-lg space-y-6">
+<!-- Stepper Visual Track -->
+<div className="relative">
+<!-- Stepper Item 1: PENDING (Completed) -->
+<div className="flex gap-4 relative pb-7">
+<!-- Connecting Line -->
+<div className="absolute left-4 top-8 -bottom-1 w-0.5 bg-customer-primary"></div>
+<!-- Node Icon -->
+<div className="w-8 h-8 rounded-full bg-customer-primary text-on-primary flex items-center justify-center shrink-0 z-10 shadow-xs">
+<span className="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div className="flex-1 pt-0.5">
+<div className="flex items-center justify-between">
+<span className="font-title-md text-title-md text-on-surface font-semibold">1. PENDING</span>
+<span className="text-label-sm font-label-sm text-on-surface-variant">Oct 24, 10:14 AM</span>
+</div>
+<p className="text-body-sm font-body-sm text-on-surface-variant">Order placed and assigned to regional fulfillment queues.</p>
+</div>
+</div>
+<!-- Stepper Item 2: PAID (Completed) -->
+<div className="flex gap-4 relative pb-7">
+<div className="absolute left-4 top-8 -bottom-1 w-0.5 bg-customer-primary"></div>
+<div className="w-8 h-8 rounded-full bg-customer-primary text-on-primary flex items-center justify-center shrink-0 z-10 shadow-xs">
+<span className="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div className="flex-1 pt-0.5">
+<div className="flex items-center justify-between">
+<span className="font-title-md text-title-md text-on-surface font-semibold">2. PAID</span>
+<span className="text-label-sm font-label-sm text-on-surface-variant">Oct 24, 10:15 AM</span>
+</div>
+<p className="text-body-sm font-body-sm text-on-surface-variant">Payment verified via secure escrow checkout.</p>
+</div>
+</div>
+<!-- Stepper Item 3: PROCESSING (Completed) -->
+<div className="flex gap-4 relative pb-7">
+<div className="absolute left-4 top-8 -bottom-1 w-0.5 bg-customer-primary"></div>
+<div className="w-8 h-8 rounded-full bg-customer-primary text-on-primary flex items-center justify-center shrink-0 z-10 shadow-xs">
+<span className="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div className="flex-1 pt-0.5">
+<div className="flex items-center justify-between">
+<span className="font-title-md text-title-md text-on-surface font-semibold">3. PROCESSING</span>
+<span className="text-label-sm font-label-sm text-on-surface-variant">Oct 24, 02:30 PM</span>
+</div>
+<p className="text-body-sm font-body-sm text-on-surface-variant">Packed and QA inspected by vendor Apex Audio workshop.</p>
+</div>
+</div>
+<!-- Stepper Item 4: SHIPPED (Active/In Progress) -->
+<div className="flex gap-4 relative pb-7">
+<!-- Connecting Line to Inactive next step (Grey) -->
+<div className="absolute left-4 top-8 -bottom-1 w-0.5 bg-surface-variant"></div>
+<div className="w-8 h-8 rounded-full bg-customer-primary text-on-primary ring-4 ring-customer-primary/20 flex items-center justify-center shrink-0 z-10 shadow-sm">
+<span className="material-symbols-outlined text-[18px] animate-pulse">local_shipping</span>
+</div>
+<div className="flex-1 pt-0.5">
+<div className="flex items-center justify-between">
+<div className="flex items-center gap-2">
+<span className="font-title-md text-title-md text-customer-primary font-bold">4. SHIPPED</span>
+<span className="px-2 py-0.2 rounded-full text-label-sm font-label-sm bg-customer-primary/10 text-customer-primary font-bold">In Transit</span>
+</div>
+<span className="text-label-sm font-label-sm text-customer-primary font-semibold">Oct 25, 08:45 AM</span>
+</div>
+<p className="text-body-sm font-body-sm text-on-surface mt-0.5 font-medium">Departed regional sorting hub via FedEx Express vehicle #892.</p>
+</div>
+</div>
+<!-- Stepper Item 5: DELIVERED (Upcoming) -->
+<div className="flex gap-4 relative">
+<div className="w-8 h-8 rounded-full bg-surface-variant text-outline flex items-center justify-center shrink-0 z-10">
+<span className="material-symbols-outlined text-[18px]">inventory_2</span>
+</div>
+<div className="flex-1 pt-0.5 opacity-60">
+<div className="flex items-center justify-between">
+<span className="font-title-md text-title-md text-on-surface font-semibold">5. DELIVERED</span>
+<span className="text-label-sm font-label-sm text-on-surface-variant">Estimated Oct 26</span>
+</div>
+<p className="text-body-sm font-body-sm text-on-surface-variant">Signature delivery to 742 Evergreen Terrace, Springfield, OR.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div className="bg-surface px-space-lg py-3.5 border-t border-surface-variant flex items-center justify-between">
+<button className="text-customer-primary hover:underline font-label-md text-label-md flex items-center gap-1">
+<span className="material-symbols-outlined text-[16px]">receipt_long</span>
+          Download Full Tracking Log
+        </button>
+<button className="px-5 py-2 bg-customer-primary text-on-primary font-label-md text-label-md rounded-lg hover:bg-[#4338CA] transition-colors" onclick="closeTrackingModal()">
+          Dismiss
+        </button>
+</div>
+</div>
+</div>
+<!-- Shared Official Footer -->
+<footer className="bg-surface-container-low border-t border-surface-variant mt-auto">
+<div className="w-full max-w-7xl mx-auto px-margin-mobile md:px-margin py-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md">
+<!-- Brand & Copyright -->
+<div className="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
+<span className="text-headline-sm font-headline-sm text-customer-primary tracking-tight">ShopEase</span>
+<div className="hidden sm:block h-4 w-[1px] bg-outline-variant"></div>
+<p className="text-body-sm font-body-sm text-on-surface-variant">
+          © 2024 ShopEase Marketplace Inc. All rights reserved. Built for modern vendors and smart shoppers.
+        </p>
+</div>
+<!-- Standard Links -->
+<div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+<a className="text-on-surface-variant hover:text-customer-primary text-label-md font-label-md transition-colors duration-150" href="#">Terms of Service</a>
+<a className="text-on-surface-variant hover:text-customer-primary text-label-md font-label-md transition-colors duration-150" href="#">Privacy Policy</a>
+<a className="text-on-surface-variant hover:text-customer-primary text-label-md font-label-md transition-colors duration-150" href="#">Vendor Policy</a>
+<a className="text-on-surface-variant hover:text-customer-primary text-label-md font-label-md transition-colors duration-150" href="#">Security</a>
+<a className="text-on-surface-variant hover:text-customer-primary text-label-md font-label-md transition-colors duration-150" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+<!-- Micro-interactions & Tab Switcher Script -->
+<script>
+    function switchTab(tabId) {
+      // Hide all contents
+      document.getElementById('tab-profile-content').classNameList.add('hidden');
+      document.getElementById('tab-orders-content').classNameList.add('hidden');
+      document.getElementById('tab-wishlist-content').classNameList.add('hidden');
+
+      // Reset button styles
+      ['profile', 'orders', 'wishlist'].forEach(id => {
+        const btn = document.getElementById('nav-' + id);
+        if (btn) {
+          btn.classNameName = "w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface font-label-lg text-label-lg transition-all duration-150";
+        }
+      });
+
+      // Show selected content
+      const targetContent = document.getElementById('tab-' + tabId + '-content');
+      if (targetContent) {
+        targetContent.classNameList.remove('hidden');
+      }
+
+      // Highlight active nav button
+      const activeBtn = document.getElementById('nav-' + tabId);
+      if (activeBtn) {
+        activeBtn.classNameName = "w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-customer-primary bg-surface-container-low font-label-lg text-label-lg transition-all duration-150 font-bold";
+      }
+    }
+
+    function openTrackingModal() {
+      const modal = document.getElementById('tracking-modal');
+      modal.classNameList.remove('hidden');
+      modal.classNameList.add('flex');
+    }
+
+    function closeTrackingModal() {
+      const modal = document.getElementById('tracking-modal');
+      modal.classNameList.add('hidden');
+      modal.classNameList.remove('flex');
+    }
+
+    // Modal click outside dismissal
+    document.getElementById('tracking-modal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeTrackingModal();
+      }
+    });
+
+    // Initialize with Orders tab prominently open to view the Tracking Stepper trigger
+    document.addEventListener('DOMContentLoaded', () => {
+      switchTab('orders');
+    });
+  </script>
+</body></html>
