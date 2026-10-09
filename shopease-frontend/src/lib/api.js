@@ -114,10 +114,19 @@ export async function api(path, options = {}) {
   if (res.status === 204) return null;
   const text = await res.text();
   let data = null;
-  try {
-    data = text ? JSON.parse(text) : null;
-  } catch {
-    data = null;
+  if (text) {
+    try {
+      data = JSON.parse(text);
+    } catch {
+      // A 200 that is not JSON is almost always a web page (e.g. index.html) answering instead of the API,
+      // which happens when VITE_API_URL is missing or wrong.
+      if (res.ok) {
+        throw new ApiError(
+          502,
+          'The server sent a web page instead of data. If you run this site, check that VITE_API_URL points at your API and redeploy.',
+        );
+      }
+    }
   }
   if (!res.ok) {
     throw new ApiError(res.status, data?.message || res.statusText || 'Something went wrong', data?.validationErrors);
