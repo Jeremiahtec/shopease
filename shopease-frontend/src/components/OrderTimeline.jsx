@@ -42,7 +42,7 @@ export default function OrderTimeline({ status }) {
               <p className={`text-sm font-bold ${done || active ? 'text-slate-900' : 'text-slate-400'}`}>
                 {index + 1}. {step.title}
                 {active && (
-                  <span className="ml-2 rounded-full bg-brand-50 px-2 py-0.5 text-[10px] font-bold uppercase text-brand-700">Current</span>
+                  <span className="ml-2 rounded-md bg-brand-50 px-1.5 py-0.5 text-[10px] font-bold uppercase text-brand-700">Current</span>
                 )}
               </p>
               <p className={`text-sm ${done || active ? 'text-slate-500' : 'text-slate-400'}`}>{step.text}</p>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Check, Heart, ShoppingCart, Store } from 'lucide-react';
+import { Check, Heart, ShoppingCart } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useCartActions } from '../hooks/useCart';
 import { useWishlist } from '../hooks/useWishlist';
@@ -32,9 +32,8 @@ export default function ProductCard({ product }) {
         </Link>
         <Link
           to={`/stores/${product.storeId}`}
-          className="absolute left-3 top-3 inline-flex max-w-[70%] items-center gap-1 truncate rounded-full bg-white/95 px-2.5 py-1 text-[11px] font-semibold text-slate-700 shadow-card backdrop-blur hover:text-brand-700"
+          className="absolute left-3 top-3 inline-flex max-w-[70%] items-center truncate rounded-md bg-white/95 px-2 py-1 text-[11px] font-semibold text-slate-700 shadow-card hover:text-brand-700"
         >
-          <Store className="h-3 w-3 shrink-0 text-brand-600" />
           <span className="truncate">{product.storeName}</span>
         </Link>
         {canShop && (

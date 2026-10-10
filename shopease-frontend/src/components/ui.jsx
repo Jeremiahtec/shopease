@@ -77,7 +77,7 @@ const TONES = {
 
 export function Badge({ tone = 'slate', className = '', children }) {
   return (
-    <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-semibold ring-1 ring-inset ${TONES[tone]} ${className}`}>
+    <span className={`inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] font-semibold ${TONES[tone]} ${className}`}>
       {children}
     </span>
   );
@@ -163,11 +163,10 @@ export function EmptyState({ icon: Icon = Package, title, description, children 
 }
 
 /* ---------- Layout helpers ---------- */
-export function PageHeader({ eyebrow, title, description, actions }) {
+export function PageHeader({ title, description, actions }) {
   return (
     <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
       <div>
-        {eyebrow && <p className="mb-1 text-[11px] font-bold uppercase tracking-wider text-brand-600">{eyebrow}</p>}
         <h1 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">{title}</h1>
         {description && <p className="mt-1 max-w-2xl text-sm text-slate-500">{description}</p>}
       </div>
@@ -176,18 +175,10 @@ export function PageHeader({ eyebrow, title, description, actions }) {
   );
 }
 
-export function StatCard({ label, value, hint, icon: Icon, tone = 'brand' }) {
-  const toneClass = tone === 'brand' ? 'bg-brand-50 text-brand-600' : tone === 'green' ? 'bg-emerald-50 text-emerald-600' : 'bg-amber-50 text-amber-600';
+export function StatCard({ label, value, hint }) {
   return (
     <div className="card p-5">
-      <div className="flex items-start justify-between">
-        <p className="text-xs font-semibold text-slate-500">{label}</p>
-        {Icon && (
-          <span className={`flex h-9 w-9 items-center justify-center rounded-xl ${toneClass}`}>
-            <Icon className="h-4 w-4" />
-          </span>
-        )}
-      </div>
+      <p className="text-xs font-semibold text-slate-500">{label}</p>
       <p className="mt-2 text-2xl font-extrabold text-slate-900 sm:text-3xl">{value}</p>
       {hint && <p className="mt-1 text-xs text-slate-500">{hint}</p>}
     </div>

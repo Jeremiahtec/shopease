@@ -27,7 +27,6 @@ function Dashboard({ store }) {
   return (
     <>
       <PageHeader
-        eyebrow="Catalog management"
         title={`${store.name} dashboard`}
         description="Your products, orders and fulfilment at a glance."
         actions={<Link to="/vendor/products"><Button icon={Plus}>Add product</Button></Link>}
@@ -78,7 +77,7 @@ function Dashboard({ store }) {
               {lowStock.slice(0, 6).map((p) => (
                 <li key={p.id} className="flex items-center justify-between py-3 text-sm">
                   <span className="truncate pr-3 font-semibold">{p.name}</span>
-                  <span className={`shrink-0 rounded-full px-2.5 py-0.5 text-[11px] font-bold ${p.stockQuantity === 0 ? 'bg-rose-50 text-rose-700' : 'bg-amber-50 text-amber-700'}`}>
+                  <span className={`shrink-0 rounded-md px-2 py-0.5 text-[11px] font-bold ${p.stockQuantity === 0 ? 'bg-rose-50 text-rose-700' : 'bg-amber-50 text-amber-700'}`}>
                     {p.stockQuantity === 0 ? 'Depleted' : `${p.stockQuantity} left`}
                   </span>
                 </li>

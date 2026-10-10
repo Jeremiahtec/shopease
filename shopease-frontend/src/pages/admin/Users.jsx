@@ -34,7 +34,6 @@ export default function Users() {
   return (
     <>
       <PageHeader
-        eyebrow="Operational console"
         title="Users management"
         description="Every account on the platform. Vendors can be suspended or reinstated."
         actions={

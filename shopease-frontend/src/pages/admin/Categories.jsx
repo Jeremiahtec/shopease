@@ -48,7 +48,7 @@ export default function Categories() {
 
   return (
     <>
-      <PageHeader eyebrow="Catalog management" title="Category management" description="Platform-wide product categories used by vendors and shoppers." actions={<Button icon={Plus} onClick={() => openForm()}>Create category</Button>} />
+      <PageHeader title="Category management" description="Platform-wide product categories used by vendors and shoppers." actions={<Button icon={Plus} onClick={() => openForm()}>Create category</Button>} />
 
       <div className="card overflow-hidden">
         {categories.data.totalElements === 0 ? (

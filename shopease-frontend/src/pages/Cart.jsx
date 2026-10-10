@@ -39,7 +39,7 @@ export default function Cart() {
               <p className="mb-3 text-[11px] font-bold uppercase tracking-wider text-slate-500">Explore popular categories</p>
               <div className="flex flex-wrap justify-center gap-2">
                 {categories.data.content.slice(0, 6).map((c) => (
-                  <Link key={c.id} to={`/?category=${c.id}`} className="rounded-full border border-slate-200 bg-brand-50/50 px-4 py-2 text-sm font-semibold text-slate-700 hover:border-brand-200 hover:text-brand-700">
+                  <Link key={c.id} to={`/?category=${c.id}`} className="rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:border-brand-200 hover:text-brand-700">
                     {c.name}
                   </Link>
                 ))}

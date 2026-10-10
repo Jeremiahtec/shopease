@@ -41,7 +41,7 @@ export default function DashboardLayout({ variant, nav, sectionLabel }) {
         <Link to={isVendor ? '/vendor' : '/admin'} className="flex shrink-0 items-center gap-3">
           <Logo className="h-7" />
           <span
-            className={`hidden rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wide sm:inline ${
+            className={`hidden rounded-md px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide sm:inline ${
               isVendor ? 'bg-brand-100 text-brand-700' : 'bg-slate-900 text-white'
             }`}
           >
@@ -51,13 +51,8 @@ export default function DashboardLayout({ variant, nav, sectionLabel }) {
 
         <div className="ml-auto flex items-center gap-3">
           {isVendor && store.data && (
-            <span
-              className={`hidden items-center gap-2 rounded-full px-3 py-1.5 text-xs font-semibold md:flex ${
-                store.data.active ? 'bg-emerald-50 text-emerald-700' : 'bg-rose-50 text-rose-700'
-              }`}
-            >
-              <span className={`h-2 w-2 rounded-full ${store.data.active ? 'bg-emerald-500' : 'bg-rose-500'}`} />
-              {store.data.active ? 'Store active & operational' : 'Store suspended'}
+            <span className={`hidden text-xs font-semibold md:inline ${store.data.active ? 'text-emerald-700' : 'text-rose-700'}`}>
+              {store.data.active ? 'Store is live' : 'Store suspended'}
             </span>
           )}
           {isVendor && store.data && (

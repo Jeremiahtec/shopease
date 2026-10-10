@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
-import { BadgeCheck, Search, Store as StoreIcon } from 'lucide-react';
+import { Search, Store as StoreIcon } from 'lucide-react';
 import { api } from '../lib/api';
 import { formatDate } from '../lib/format';
 import ProductCard, { ProductCardSkeleton } from '../components/ProductCard';
@@ -52,8 +52,7 @@ export default function StorePage() {
             <div className="min-w-0 flex-1 pt-14 sm:pt-0">
               <div className="flex flex-wrap items-center gap-2">
                 <h1 className="text-2xl font-extrabold">{s.name}</h1>
-                <span className="inline-flex items-center gap-1 rounded-full bg-brand-50 px-2.5 py-0.5 text-[11px] font-bold text-brand-700"><BadgeCheck className="h-3.5 w-3.5" /> Verified seller</span>
-                {!s.active && <span className="rounded-full bg-rose-50 px-2.5 py-0.5 text-[11px] font-bold text-rose-700">Suspended</span>}
+                {!s.active && <span className="rounded-md bg-rose-50 px-2 py-0.5 text-[11px] font-bold text-rose-700">Suspended</span>}
               </div>
               <p className="mt-1 text-xs text-slate-500">On ShopEase since {formatDate(s.createdAt, { day: undefined })}</p>
             </div>

@@ -1,15 +1,9 @@
 import { useState } from 'react';
 import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
-import { ArrowRight, Eye, EyeOff, Lock, Mail, ShieldCheck, Store, Zap, ShoppingBag, User, Phone } from 'lucide-react';
+import { ArrowRight, Eye, EyeOff, Lock, Mail, Store, ShoppingBag, User, Phone } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { roleHome } from '../lib/format';
 import { Button, Field, Input, Logo } from '../components/ui';
-
-const FEATURES = [
-  { icon: ShieldCheck, title: 'Secure by design', text: 'Passwords are hashed and payments are handled by Paystack.' },
-  { icon: Store, title: 'Sell without setup fees', text: 'Open your store, list products and manage orders from one hub.' },
-  { icon: Zap, title: 'Instant role routing', text: 'Shoppers, vendors and admins each land on the right dashboard.' },
-];
 
 export default function Auth() {
   const location = useLocation();
@@ -58,17 +52,13 @@ export default function Auth() {
 
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-10 sm:px-6 lg:grid-cols-2 lg:py-16">
         <div className="hidden lg:block">
-          <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1 text-xs font-bold text-brand-700"><span className="h-2 w-2 rounded-full bg-emerald-500" /> Multi-vendor marketplace</span>
-          <h1 className="mt-5 text-5xl font-extrabold leading-[1.1]">One account for smarter shopping & scalable selling.</h1>
-          <p className="mt-4 max-w-md text-slate-600">Connect directly with independent merchants, or launch your own storefront in minutes.</p>
-          <div className="stagger mt-8 space-y-3">
-            {FEATURES.map(({ icon: Icon, title, text }) => (
-              <div key={title} className="card flex gap-4 p-4">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600"><Icon className="h-5 w-5" /></span>
-                <div><p className="font-bold">{title}</p><p className="text-sm text-slate-500">{text}</p></div>
-              </div>
-            ))}
-          </div>
+          <h1 className="text-5xl font-extrabold leading-[1.1]">One account for smarter shopping & scalable selling.</h1>
+          <p className="mt-4 max-w-md text-slate-600">Buy from independent vendors in a single cart, or open your own store and start selling.</p>
+          <ul className="mt-8 max-w-md divide-y divide-slate-200 border-y border-slate-200 text-sm leading-relaxed">
+            <li className="py-3"><b>Shoppers</b> <span className="text-slate-600">add items from several vendors and pay once with Paystack.</span></li>
+            <li className="py-3"><b>Vendors</b> <span className="text-slate-600">list products, follow orders and ship from one dashboard.</span></li>
+            <li className="py-3"><b>Your data</b> <span className="text-slate-600">stays yours: passwords are hashed and card details never reach our servers.</span></li>
+          </ul>
         </div>
 
         <div className="card p-6 sm:p-8">

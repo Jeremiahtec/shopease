@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { Check, Heart, Minus, Pencil, Plus, ShieldCheck, ShoppingCart, Store, Truck, Zap } from 'lucide-react';
+import { Check, Heart, Minus, Pencil, Plus, ShieldCheck, ShoppingCart, Truck, Zap } from 'lucide-react';
 import { api } from '../lib/api';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../context/ToastContext';
@@ -81,9 +81,7 @@ export default function ProductDetail() {
         </div>
 
         <div>
-          <Link to={`/stores/${p.storeId}`} className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1 text-xs font-bold text-brand-700 hover:bg-brand-100">
-            <Store className="h-3.5 w-3.5" /> {p.storeName}
-          </Link>
+          <Link to={`/stores/${p.storeId}`} className="text-sm text-slate-500 hover:text-brand-700">Sold by <span className="font-semibold text-slate-800 underline-offset-4 hover:underline">{p.storeName}</span></Link>
           <h1 className="mt-3 text-3xl font-extrabold leading-tight">{p.name}</h1>
           <div className="mt-2 flex items-center gap-3 text-sm text-slate-500">
             {list.length > 0 ? (

@@ -59,7 +59,7 @@ export default function Notifications() {
               <span className="min-w-0 flex-1">
                 <span className="flex items-center gap-2">
                   <span className="font-bold text-slate-900">{n.title}</span>
-                  {!n.seen && <span className="rounded-full bg-rose-500 px-2 py-0.5 text-[10px] font-bold uppercase text-white">New</span>}
+                  {!n.seen && <span className="rounded-md bg-rose-500 px-1.5 py-0.5 text-[10px] font-bold uppercase text-white">New</span>}
                 </span>
                 <span className="mt-0.5 block text-sm text-slate-600">{n.message}</span>
                 <span className="mt-1 block text-xs text-slate-400">{timeAgo(n.createdAt)}{n.orderId ? ` · Order #${n.orderId}` : ''}</span>

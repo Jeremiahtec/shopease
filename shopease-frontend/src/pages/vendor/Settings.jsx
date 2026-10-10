@@ -11,7 +11,7 @@ export default function Settings() {
 
   return (
     <div className="mx-auto max-w-5xl">
-      <PageHeader eyebrow="Storefront & brand" title="Store settings & brand configuration" description="Configure the public identity customers see on your storefront." />
+      <PageHeader title="Store settings & brand configuration" description="Configure the public identity customers see on your storefront." />
       {store.data && (
         <div className={`mb-6 flex items-center justify-between gap-3 rounded-2xl border p-5 ${store.data.active ? 'border-emerald-200 bg-emerald-50' : 'border-rose-200 bg-rose-50'}`}>
           <div>

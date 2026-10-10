@@ -17,7 +17,7 @@ export default function Orders() {
 
   return (
     <>
-      <PageHeader eyebrow="Operational console" title="Global orders" description="Every order on the platform. Admins monitor orders; vendors and customers change their status." />
+      <PageHeader title="Global orders" description="Every order on the platform. Admins monitor orders; vendors and customers change their status." />
       <div className="card overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full">

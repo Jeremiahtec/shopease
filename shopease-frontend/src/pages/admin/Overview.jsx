@@ -33,7 +33,7 @@ export default function Overview() {
 
   return (
     <>
-      <PageHeader eyebrow="Operational console" title="Platform overview & governance" description="Marketplace totals, vendor stores and moderation in one place." />
+      <PageHeader title="Platform overview & governance" description="Marketplace totals, vendor stores and moderation in one place." />
 
       <div className="stagger grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         <StatCard label="Registered users" value={s.totalUsers} hint={`${s.totalCustomers} shoppers · ${s.totalVendors} vendors`} icon={Users} />

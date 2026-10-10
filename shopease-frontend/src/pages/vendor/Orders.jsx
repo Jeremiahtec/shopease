@@ -55,13 +55,13 @@ function OrdersTable() {
 
   return (
     <>
-      <PageHeader eyebrow="Fulfilment" title="Store orders" description="Orders containing your products. Totals show your share of each order." />
+      <PageHeader title="Store orders" description="Orders containing your products. Totals show your share of each order." />
 
       <div className="card overflow-hidden">
         <div className="flex gap-1 overflow-x-auto border-b border-slate-100 px-3 pt-3">
           {TABS.map((t) => (
             <button key={t} onClick={() => setTab(t)} className={`whitespace-nowrap border-b-2 px-3 pb-3 text-sm font-semibold transition-colors ${tab === t ? 'border-brand-600 text-brand-700' : 'border-transparent text-slate-500 hover:text-slate-800'}`}>
-              {TAB_LABEL[t]} <span className="ml-1 rounded-full bg-slate-100 px-2 py-0.5 text-[11px]">{count(t)}</span>
+              {TAB_LABEL[t]} <span className="ml-1 rounded bg-slate-100 px-1.5 py-0.5 text-[11px]">{count(t)}</span>
             </button>
           ))}
         </div>

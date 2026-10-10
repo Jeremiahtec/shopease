@@ -13,7 +13,7 @@ export default function StoreGate({ children }) {
   if (store.isError) {
     return (
       <div className="mx-auto max-w-4xl">
-        <PageHeader eyebrow="Welcome" title="Set up your store" description="Create your store to start listing products. You can change all of this later." />
+        <PageHeader title="Set up your store" description="Create your store to start listing products. You can change all of this later." />
         <div className="mb-6 flex items-center gap-3 rounded-xl bg-brand-50 p-4 text-sm text-brand-700"><Store className="h-5 w-5" /> Step 1 of 2 — create your store, then add your first product.</div>
         <StoreForm />
       </div>

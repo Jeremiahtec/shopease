@@ -60,41 +60,31 @@ export default function Marketplace() {
 
   return (
     <>
-      <section className="animate-fade-in bg-gradient-to-br from-brand-700 via-brand-600 to-violet-600 text-white">
-        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[1.4fr_1fr] lg:py-16">
-          <div>
-            <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold backdrop-blur">
-              <span className="h-2 w-2 rounded-full bg-emerald-300" /> Multi-vendor marketplace
-            </span>
-            <h1 className="mt-4 text-3xl font-extrabold leading-tight sm:text-5xl">
-              Curated products,
-              <br /> direct from independent makers
-            </h1>
-            <p className="mt-4 max-w-xl text-sm text-white/80 sm:text-base">
-              Shop several vendors in one cart, pay once with Paystack, and track every order from your account.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a href="#products" className="inline-flex h-12 items-center gap-2 rounded-lg bg-white px-6 text-sm font-bold text-brand-700 hover:bg-brand-50">
-                Explore collection <ArrowRight className="h-4 w-4" />
-              </a>
-              <Link to="/register" className="inline-flex h-12 items-center rounded-lg border border-white/30 px-6 text-sm font-bold text-white hover:bg-white/10">
-                Sell on ShopEase
-              </Link>
-            </div>
+      <section className="animate-fade-in bg-brand-700 text-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:py-16">
+          <h1 className="max-w-3xl text-3xl font-extrabold leading-tight sm:text-5xl">
+            Curated products, direct from independent makers
+          </h1>
+          <p className="mt-4 max-w-xl text-sm text-white/80 sm:text-base">
+            Shop several vendors in one cart, pay once with Paystack, and track every order from your account.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href="#products" className="inline-flex h-12 items-center gap-2 rounded-lg bg-white px-6 text-sm font-bold text-brand-700 hover:bg-brand-50">
+              Explore collection <ArrowRight className="h-4 w-4" />
+            </a>
+            <Link to="/register" className="inline-flex h-12 items-center rounded-lg border border-white/30 px-6 text-sm font-bold text-white hover:bg-white/10">
+              Sell on ShopEase
+            </Link>
           </div>
           {cats.length > 0 && (
-            <div className="grid grid-cols-3 gap-3 self-end">
-              {cats.slice(0, 3).map((c) => (
-                <button
-                  key={c.id}
-                  onClick={() => update({ category: c.id })}
-                  className="rounded-2xl border border-white/20 bg-white/10 p-4 text-left backdrop-blur transition hover:bg-white/20"
-                >
-                  <p className="line-clamp-2 text-sm font-bold">{c.name}</p>
-                  <p className="mt-1 text-[11px] text-white/70">Browse →</p>
+            <p className="mt-8 flex flex-wrap items-baseline gap-x-5 gap-y-1 border-t border-white/15 pt-4 text-sm">
+              <span className="text-white/60">Browse</span>
+              {cats.slice(0, 6).map((c) => (
+                <button key={c.id} onClick={() => update({ category: c.id })} className="font-semibold text-white underline-offset-4 hover:underline">
+                  {c.name}
                 </button>
               ))}
-            </div>
+            </p>
           )}
         </div>
       </section>
@@ -150,7 +140,7 @@ export default function Marketplace() {
             <div className="flex flex-wrap items-center gap-3">
               <h2 className="text-lg font-bold">{q ? `Results for “${q}”` : 'Marketplace products'}</h2>
               {products.data && (
-                <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">
+                <span className="text-sm font-medium text-slate-500">
                   {products.data.totalElements} {products.data.totalElements === 1 ? 'item' : 'items'}
                 </span>
               )}

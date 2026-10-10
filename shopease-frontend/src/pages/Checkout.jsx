@@ -70,8 +70,7 @@ export default function Checkout() {
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       <div className="mb-6 flex flex-wrap items-end justify-between gap-2">
         <div>
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-3 py-1 text-[11px] font-bold text-brand-700"><Lock className="h-3 w-3" /> Secure checkout</span>
-          <h1 className="mt-2 text-3xl font-extrabold">Checkout</h1>
+          <h1 className="text-3xl font-extrabold">Checkout</h1>
         </div>
         <Link to="/cart" className="text-sm font-semibold text-slate-500 hover:text-brand-700">← Back to cart</Link>
       </div>

@@ -13,9 +13,9 @@ export default function Products() {
 }
 
 function stockBadge(qty) {
-  if (qty <= 0) return <span className="rounded-full bg-rose-50 px-2.5 py-0.5 text-[11px] font-bold text-rose-700">0 · Depleted</span>;
-  if (qty <= 5) return <span className="rounded-full bg-amber-50 px-2.5 py-0.5 text-[11px] font-bold text-amber-700">{qty} · Low stock</span>;
-  return <span className="rounded-full bg-emerald-50 px-2.5 py-0.5 text-[11px] font-bold text-emerald-700">{qty} · Healthy</span>;
+  if (qty <= 0) return <span className="rounded-md bg-rose-50 px-2 py-0.5 text-[11px] font-bold text-rose-700">0 · Depleted</span>;
+  if (qty <= 5) return <span className="rounded-md bg-amber-50 px-2 py-0.5 text-[11px] font-bold text-amber-700">{qty} · Low stock</span>;
+  return <span className="rounded-md bg-emerald-50 px-2 py-0.5 text-[11px] font-bold text-emerald-700">{qty} · Healthy</span>;
 }
 
 function ProductsTable() {
@@ -55,7 +55,7 @@ function ProductsTable() {
 
   return (
     <>
-      <PageHeader eyebrow="Catalog management" title="Products" description="Manage pricing, stock levels and visibility." actions={<Button icon={Plus} onClick={() => openForm()}>New product</Button>} />
+      <PageHeader title="Products" description="Manage pricing, stock levels and visibility." actions={<Button icon={Plus} onClick={() => openForm()}>New product</Button>} />
 
       <div className="card overflow-hidden">
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 p-4">
